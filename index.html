@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>دوقاب | کدساز عکس زوج</title>
+<meta name="description" content="۳۲۰ کد برای ساخت و ویرایش عکس زوج و برنامه‌ریزی آلبوم. ژست، نور، لباس و مکان را انتخاب کن؛ دوقاب جملهٔ کامل را برای ChatGPT، Gemini، Midjourney یا Flux می‌سازد.">
+<meta name="theme-color" content="#0B0B14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="دوقاب | کدساز عکس زوج">
+<meta property="og:description" content="۳۲۰ کد برای ساخت و ویرایش عکس زوج و برنامه‌ریزی آلبوم؛ فارسی و آفلاین.">
+<meta property="og:image" content="og.png">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/Vazirmatn.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Vazirmatn";src:url(fonts/Vazirmatn.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{
+ --ink:#0B0B14;--night:#15112B;--night2:#1D1740;--paper:#F4F2F9;--white:#fff;
+ --violet:#7C4DFF;--blue:#3D7BFF;--lav:#C9A6FF;--champ:#EBD8B8;
+ --text:#17172B;--muted:#5E5E78;--line:#DDD8EC;--bad:#FF8A8D;--ok:#4BD39B;
+ --g:linear-gradient(135deg,#7C4DFF,#3D7BFF);
+ --mono:"JetBrains Mono","DejaVu Sans Mono",Consolas,monospace;
+ --wrap:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:"Vazirmatn",Tahoma,"Noto Sans Arabic",sans-serif;background:var(--paper);color:var(--text);font-size:16px;line-height:1.95;font-weight:400;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:10px}
+code,.ltr{direction:ltr;unicode-bidi:isolate;font-family:var(--mono)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- دکمه نصب / ورود ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:16px;font-weight:800;font-size:16px;text-decoration:none;transition:transform .15s,box-shadow .2s,background .2s}
+.btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn-main{background:var(--g);color:#fff;box-shadow:0 10px 30px -8px #7C4DFF99}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px #7C4DFFcc}
+.btn-ghost{color:#E9E4FA;border:1.5px solid #ffffff33}
+.btn-ghost:hover{background:#ffffff12}
+.btn-sm{min-height:42px;padding:0 18px;font-size:14.5px;border-radius:12px}
+[data-install] .on-installed,[data-install] .on-pending{display:none}
+[data-install][data-state=installed] .on-ready,[data-install][data-state=pending] .on-ready{display:none}
+[data-install][data-state=installed] .on-installed{display:inline-flex;align-items:center;gap:10px}
+[data-install][data-state=pending] .on-pending{display:inline-flex;align-items:center;gap:10px}
+[data-install][data-state=pending]{pointer-events:none;opacity:.8}
+.on-ready{display:inline-flex;align-items:center;gap:10px}
+[data-install][data-state=installed]{background:#fff;color:var(--ink);box-shadow:0 10px 30px -10px #fff6}
+.state-note{font-size:13.5px;color:#B7B2D2;margin-top:10px;min-height:1.9em}
+.state-note a{color:var(--champ)}
+
+/* ---------- نوار بالا ---------- */
+.top{position:sticky;top:0;z-index:40;background:#0B0B14e6;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #ffffff14}
+.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;margin-inline-end:auto}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand b{font-size:19px;font-weight:900;line-height:1}
+.brand small{font-family:var(--mono);font-size:11px;color:#9C97BD;letter-spacing:.04em;direction:ltr}
+.top nav{display:none;gap:26px;font-size:14.5px}
+.top nav a{color:#C7C2E0;text-decoration:none}
+.top nav a:hover{color:#fff}
+@media(min-width:860px){.top nav{display:flex}}
+
+/* ---------- هیرو ---------- */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:760px;height:760px;background:radial-gradient(closest-side,#7C4DFF55,transparent 70%);z-index:-1}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -10%;width:640px;height:640px;background:radial-gradient(closest-side,#3D7BFF40,transparent 70%);z-index:-1}
+.prints{position:absolute;inset:0;z-index:-1;opacity:.5;pointer-events:none}
+.hero .wrap{display:grid;gap:44px;padding-block:56px 72px}
+@media(min-width:960px){.hero .wrap{grid-template-columns:1fr 1.05fr;align-items:center;gap:56px;padding-block:84px 96px}}
+.hero h1 span{display:block}
+.hero h1{font-size:clamp(40px,7.2vw,76px);line-height:1.18;font-weight:900;letter-spacing:-.01em}
+.hero .lead{font-size:clamp(16px,2.1vw,18.5px);color:#CFCAE8;max-width:34em;margin-top:18px;line-height:2.1}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facts{list-style:none;margin-top:26px;display:grid;gap:6px;font-size:14.5px;color:#B7B2D2}
+.facts li{display:flex;gap:10px;align-items:flex-start}
+.facts svg{width:18px;height:18px;margin-top:6px;stroke:var(--champ);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* کنسول زنده */
+.console{position:relative;background:linear-gradient(180deg,var(--night2),var(--night));border:1px solid #ffffff1c;border-radius:22px;padding:22px 18px 18px;box-shadow:0 40px 80px -30px #000c}
+.console::before,.console::after{content:"";position:absolute;width:26px;height:26px;border:3px solid var(--champ);opacity:.9;pointer-events:none}
+.console::before{top:-9px;right:-9px;border-width:3px 3px 0 0;border-radius:0 12px 0 0}
+.console::after{bottom:-9px;left:-9px;border-width:0 0 3px 3px;border-radius:0 0 0 12px}
+.con-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.con-head b{font-size:15px;font-weight:800}
+.con-head span{font-size:13px;color:#A9A4C8}
+.row{display:grid;grid-template-columns:64px 1fr;gap:8px;align-items:start;padding:7px 0;border-top:1px solid #ffffff10}
+.row:first-of-type{border-top:0}
+.row>span{font-size:13px;color:#A9A4C8;padding-top:5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;flex-direction:column;align-items:flex-start;padding:3px 12px 4px;border-radius:12px;border:1px solid #ffffff22;background:#ffffff08;color:#E7E2F8;font-size:13.5px;line-height:1.6;text-align:start;transition:background .15s,border-color .15s}
+@media(max-width:560px){.row{grid-template-columns:1fr;gap:2px}.row>span{padding-top:0}.chip{padding:2px 10px 3px;font-size:13px}}
+.chip code{font-size:10.5px;color:#9C97BD;line-height:1.5}
+.chip:hover{background:#ffffff14}
+.chip[aria-pressed=true]{background:#7C4DFF33;border-color:#9B78FF}
+.chip[aria-pressed=true] code{color:var(--lav)}
+.msg{margin-top:10px;font-size:13.5px;border-radius:12px;padding:6px 12px;line-height:1.8}
+.msg.bad{background:#FF8A8D1c;color:var(--bad);border:1px solid #FF8A8D55}
+.msg.ok{background:#4BD39B18;color:var(--ok);border:1px solid #4BD39B40}
+.sentence{margin-top:12px;background:#0B0B14;border:1px solid #ffffff1a;border-radius:14px;padding:12px 14px}
+.sentence .lb{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--lav);font-weight:800}
+.sentence p{direction:ltr;text-align:left;font-family:var(--mono);font-size:12.5px;line-height:1.85;color:#D8D3EE;margin-top:6px;unicode-bidi:plaintext}
+.sentence mark{background:#EBD8B826;color:var(--champ);border-radius:4px;padding:0 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.copy{font-size:12.5px;padding:2px 12px;border-radius:99px;border:1px solid #ffffff2a;color:#E7E2F8}
+.copy:hover{background:#ffffff14}
+.bad-out{opacity:.55}
+
+/* ---------- بخش‌های روشن ---------- */
+section{position:relative}
+.sec{padding-block:72px}
+h2{font-size:clamp(28px,4.4vw,44px);line-height:1.35;font-weight:900;letter-spacing:-.005em}
+.sec .sub{color:var(--muted);max-width:38em;margin-top:12px}
+.versus{display:grid;gap:18px;margin-top:34px}
+@media(min-width:820px){.versus{grid-template-columns:1fr 1fr}}
+.v-old,.v-new{border-radius:20px;padding:24px}
+.v-old{border:1.5px dashed #BDB6D6;color:#6B6685}
+.v-old h3,.v-new h3{font-size:15px;font-weight:800;margin-bottom:10px}
+.v-old q{display:block;font-size:19px;line-height:1.9;text-decoration:line-through;text-decoration-color:#C0577A;text-decoration-thickness:2px;quotes:none}
+.v-old ul{margin-top:14px;padding-inline-start:20px;font-size:14.5px}
+.v-new{background:var(--ink);color:#fff}
+.v-new .chips code{font-size:12px;padding:1px 9px;border-radius:7px;background:#7C4DFF30;color:var(--lav)}
+.v-new .chips{margin:6px 0 14px}
+.v-new p{font-size:14.5px;color:#CFCAE8}
+
+.feat{display:grid;gap:36px;align-items:center;padding-block:64px;border-top:1px solid var(--line)}
+.feat:first-of-type{border-top:0}
+@media(min-width:900px){.feat{grid-template-columns:1fr 1fr;gap:72px}.feat.flip .feat-media{order:-1}}
+.feat h3{font-size:clamp(24px,3.2vw,34px);line-height:1.45;font-weight:900}
+.feat p{color:var(--muted);margin-top:12px;max-width:34em}
+.feat ul{margin-top:16px;padding-inline-start:20px;color:var(--text);font-size:15px}
+.feat li+li{margin-top:2px}
+.feat-media{display:flex;justify-content:center}
+.phone{width:min(290px,76vw);background:#0d0d18;border:1px solid #2c2748;border-radius:44px;padding:9px;box-shadow:0 40px 70px -30px #1d1245aa,0 0 0 1px #00000040;position:relative}
+.phone::before{content:"";position:absolute;top:15px;left:50%;transform:translateX(-50%);width:70px;height:6px;border-radius:9px;background:#0d0d18;z-index:2}
+.phone img{border-radius:36px;width:100%;aspect-ratio:390/844;object-fit:cover}
+.tilt-l{transform:rotate(-2.5deg)}.tilt-r{transform:rotate(2.5deg)}
+
+/* کنتاکت‌شیت آلبوم */
+.sheet{background:var(--ink);border-radius:18px;padding:30px 14px;margin-top:22px;position:relative;
+ background-image:repeating-linear-gradient(90deg,transparent 0 14px,#ffffff1f 14px 22px);background-size:100% 8px;background-repeat:no-repeat;background-position:0 8px}
+.sheet::after{content:"";position:absolute;inset:auto 0 8px 0;height:8px;background:repeating-linear-gradient(90deg,transparent 0 14px,#ffffff1f 14px 22px)}
+.sheet ol{list-style-type:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(min-width:560px){.sheet ol{grid-template-columns:repeat(6,1fr)}}
+.sheet li .fig{position:relative;background:linear-gradient(180deg,#241C4D,#16112F);border-radius:8px;aspect-ratio:4/5;overflow:hidden;border:1px solid #ffffff14}
+.sheet li .fig svg{position:absolute;inset:0;width:100%;height:100%}
+.sheet li span{display:block;padding:6px 2px 0;font-size:12px;line-height:1.55;color:#E7E2F8}
+.sheet li span i{display:block;font-style:normal;font-family:var(--mono);font-size:11px;color:var(--champ)}
+ol{list-style-type:persian}
+.sheet-cap{font-size:13.5px;color:var(--muted);margin-top:10px}
+
+/* فهرست خط‌دار */
+.ruled{margin-top:30px;border-top:1.5px solid var(--text)}
+.ruled>div{display:grid;gap:4px 28px;padding-block:20px;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.ruled>div{grid-template-columns:230px 1fr}}
+.ruled h3{font-size:18px;font-weight:800}
+.ruled p{color:var(--muted);max-width:40em}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.tools span{padding:6px 16px;border-radius:99px;border:1.5px solid var(--text);font-weight:600;font-size:14.5px}
+.who{display:grid;gap:26px;margin-top:30px}
+@media(min-width:820px){.who{grid-template-columns:repeat(3,1fr);gap:36px}}
+.who h3{font-size:18px;font-weight:800;margin-bottom:4px}
+.who p{color:var(--muted);font-size:15px}
+
+/* ---------- نصب ---------- */
+.install{background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.install::before{content:"";position:absolute;inset:auto auto -40% 50%;width:720px;height:720px;transform:translateX(-50%);background:radial-gradient(closest-side,#7C4DFF40,transparent 70%);z-index:-1}
+.install .wrap{padding-block:80px}
+.install h2{max-width:16em}
+.install .sub{color:#B7B2D2}
+.how{display:grid;gap:14px;margin-top:40px}
+@media(min-width:860px){.how{grid-template-columns:repeat(3,1fr);gap:20px}}
+.how>div{border:1px solid #ffffff1c;border-radius:18px;padding:18px 20px;background:#ffffff06}
+.how h3{font-size:16px;font-weight:800;margin-bottom:6px}
+.how ol{padding-inline-start:20px;font-size:14.5px;color:#CFCAE8}
+.warn{margin-top:24px;font-size:14px;color:#D6D1EC;border-inline-start:3px solid var(--champ);padding:4px 14px;max-width:46em}
+
+/* ---------- سوالات ---------- */
+.faq{margin-top:28px;border-top:1.5px solid var(--text)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:800;font-size:17px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-weight:400;font-size:24px;line-height:1;color:var(--violet);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);padding-bottom:18px;max-width:44em}
+footer{background:var(--ink);color:#A9A4C8;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding-block:28px 36px}
+footer b{color:#fff}
+
+/* ---------- پنجرهٔ راهنمای نصب ---------- */
+dialog{border:0;border-radius:22px;padding:0;max-width:min(460px,92vw);width:100%;background:var(--ink);color:#fff;margin:auto}
+dialog::backdrop{background:#000a}
+dialog .in{padding:22px 22px 20px}
+dialog h3{font-size:19px;font-weight:900}
+dialog ol{padding-inline-start:20px;margin:12px 0 16px;color:#D6D1EC;font-size:15px}
+dialog .tabs{display:flex;gap:6px;margin-top:12px}
+dialog .tabs button{padding:3px 14px;border-radius:99px;border:1px solid #ffffff2a;font-size:13.5px;color:#CFCAE8}
+dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF;color:#fff}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#fff;color:var(--ink);padding:8px 20px;border-radius:99px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:80}
+#toast.on{opacity:1;transform:translateX(-50%)}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="#top" aria-label="دوقاب"><img src="icon-192.png" width="34" height="34" alt=""><b>دوقاب</b><small>Duoframe</small></a>
+  <nav aria-label="بخش‌ها"><a href="#features">امکانات</a><a href="#album">آلبوم</a><a href="#install">نصب</a><a href="#faq">سوالات</a></nav>
+  <a class="btn btn-main btn-sm" href="app.html" data-install data-state="ready"><span class="on-ready"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>نصب برنامه</span><span class="on-installed"><svg viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l4 4-4 4M14 12H4"/></svg>ورود</span><span class="on-pending">در حال نصب…</span></a>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <svg class="prints" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke-width="2"><rect x="760" y="70" width="300" height="375" rx="40" transform="rotate(-9 910 257)" stroke="#C9A6FF" stroke-opacity=".22"/><rect x="900" y="150" width="300" height="375" rx="40" transform="rotate(9 1050 337)" stroke="#3D7BFF" stroke-opacity=".28"/></g></svg>
+ <div class="wrap">
+  <div>
+   <h1><span>هر عکس زوج،</span> <span>با یک کد</span></h1>
+   <p class="lead">ژست، نور، لباس و مکان را از ۳۲۰ کد انتخاب کن. دوقاب جملهٔ کامل را برای ChatGPT، Gemini، Midjourney یا Flux می‌سازد؛ برای عکس تازه، ویرایش عکس موجود و برنامه‌ریزی کل آلبوم.</p>
+   <div class="cta-row">
+    <a class="btn btn-main" href="app.html" data-install data-state="ready"><span class="on-ready"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>نصب برنامه</span><span class="on-installed"><svg viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l4 4-4 4M14 12H4"/></svg>ورود به برنامه</span><span class="on-pending">در حال نصب…</span></a>
+    <a class="btn btn-ghost" href="app.html" data-try>امتحان در مرورگر</a>
+   </div>
+   <p class="state-note" data-note aria-live="polite"></p>
+   <ul class="facts">
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>بعد از نصب بدون اینترنت هم کار می‌کند</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>ثبت‌نام ندارد</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>عکس‌هایت آپلود نمی‌شود؛ برنامه فقط متن می‌سازد</li>
+   </ul>
+  </div>
+
+  <div class="console" id="demo" aria-label="نمونهٔ زندهٔ سازنده">
+   <div class="con-head"><b>ترکیب من</b><span id="cnt"></span></div>
+   <div id="rows"></div>
+   <div id="msg"></div>
+   <div class="sentence"><div class="lb"><span>English</span><button class="copy" id="copy" type="button">کپی</button></div><p id="out"></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="why">
+ <div class="wrap">
+  <h2>حدس‌زدن را کنار بگذار</h2>
+  <p class="sub">پرامپت‌های آزاد هر بار نتیجهٔ دیگری می‌دهند. با کد، هر تصمیم یک برچسب مشخص دارد و می‌توانی فقط یکی را عوض کنی.</p>
+  <div class="versus">
+   <div class="v-old"><h3>پرامپت معمول</h3><q>یه عکس عاشقانه از یه زوج توی باغ، قشنگ و سینمایی</q><ul><li>نور و لباس هر بار فرق می‌کند</li><li>نمی‌دانی کدام کلمه اثر گذاشت</li><li>ترکیب‌های ناباورپذیر، مثل برف با لباس کتان</li></ul></div>
+   <div class="v-new"><h3>با دوقاب</h3><div class="chips"><code>foreheadtouch</code><code>goldenhourglow</code><code>persiangardencouple</code><code>traditionalwearcouple</code></div><p>چهار انتخاب، یک جملهٔ کامل. اگر نتیجه خوب نبود، فقط یک کد را عوض کن و دوباره بساز.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="features">
+ <div class="wrap">
+  <div class="feat">
+   <div>
+    <h3>از هر نقش یک کد؛ تعارض‌ها را خودش می‌گیرد</h3>
+    <p>هشت نقش (ژست، کادر، نور، مکان، لباس، آب‌وهوا، سبک، لنز) و ۳۹ قانون تعارض. اگر ترکیبی باورپذیر نباشد، همان لحظه هشدار می‌گیری.</p>
+    <ul><li>خروجی فارسی و انگلیسی</li><li>پروفایل جدا برای ChatGPT، Gemini، Flux، Midjourney V7 و تصویر به ویدیو</li><li>حالت «غافلگیرم کن» برای شروع سریع</li></ul>
+   </div>
+   <div class="feat-media"><div class="phone tilt-r"><img src="landing/s-build.webp" width="390" height="844" loading="lazy" alt="صفحهٔ سازندهٔ دوقاب با شش کد انتخاب‌شده و جملهٔ خروجی"></div></div>
+  </div>
+
+  <div class="feat flip">
+   <div>
+    <h3>عکس داری؟ فقط همان تغییر را بخواه</h3>
+    <p>نُه نوع ویرایش: رتوش طبیعی، تعویض پس‌زمینه یا لباس، تغییر نور، حذف افراد اضافه، گسترش کادر، گرید رنگ، اصلاح دست‌ها و افزایش وضوح. جمله‌ی خروجی چهره، هویت و ژست را قفل می‌کند.</p>
+    <ul><li>صحنهٔ هدف اختیاری است</li><li>ویرایش برای ChatGPT، Gemini و Flux</li></ul>
+   </div>
+   <div class="feat-media"><div class="phone tilt-l"><img src="landing/s-edit.webp" width="390" height="844" loading="lazy" alt="حالت ویرایش عکس در دوقاب با دو تغییر انتخاب‌شده"></div></div>
+  </div>
+
+  <div class="feat" id="album">
+   <div>
+    <h3>یک آلبوم، نه شش عکس بی‌ربط</h3>
+    <p>دنیای آلبوم (مکان، نور، لباس، سبک) ثابت می‌ماند و فقط ژست، کادر و لنز عوض می‌شود. ۶، ۹ یا ۱۲ عکس با ریتم باز، متوسط، نزدیک و جزئیات؛ هر شات قفل‌شدنی و قابل‌تعویض است.</p>
+    <div class="sheet"><ol id="sheet"></ol></div>
+    <p class="sheet-cap">نمونهٔ ریتم یک آلبوم ۶ عکسی. از عکس دوم به بعد، عکس اول به‌عنوان لنگر هویت و لباس پیوست می‌شود.</p>
+   </div>
+   <div class="feat-media"><div class="phone tilt-r"><img src="landing/s-album.webp" width="390" height="844" loading="lazy" alt="برنامه‌ریز آلبوم دوقاب با فهرست شات‌ها"></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" style="padding-top:24px">
+ <div class="wrap">
+  <h2>برای کارِ روزمرهٔ عکاس هم ساخته شده</h2>
+  <div class="ruled">
+   <div><h3>شات‌لیست عکاس</h3><p>کدها را سر جلسه تیک بزن. صفحه خاموش نمی‌شود و لیست قابل چاپ است.</p></div>
+   <div><h3>حالت محتاط</h3><p>کدهای بوسه و تماس نزدیک در کل برنامه پنهان می‌شود؛ مناسب آتلیه‌ها و مشتری‌های خانوادگی.</p></div>
+   <div><h3>۲۰ کد بومی</h3><p>سفرهٔ عقد، حنابندان، باغ ایرانی، بازار، یلدا، نوروز و پوشش موقر.</p></div>
+   <div><h3>ترکیب‌های آماده</h3><p>شش ترکیب برای شروع و لینک اشتراک برای فرستادن یک ترکیب به همکار.</p></div>
+   <div><h3>پشتیبان و آفلاین</h3><p>علاقه‌مندی‌ها، شات‌لیست و آلبوم‌ها روی دستگاه خودت می‌مانند. هر وقت خواستی فایل پشتیبان بگیر.</p></div>
+  </div>
+  <div class="tools" aria-label="ابزارهای پشتیبانی‌شده"><span>ChatGPT / GPT Image</span><span>Gemini / Nano Banana</span><span>Midjourney V7</span><span>Flux Kontext</span><span>Kling / Veo / Runway</span></div>
+  <div class="who">
+   <div><h3>عکاس و آتلیه</h3><p>برنامهٔ جلسه، شات‌لیست و جمله‌هایی که می‌توانی به زوج بگویی.</p></div>
+   <div><h3>ادیتور و تولیدکنندهٔ محتوا</h3><p>ساخت و ویرایش سریع تصویر برای پست، استوری و ریلز.</p></div>
+   <div><h3>سازندهٔ پروژه‌های AI</h3><p>پرامپت‌های هماهنگ و تکرارپذیر برای یک مجموعه عکس.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="install" id="install">
+ <div class="wrap">
+  <h2>روی صفحهٔ اصلی گوشی‌ات بنشیند</h2>
+  <p class="sub">نصب چند ثانیه طول می‌کشد و نیازی به فروشگاه اپ ندارد.</p>
+  <div class="cta-row" style="margin-top:26px">
+   <a class="btn btn-main" href="app.html" data-install data-state="ready"><span class="on-ready"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>نصب برنامه</span><span class="on-installed"><svg viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l4 4-4 4M14 12H4"/></svg>ورود به برنامه</span><span class="on-pending">در حال نصب…</span></a>
+  </div>
+  <p class="state-note" data-note aria-live="polite"></p>
+  <div class="how">
+   <div><h3>اندروید (Chrome)</h3><ol><li>روی «نصب برنامه» بزن.</li><li>اگر پنجره‌ای نیامد: منوی سه‌نقطه ← «نصب برنامه» یا «Add to Home screen».</li></ol></div>
+   <div><h3>آیفون (Safari)</h3><ol><li>دکمهٔ اشتراک‌گذاری را بزن.</li><li>«افزودن به صفحهٔ اصلی» (Add to Home Screen) را انتخاب کن.</li><li>«افزودن» را بزن.</li></ol></div>
+   <div><h3>کامپیوتر (Chrome / Edge)</h3><ol><li>روی «نصب برنامه» بزن.</li><li>یا آیکن نصب را در انتهای نوار آدرس بزن.</li></ol></div>
+  </div>
+  <p class="warn">لینک را داخل روبیکا، تلگرام یا اینستاگرام باز کرده‌ای؟ از منوی بالا «باز کردن در مرورگر» را بزن. نصب فقط در Chrome، Safari یا Edge ممکن است.</p>
+ </div>
+</section>
+
+<section class="sec" id="faq">
+ <div class="wrap">
+  <h2>سوال‌های رایج</h2>
+  <div class="faq">
+   <details><summary>بدون اینترنت کار می‌کند؟</summary><p>بعد از اولین باز شدن و نصب کامل، بله. فقط به‌روزرسانی و اشتراک‌گذاری لینک به اینترنت نیاز دارند.</p></details>
+   <details><summary>عکس‌های من جایی آپلود می‌شود؟</summary><p>نه. دوقاب اصلاً عکس نمی‌گیرد. فقط متن می‌سازد و فهرست‌هایت را روی دستگاه خودت ذخیره می‌کند. عکس مرجع را خودت در ابزار AI پیوست می‌کنی.</p></details>
+   <details><summary>خودِ دوقاب عکس می‌سازد؟</summary><p>نه. جملهٔ آماده می‌دهد تا در ابزار دلخواهت بچسبانی. هزینهٔ ساخت تصویر با همان ابزار است.</p></details>
+   <details><summary>ثبات چهره تضمین است؟</summary><p>هیچ پرامپتی ثبات را صددرصد تضمین نمی‌کند. جمله‌های قفل هویت و روش لنگر آلبوم شانس را بالا می‌برند. اگر یک عکس خراب شد، فقط همان را دوباره بساز.</p></details>
+   <details><summary>روی آیفون هم نصب می‌شود؟</summary><p>بله، از Safari: دکمهٔ اشتراک‌گذاری ← افزودن به صفحهٔ اصلی.</p></details>
+   <details><summary>برنامه چطور به‌روز می‌شود؟</summary><p>خودکار. وقتی نسخهٔ جدید آماده شود، داخل برنامه پیام «به‌روزرسانی» می‌بینی.</p></details>
+   <details><summary>اگر برنامه را پاک کنم چه می‌شود؟</summary><p>اطلاعات ذخیره‌شده هم پاک می‌شود. قبلش از «تنظیمات ← دریافت فایل پشتیبان» استفاده کن.</p></details>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span><b>دوقاب</b> (Duoframe)، محصولی از AIhub Tools</span><span>کانال تلگرام: <span class="ltr">@aihub_tools</span></span></div></footer>
+
+<dialog id="how" aria-labelledby="how-t"><div class="in">
+ <h3 id="how-t">نصب دوقاب</h3>
+ <div class="tabs" role="group" aria-label="دستگاه"><button type="button" data-p="android">اندروید</button><button type="button" data-p="ios">آیفون</button><button type="button" data-p="desktop">کامپیوتر</button></div>
+ <ol id="how-steps"></ol>
+ <button class="btn btn-main btn-sm" type="button" id="how-x">متوجه شدم</button>
+</div></dialog>
+<div id="toast" role="status"></div>
+
+<script>
+const DEMO={"codes": {"foreheadtouch": {"en": "foreheads touching"}, "walkinghandinhand": {"en": "walking hand in hand"}, "laughingembrace": {"en": "laughing in each other's arms"}, "goldenhourglow": {"en": "warm golden-hour light before sunset"}, "softwindowlight": {"en": "soft natural window light"}, "neonromancelight": {"en": "colorful neon light"}, "persiangardencouple": {"en": "couple in a Persian garden with a pool and cypress trees"}, "cozycafedate": {"en": "a date in a cozy café"}, "rainystreetromance": {"en": "couple on a wet street after rain"}, "wintercozycouple": {"en": "warm cozy winter clothing"}, "summerlinenstyle": {"en": "summer linen clothing"}, "traditionalwearcouple": {"en": "matching traditional clothing"}, "snowfallcouple": {"en": "snow falling around the couple"}, "lightdrizzlecouple": {"en": "a light, gentle drizzle"}}, "conf": [["snowfallcouple", "summerlinenstyle", "برف با لباس کتان تابستانی هماهنگ نیست"]]};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),1800)}
+
+/* ---------- کنسول زنده ---------- */
+const ROWS=[
+ ["pose","ژست",[["foreheadtouch","پیشانی به پیشانی"],["walkinghandinhand","قدم‌زدن دست‌در‌دست"],["laughingembrace","آغوش خندان"]]],
+ ["light","نور",[["goldenhourglow","طلایی غروب"],["softwindowlight","نرم پنجره"],["neonromancelight","نئون شب"]]],
+ ["place","مکان",[["persiangardencouple","باغ ایرانی"],["cozycafedate","کافهٔ دنج"],["rainystreetromance","خیابان بارانی"]]],
+ ["outfit","لباس",[["wintercozycouple","زمستانی گرم"],["summerlinenstyle","کتان تابستانی"],["traditionalwearcouple","سنتی"]]],
+ ["weather","آب‌وهوا",[["snowfallcouple","برف"],["lightdrizzlecouple","نم‌نم باران"]]]];
+const FINAL={pose:"foreheadtouch",light:"goldenhourglow",place:"persiangardencouple",outfit:"traditionalwearcouple"};
+let sel={},auto=null;
+function render(){
+ $("#rows").innerHTML=ROWS.map(([r,n,opts])=>`<div class="row"><span>${n}</span><div class="chips">${opts.map(([c,l])=>`<button type="button" class="chip" data-r="${r}" data-c="${c}" aria-pressed="${sel[r]===c}">${l}<code>${c}</code></button>`).join("")}</div></div>`).join("");
+ const codes=Object.values(sel).filter(Boolean);
+ $("#cnt").textContent=fa(codes.length)+" از ۶ کد";
+ const cf=DEMO.conf.filter(([a,b])=>codes.includes(a)&&codes.includes(b));
+ $("#msg").innerHTML=cf.length?cf.map(([a,b,w])=>`<div class="msg bad" role="alert">${esc(w)}</div>`).join(""):(codes.length>=3?`<div class="msg ok">ترکیب سازگار است.</div>`:"");
+ const parts=codes.map(c=>`<mark>${esc(DEMO.codes[c].en)}</mark>`).join(", ");
+ const head="Use the attached reference photo of the two people. Keep both faces, identity, expressions, skin tone, hairstyle and body proportions exactly unchanged. Scene: ";
+ const tail=". Aspect ratio 4:5. Photorealistic with natural skin texture; no distorted faces, no extra fingers or limbs, no text or watermark.";
+ $("#out").innerHTML=codes.length?esc(head)+parts+esc(tail):"Pick a code above to build the sentence.";
+ $("#out").parentElement.classList.toggle("bad-out",!!cf.length);
+}
+function plain(){const codes=Object.values(sel).filter(Boolean);return "Use the attached reference photo of the two people. Keep both faces, identity, expressions, skin tone, hairstyle and body proportions exactly unchanged. Scene: "+codes.map(c=>DEMO.codes[c].en).join(", ")+". Aspect ratio 4:5. Photorealistic with natural skin texture; no distorted faces, no extra fingers or limbs, no text or watermark."}
+$("#rows").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;clearInterval(auto);const r=b.dataset.r,c=b.dataset.c;
+ if(sel[r]===c&&r==="weather")delete sel[r];else sel[r]=c;render()});
+$("#copy").onclick=async()=>{const t=plain();try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}toast("کپی شد")};
+render();
+/* تنها حرکت خودکار صفحه: پر شدن اولیهٔ کنسول */
+(function(){const keys=Object.keys(FINAL);if(matchMedia("(prefers-reduced-motion:reduce)").matches){sel={...FINAL};render();return}
+ let i=0;auto=setInterval(()=>{if(i>=keys.length){clearInterval(auto);return}sel[keys[i]]=FINAL[keys[i]];i++;render()},650)})();
+
+/* ---------- کنتاکت‌شیت ---------- */
+const SH=[["نمای معرف",.42,0,0,"wide"],["نمای متوسط",.8,0,0,""],["نمای نزدیک",1.7,0,0,"close"],["جزئیات",0,0,0,"rings"],["لحظه در حرکت",.75,0,11,"motion"],["قاب پایانی",.38,16,0,"end"]];
+function tile([n,s,dx,tilt,k],i){
+ let g="";
+ if(k==="rings")g=`<circle cx="33" cy="48" r="15" fill="none" stroke="#EBD8B8" stroke-width="3"/><circle cx="48" cy="48" r="15" fill="none" stroke="#C9A6FF" stroke-width="3"/>`;
+ else{
+  const f=(x,c)=>`<g transform="translate(${x} 0)"><circle cx="0" cy="${44-14*s}" r="${7*s}" fill="${c}"/><rect x="${-8*s}" y="${44-5*s}" width="${16*s}" height="${34*s}" rx="${7*s}" fill="${c}"/></g>`;
+  const sp=11*s+3;
+  g=`<g transform="translate(${40+dx} ${k==="close"?-6:12}) rotate(${tilt} 0 50)">${f(-sp,"#C9A6FF")}${f(sp,"#8FB1FF")}</g>`;
+  if(k==="wide"||k==="end")g+=`<line x1="0" y1="82" x2="80" y2="82" stroke="#ffffff30"/>`;
+  if(k==="end")g+=`<circle cx="22" cy="30" r="9" fill="#EBD8B8" opacity=".85"/>`;
+  if(k==="motion")g+=`<g stroke="#EBD8B8" stroke-width="1.6" stroke-linecap="round" opacity=".7"><line x1="6" y1="40" x2="18" y2="40"/><line x1="4" y1="50" x2="16" y2="50"/><line x1="8" y1="60" x2="18" y2="60"/></g>`;
+ }
+ return `<li><div class="fig"><svg viewBox="0 0 80 100" aria-hidden="true">${g}</svg></div><span><i>${fa(i+1)}</i>${n}</span></li>`}
+$("#sheet").innerHTML=SH.map(tile).join("");
+
+/* ---------- نصب ← ورود ---------- */
+const KEY="duoframe-installed";
+const btns=$$("[data-install]"),notes=$$("[data-note]"),tryBtn=$("[data-try]");
+const ua=navigator.userAgent||"";
+const isIOS=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+const standalone=()=>matchMedia("(display-mode: standalone)").matches||matchMedia("(display-mode: window-controls-overlay)").matches||navigator.standalone===true;
+let dp=null,state="ready";
+const get=()=>{try{return localStorage.getItem(KEY)==="1"}catch(e){return false}};
+const set=v=>{try{v?localStorage.setItem(KEY,"1"):localStorage.removeItem(KEY)}catch(e){}};
+function setState(st){state=st;btns.forEach(b=>b.dataset.state=st);
+ if(tryBtn)tryBtn.hidden=st==="installed";
+ const msg=st==="installed"?`دوقاب روی دستگاهت نصب است. <a href="#" data-reset>نصب نیست؟</a>`:st==="pending"?"نصب شروع شد، چند ثانیه صبر کن.":"";
+ notes.forEach(n=>n.innerHTML=msg)}
+document.addEventListener("click",e=>{const r=e.target.closest("[data-reset]");if(!r)return;e.preventDefault();set(false);setState("ready")});
+const STEPS={
+ android:["در Chrome منوی سه‌نقطه را باز کن.","«نصب برنامه» یا «Add to Home screen» را بزن.","«نصب» را تأیید کن."],
+ ios:["این صفحه را در Safari باز کن.","دکمهٔ اشتراک‌گذاری را بزن.","«افزودن به صفحهٔ اصلی» (Add to Home Screen) را انتخاب کن.","«افزودن» را بزن."],
+ desktop:["در Chrome یا Edge آیکن نصب را در انتهای نوار آدرس بزن.","یا از منوی مرورگر «نصب دوقاب» را انتخاب کن."]};
+function showHow(p){$$("#how .tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.p===p));$("#how-steps").innerHTML=STEPS[p].map(t=>`<li>${t}</li>`).join("");const d=$("#how");if(!d.open)d.showModal()}
+$$("#how .tabs button").forEach(b=>b.onclick=()=>showHow(b.dataset.p));
+$("#how-x").onclick=()=>$("#how").close();
+$("#how").addEventListener("click",e=>{if(e.target.id==="how")e.target.close()});
+const platform=()=>isIOS?"ios":/android/i.test(ua)?"android":"desktop";
+btns.forEach(b=>b.addEventListener("click",async e=>{
+ if(state==="installed")return;           // لینک عادی به app.html
+ e.preventDefault();
+ if(dp){dp.prompt();const c=await dp.userChoice.catch(()=>({}));dp=null;
+  if(c.outcome==="accepted"){setState("pending");setTimeout(()=>{if(state==="pending"){set(true);setState("installed")}},6000)}
+  return}
+ showHow(platform())}));
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e;if(state==="installed"&&!standalone()){set(false);setState("ready")}});
+window.addEventListener("appinstalled",()=>{dp=null;set(true);setState("installed")});
+(async function init(){
+ let inst=standalone()||get();
+ try{if(navigator.getInstalledRelatedApps){const a=await navigator.getInstalledRelatedApps();if(a&&a.length)inst=true}}catch(e){}
+ if(standalone())set(true);
+ setState(inst?"installed":"ready");
+})();
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol))navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>

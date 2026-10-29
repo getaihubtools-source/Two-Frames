@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B14">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=JSON.parse(localStorage.getItem("ccb1")||"{}").theme;if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>دوقاب | کدساز عکس زوج</title>
+<style>
+@font-face{font-family:"Vazirmatn";src:url(fonts/Vazirmatn.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--ink:#0B0B14;--ink2:#12121F;--lav:#C9A6FF;--violet:#7C4DFF;--blue:#3D7BFF;
+--bg:#F6F5FB;--card:#fff;--text:#17172B;--muted:#65656D;--line:#E6E2F5;--soft:#F1EEFF;--okbg:#E9FBF3;--ok:#128A55;--warnbg:#FFF1E0;--warn:#B4740A;--badbg:#FFEDEC;--bad:#C22A2E;
+--g:linear-gradient(135deg,#7C4DFF,#3D7BFF)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0B0B14;--card:#14141F;--text:#EEEAFB;--muted:#9C9CB3;--line:#26263A;--soft:#1D1832;--okbg:#0F2A21;--ok:#4BD39B;--warnbg:#2B2113;--warn:#F0B75A;--badbg:#2E1719;--bad:#FF8A8D}}
+:root[data-theme=dark]{--bg:#0B0B14;--card:#14141F;--text:#EEEAFB;--muted:#9C9CB3;--line:#26263A;--soft:#1D1832;--okbg:#0F2A21;--ok:#4BD39B;--warnbg:#2B2113;--warn:#F0B75A;--badbg:#2E1719;--bad:#FF8A8D}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Vazirmatn","Vazir",Tahoma,"Noto Sans Arabic",sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.9;min-height:100vh;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:8px}
+code,.ltr{direction:ltr;unicode-bidi:isolate;font-family:"JetBrains Mono","DejaVu Sans Mono",Consolas,monospace}
+header{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:12px}
+header img{height:24px;width:auto}
+header h1{font-size:15px;font-weight:800;flex:1;line-height:1.4}
+header h1 small{display:block;font-size:11px;font-weight:500;color:#9C9CB3}
+.sw{display:flex;align-items:center;gap:8px;font-size:12px;color:#C9C9DA;cursor:pointer}
+.sw input{appearance:none;width:38px;height:22px;border-radius:99px;background:#3a3a52;position:relative;cursor:pointer;transition:background .2s}
+.sw input::after{content:"";position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
+.sw input:checked{background:var(--violet)}.sw input:checked::after{transform:translateX(-16px)}
+main{max-width:760px;margin:0 auto;padding:16px}
+.view{display:none}.view.on{display:block}
+h2{font-size:17px;font-weight:800;margin:4px 0 10px}
+.muted{color:var(--muted);font-size:13px}
+.search{width:100%;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 0;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:3px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:13px;line-height:2}
+.chip.on{background:var(--g);color:#fff;border-color:transparent;font-weight:700}
+.cd{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:10px}
+.cd .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cd code{background:var(--soft);color:var(--violet);padding:0 8px;border-radius:6px;font-size:12.5px}
+.cd p.fa{font-weight:600;margin-top:2px}.cd p.en{color:var(--muted);font-size:12.5px;line-height:1.7;text-align:left}
+.acts{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.b{padding:2px 12px;border-radius:99px;border:1px solid var(--line);font-size:12.5px;line-height:2;background:var(--card)}
+.b.p{background:var(--g);color:#fff;border-color:transparent;font-weight:700}
+.b.on{color:#E8A400;border-color:#E8A400}
+.more{display:block;margin:14px auto;padding:6px 22px}
+.empty{text-align:center;color:var(--muted);padding:34px 10px}
+details.how{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:12px}
+details.how summary{font-weight:700;cursor:pointer}
+details.how ol{padding-right:20px;margin-top:6px;font-size:13.5px}
+.slots{display:grid;gap:8px}
+.slot{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
+.slot .nm{width:96px;flex:none;font-size:13px;font-weight:700}
+.slot .pick{flex:1;text-align:start;min-width:0}
+.slot .pick code{display:block;background:var(--soft);color:var(--violet);padding:0 8px;border-radius:6px;font-size:12px;width:fit-content;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.slot .pick span{display:block;font-size:12.5px;color:var(--muted);line-height:1.6}
+.slot .x{color:var(--muted);font-size:18px;padding:0 6px}
+.bar{display:flex;align-items:center;justify-content:space-between;margin:12px 0 6px;flex-wrap:wrap;gap:6px}
+.cnt{font-weight:800}.cnt.over{color:var(--bad)}
+.msg{border-radius:12px;padding:8px 14px;font-size:13.5px;margin-top:8px;line-height:1.8}
+.msg.w{background:var(--warnbg);color:var(--warn)}.msg.bad{background:var(--badbg);color:var(--bad)}.msg.ok{background:var(--okbg);color:var(--ok)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.opts label{display:flex;flex-direction:column;gap:2px;font-size:12.5px;color:var(--muted)}
+.opts select,.opts input[type=text]{padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+.ck{display:flex;align-items:center;gap:8px;font-size:13.5px;margin-top:10px}
+.out{background:var(--ink2);color:#F1F1F7;border-radius:14px;padding:14px 16px;margin-top:12px;border:1px solid #2a2542}
+.out .lb{color:var(--lav);font-size:12px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.out p{margin-top:6px;font-size:13.5px;line-height:2}
+.out p.ltr{text-align:left;font-family:inherit;unicode-bidi:plaintext;direction:ltr}
+.out .b{background:#211843;color:var(--lav);border-color:#4E32A1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.tags code{background:#211843;color:var(--lav);padding:0 8px;border-radius:6px;font-size:11.5px}
+.rc h3{font-size:15px;font-weight:800}.rc .tg{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.rc .tg code{background:var(--soft);color:var(--violet);padding:0 8px;border-radius:6px;font-size:11.5px}
+.bi{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-top:8px}
+.bi input{margin-top:9px;width:18px;height:18px;accent-color:var(--violet)}
+.bi.dn{opacity:.55}.bi.dn .t{text-decoration:line-through}
+.bi .t code{background:var(--soft);color:var(--violet);padding:0 8px;border-radius:6px;font-size:12px}
+.bi .t div{font-size:13.5px}
+.bi .rm{margin-inline-start:auto;color:var(--muted);font-size:18px}
+nav{position:fixed;bottom:0;inset-inline:0;background:var(--card);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 6px calc(6px + env(safe-area-inset-bottom));z-index:30}
+nav button{padding:6px 2px;font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:0;line-height:1.7;border-radius:10px}
+nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav button.on{color:var(--violet);font-weight:800}
+.sheet .in{background:var(--bg);width:100%;max-width:760px;margin:0 auto;max-height:82vh;max-height:82dvh;border-radius:20px 20px 0 0;padding:14px 16px calc(14px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+.sheet .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.sheet .ls{overflow:auto;flex:1}
+#toast{position:fixed;bottom:calc(88px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:6px 18px;border-radius:99px;font-size:13px;z-index:60;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+#inst{display:none}
+:root{color-scheme:light dark}:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+[hidden]{display:none!important}
+body{min-height:100dvh}
+dialog.sheet{border:0;padding:0;background:transparent;color:inherit;width:100%;height:100%;max-width:none;max-height:none;margin:0;inset:0;overflow:hidden}
+dialog.sheet::backdrop{background:#0009}
+dialog.sheet[open]{display:flex;align-items:flex-end}
+.gear{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#C9C9DA}
+.gear svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mbadge{font-size:11px;font-weight:800;color:var(--lav);border:1px solid #4E32A1;border-radius:99px;padding:0 8px;line-height:1.7}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--soft);border-radius:14px;padding:4px;gap:4px;margin-bottom:12px}
+.seg button{padding:5px 8px;border-radius:11px;font-weight:700;font-size:13.5px;color:var(--muted)}
+.seg button.on{background:var(--card);color:var(--violet);box-shadow:0 1px 3px #0002}
+.chips.wrap{flex-wrap:wrap;overflow:visible}
+.codebtn{display:inline-flex;border-radius:6px;padding:0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.row b{font-size:14px}.row .muted{font-size:12.5px;line-height:1.7}
+.row select{padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+.row input[type=checkbox]{width:20px;height:20px;accent-color:var(--violet);flex:none}
+.sheet h3{font-size:14px;font-weight:800;margin:16px 0 4px}
+.sheet .danger{color:var(--bad);border-color:var(--bad);margin-top:14px}
+#dock{position:fixed;inset-inline:12px;bottom:calc(68px + env(safe-area-inset-bottom));max-width:736px;margin:0 auto;background:var(--ink);color:#fff;border-radius:16px;padding:8px 8px 8px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:25;box-shadow:0 6px 20px #0006;font-size:13px;border:1px solid #2a2542}
+#dock span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#C9C9DA}
+body.hasdock{padding-bottom:calc(136px + env(safe-area-inset-bottom))}
+body.hasdock #toast{bottom:calc(140px + env(safe-area-inset-bottom))}
+#upd{position:fixed;inset-inline:12px;top:calc(64px + env(safe-area-inset-top));max-width:736px;margin:0 auto;background:var(--card);color:var(--text);border:1px solid var(--violet);border-radius:14px;padding:8px 8px 8px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:70;font-size:13.5px;box-shadow:0 6px 20px #0004}
+.intro{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:12px;font-size:13.5px}
+.intro b{display:block;margin-bottom:2px}
+.intro ol{padding-right:20px}
+.intro .b{margin-top:6px}
+.tipline{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.8}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{header,nav,.noprint{display:none!important}body{background:#fff;color:#000;padding:0}.view{display:none!important}#v-shoot{display:block!important}.bi{break-inside:avoid;background:#fff}}
+</style></head>
+<body>
+<header>
+<img src="icon-192.png" alt="" width="28" height="28" style="border-radius:7px">
+<h1>دوقاب<small>۳۲۰ کد · ساخت و ویرایش</small></h1>
+<button id="inst" class="b p" type="button">نصب</button>
+<span id="mbadge" class="mbadge" hidden>محتاط</span>
+<button id="gear" class="gear" type="button" aria-label="تنظیمات"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></button>
+</header>
+<main>
+<section id="v-lib" class="view on">
+ <div class="intro" id="intro" hidden><b>شروع سریع</b><ol><li>از کتابخانه چند کد بردار (یا «غافلگیرم کن» را در سازنده بزن).</li><li>در سازنده ابزارت را انتخاب کن تا جمله مخصوص همان ابزار ساخته شود.</li><li>عکس داری؟ حالت «ویرایش عکس» را بزن و فقط تغییر لازم را بخواه.</li></ol><button class="b p" id="introx" type="button">متوجه شدم</button></div>
+ <input class="search" id="q" type="search" placeholder="جستجوی کد، فارسی یا انگلیسی" aria-label="جستجو">
+ <div class="chips" id="chips"></div>
+ <p class="muted" id="tipbar"></p>
+ <div id="list"></div>
+ <button class="b more" id="more" type="button">نمایش بیشتر</button>
+</section>
+<section id="v-build" class="view">
+ <details class="how"><summary>راهنمای ترکیب در یک نگاه</summary>
+  <ol><li>از هر نقش حداکثر یک کد بردار.</li><li>مجموع کدها از شش بیشتر نشود.</li><li>پس از اولین نتیجه فقط یک کد را عوض کن.</li><li>خروجی یک جمله‌ی کامل است و به هیچ ابزار خاصی وابسته نیست.</li></ol>
+  <p class="muted" id="iosHint" style="display:none;margin-top:6px">برای نصب روی آیفون: دکمه‌ی اشتراک‌گذاری و بعد «Add to Home Screen».</p></details>
+ <div class="seg" role="tablist" aria-label="حالت سازنده"><button type="button" role="tab" data-mode="create">ساخت تصویر</button><button type="button" role="tab" data-mode="edit">ویرایش عکس</button></div>
+ <div id="eopsWrap" hidden><h2>چه تغییری لازم است؟</h2><div class="chips wrap" id="eops"></div></div>
+ <div class="bar"><h2 id="slotsT">ترکیب من</h2><div><span class="cnt" id="cnt"></span></div></div>
+ <div class="slots" id="slots"></div>
+ <div class="bar"><button class="b p" id="rnd" type="button">غافلگیرم کن</button><button class="b" id="clr" type="button">پاک‌کردن همه</button><button class="b" id="lnk" type="button">کپی لینک ترکیب</button></div>
+ <div id="warns"></div>
+ <div class="opts">
+  <label style="grid-column:1/-1">ابزار هدف<select id="tool"></select></label>
+  <label>نسبت تصویر<select id="ratio"><option value="4:5">۴:۵ پست</option><option value="9:16">۹:۱۶ استوری</option><option value="1:1">۱:۱ مربع</option><option value="3:2">۳:۲ افقی</option><option value="16:9">۱۶:۹ عریض</option></select></label>
+  <label>زبان خروجی<select id="lang"><option value="both">فارسی و انگلیسی</option><option value="fa">فقط فارسی</option><option value="en">فقط انگلیسی</option></select></label>
+ </div>
+ <label class="ck" id="refw"><input type="checkbox" id="ref" checked> عکس مرجع دارم (حفظ هویت دو نفر)</label>
+ <div id="outs"></div>
+ <div class="opts" style="margin-top:14px"><label>نام ترکیب برای ذخیره<input type="text" id="sname" placeholder="مثلاً: کافه‌ی غروب"></label><button class="b p" id="ssave" type="button" style="align-self:end">ذخیره ترکیب</button></div>
+</section>
+<section id="v-album" class="view">
+ <h2>برنامه‌ریز آلبوم</h2>
+ <p class="muted">دنیای آلبوم (مکان، نور، لباس، سبک) ثابت می‌ماند و فقط ژست، کادر و لنز بین عکس‌ها عوض می‌شود؛ مثل یک آلبوم واقعی با ریتم نمای باز، متوسط، نزدیک و جزئیات.</p>
+ <details class="how"><summary>قاعدهٔ ثبات چهره و لباس در آلبوم</summary>
+  <ol><li>عکس ۱ «لنگر» آلبوم است. چند بار بسازش و بهترین نسخه را نگه دار.</li><li>برای عکس‌های بعدی، عکس مرجع اصلی و همان عکس ۱ را هم پیوست کن.</li><li>اگر یک عکس خراب شد، فقط همان را «عوض‌کن» بزن؛ قفل‌شده‌ها دست نمی‌خورند.</li><li>دنیای آلبوم را وسط کار عوض نکن، وگرنه ثبات از بین می‌رود.</li></ol></details>
+ <h2 style="margin-top:12px">الگوی آلبوم</h2><div class="chips wrap" id="atpl"></div>
+ <div class="opts"><label>تعداد عکس<select id="asize"><option value="6">۶ عکس</option><option value="9">۹ عکس</option><option value="12">۱۲ عکس</option></select></label>
+ <label>نسبت تصویر<select id="aratio"><option value="4:5">۴:۵ پست</option><option value="9:16">۹:۱۶ استوری</option><option value="1:1">۱:۱ مربع</option><option value="3:2">۳:۲ افقی</option><option value="16:9">۱۶:۹ عریض</option></select></label></div>
+ <div class="bar"><h2>دنیای آلبوم</h2><div class="acts"><button class="b" id="afrom" type="button">از سازنده</button><button class="b" id="arnd" type="button">دنیای تصادفی</button></div></div>
+ <div class="slots" id="aworld"></div><div id="awarn"></div>
+ <div class="bar"><button class="b p" id="agen" type="button">ساخت آلبوم</button></div>
+ <div id="ashots"></div>
+ <div id="aactions" hidden>
+  <div class="opts" style="margin-top:14px"><label>نام آلبوم<input type="text" id="aname" placeholder="مثلاً: باغ ایرانی غروب"></label><button class="b p" id="asave" type="button" style="align-self:end">ذخیرهٔ آلبوم</button></div>
+  <div class="bar"><button class="b p" id="acopyall" type="button">کپی همهٔ پرامپت‌ها</button><button class="b" id="abd" type="button">افزودن به شات‌لیست</button></div>
+ </div>
+ <h2 style="margin-top:22px">آلبوم‌های من</h2><div id="amine"></div>
+</section>
+<section id="v-rec" class="view">
+ <h2>ترکیب‌های آماده</h2><p class="muted">شش ترکیب شش‌کدی تست‌نشده برای شروع؛ همه را در سازنده می‌توانی تغییر بدهی.</p>
+ <div id="recs"></div>
+ <h2 style="margin-top:22px">ترکیب‌های من</h2><div id="mine"></div>
+</section>
+<section id="v-shoot" class="view">
+ <div class="bar noprint"><h2>شات‌لیست عکاس</h2><span class="muted" id="bcnt"></span></div>
+ <p class="muted noprint">کدها را از کتابخانه به شات‌لیست اضافه کن و حین جلسه تیک بزن.</p>
+ <div class="bar noprint"><button class="b p" id="bsug" type="button">افزودن شات‌لیست پیشنهادی</button><button class="b" id="bcopy" type="button">کپی لیست</button><button class="b" id="bprint" type="button">چاپ</button><button class="b" id="bclr" type="button">پاک‌کردن</button></div>
+ <div id="board"></div>
+</section>
+</main>
+<div id="dock" hidden><span id="dk"></span><button class="b p" id="dkcp" type="button">کپی پرامپت</button></div>
+<nav aria-label="بخش‌ها">
+<button class="on" data-v="lib" type="button"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg>کتابخانه</button>
+<button data-v="build" type="button"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg>سازنده</button>
+<button data-v="album" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>آلبوم</button>
+<button data-v="rec" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l3 3 5-6"/></svg>ترکیب‌ها</button>
+<button data-v="shoot" type="button"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>عکاس</button>
+</nav>
+<dialog class="sheet" id="sheet" aria-labelledby="sh-t"><div class="in"><div class="hd"><h2 id="sh-t"></h2><button class="b" id="sh-x" type="button">بستن</button></div><input class="search" id="sh-q" type="search" placeholder="جستجو" aria-label="جستجو در انتخاب"><div class="ls" id="sh-l"></div></div></dialog>
+<div id="toast" role="status"></div>
+<dialog class="sheet" id="settings" aria-labelledby="st-t"><div class="in"><div class="hd"><h2 id="st-t">تنظیمات</h2><button class="b" data-close type="button">بستن</button></div><div class="ls">
+<div class="row"><div><b>ظاهر</b><div class="muted">پیش‌فرض: مطابق تنظیم دستگاه</div></div><select id="theme" aria-label="ظاهر"><option value="auto">خودکار</option><option value="light">روشن</option><option value="dark">تاریک</option></select></div>
+<label class="row"><div><b>حالت محتاط</b><div class="muted">کدهای بوسه و تماس نزدیک در همه‌جا پنهان می‌شود</div></div><input type="checkbox" id="modest"></label>
+<label class="row"><div><b>روشن‌ماندن صفحه در شات‌لیست</b><div class="muted">حین جلسهٔ عکاسی صفحه خاموش نشود</div></div><input type="checkbox" id="wake"></label>
+<h3>پشتیبان‌گیری</h3>
+<p class="muted">علاقه‌مندی‌ها، شات‌لیست و ترکیب‌های ذخیره‌شده فقط روی همین دستگاه ذخیره می‌شوند. از آن‌ها پشتیبان بگیر تا با پاک‌شدن داده‌های مرورگر از دست نروند.</p>
+<div class="acts"><button class="b p" id="exp" type="button">دریافت فایل پشتیبان</button><button class="b" id="imp" type="button">بازیابی از فایل</button><input type="file" id="impf" accept="application/json,.json" hidden></div>
+<div class="row"><div><b>ذخیره‌سازی پایدار</b><div class="muted" id="persist">…</div></div><button class="b" id="pers" type="button">درخواست</button></div>
+<button class="b danger" id="wipe" type="button">پاک‌کردن همهٔ داده‌ها</button>
+<p class="muted" style="margin-top:12px">دوقاب · کدساز عکس زوج · نسخهٔ ۲٫۲ · AIhub Tools</p>
+</div></div></dialog>
+<div id="upd" role="alert" hidden><span>نسخهٔ جدید آماده است</span><button id="updgo" class="b p" type="button">به‌روزرسانی</button></div>
+
+<script>
+const D={"cats":[{"n":1,"t":"زاویهٔ دوربین و جهت عکاسی","ins":"جهت دوربین نسبت به زوج را انتخاب کن.","tip":"برای شروع از زاویهٔ هم‌سطح چشم یا سه‌رخ استفاده کن؛ زاویه‌های بسیار پایین یا بالا چهره را تغییر می‌دهند."},{"n":2,"t":"حالت سر و شانه‌ها","ins":"جهت نگاه، تماس چهره‌ها و حالت سر را مشخص کن.","tip":"در هر درخواست فقط یک حالت سر انتخاب کن؛ چند تماس هم‌زمان چهره‌ها را به‌هم می‌ریزد."},{"n":3,"t":"آغوش و لمس عاشقانه","ins":"نوع آغوش و محل قرارگیری دست‌ها را انتخاب کن.","tip":"اگر دست‌ها خراب درمی‌آید، محل دست را دقیق بنویس؛ مثلاً «دست راست روی کمر»."},{"n":4,"t":"ژست‌های ایستاده و راه رفتن","ins":"حالت بدن و نحوهٔ حرکت در حالت ایستاده را تعیین کن.","tip":"برای راه رفتن، جهت حرکت را هم بنویس: به‌سوی دوربین، دور از دوربین یا کنار هم."},{"n":5,"t":"ژست‌های نشسته و استراحت","ins":"ژست‌های آرام برای موقعیت‌های نشسته و استراحت.","tip":"ژست نشسته را با محل نشستن بنویس (مبل، نیمکت، زیرانداز)؛ وضعیت پاها از همان معلوم می‌شود."},{"n":6,"t":"لحظه‌های عاشقانه و صمیمیت","ins":"حس و تعامل میان دو نفر را در تصویر مشخص کن.","tip":"کد صمیمیت را با نور نرم یا ضدنور بنویس؛ حس تصویر محترمانه‌تر و سینمایی‌تر می‌شود."},{"n":7,"t":"کادربندی، برش و ترکیب‌بندی","ins":"اندازهٔ نما و جایگاه زوج در کادر را انتخاب کن.","tip":"کادر را همیشه پیش از نور و مکان انتخاب کن؛ کادر مشخص می‌کند چه چیزی در تصویر دیده می‌شود."},{"n":8,"t":"نورپردازی و حال‌وهوای نور","ins":"کیفیت، جهت و رنگ نور را مشخص کن.","tip":"از نقش نور فقط یک کد بنویس؛ دو منبع نور رقیب تصویر را گنگ می‌کند."},{"n":9,"t":"مکان و پس‌زمینهٔ عکس","ins":"محیطی متناسب با حال‌وهوای عکس انتخاب کن.","tip":"مکان را کوتاه و مشخص بنویس؛ توصیف‌های طولانی مکان، زوج را در تصویر کوچک می‌کند."},{"n":10,"t":"حرکت، پویایی و لحظه‌های طبیعی","ins":"حرکت و لحظه‌های خودجوش را به تصویر اضافه کن.","tip":"حرکت در کادر باز بهتر درمی‌آید؛ برای نمای نزدیک، کدهای حرکت را کم کن."},{"n":11,"t":"لباس و استایل زوج","ins":"هماهنگی پوشش و سبک لباس‌ها را مشخص کن.","tip":"لباس را با فصل و مکان هماهنگ کن؛ لباس تابستانی در صحنهٔ برفی تصویر را ناهماهنگ می‌کند."},{"n":12,"t":"وسایل صحنه و اکسسوری","ins":"وسیله‌ای متناسب با موقعیت عکس انتخاب کن.","tip":"فقط یک وسیله بگذار تا نگاه بیننده روی خود زوج بماند."},{"n":13,"t":"آب‌وهوا و عناصر طبیعی","ins":"وضعیت هوا و عناصر طبیعی صحنه را تعیین کن.","tip":"آب‌وهوا با نور هم‌زمان تصمیم می‌گیرد؛ باران را با نور ابری یا نئون هماهنگ کن، نه با نور مستقیم غروب."},{"n":14,"t":"سبک فیلم و عکاسی","ins":"بافت، رنگ و سبک نهایی عکس را انتخاب کن.","tip":"سبک رنگ و بافت را تعیین می‌کند؛ یک سبک بنویس، نه سه سبک."},{"n":15,"t":"لنز و افکت‌های دوربین","ins":"ظاهر لنز و افکت‌های بصری تصویر را مشخص کن.","tip":"لنز را آخر بنویس؛ ۸۵ میلی‌متری برای چهره و ۳۵ میلی‌متری برای نشان‌دادن محیط مناسب‌تر است."},{"n":16,"t":"مراسم، فرهنگ و حالت محتاط","ins":"فرهنگ، مراسم و پوشش را متناسب با مخاطب و موقعیت انتخاب کن.","tip":"اگر مخاطب تصویر حالت محتاط می‌خواهد، یکی از کدهای فاصلهٔ محترمانه یا پوشش موقر را در ابتدای ترکیب بگذار."}],"codes":[["backviewcouple","عکاسی از زوج از پشت سر","photographed from behind the couple",1,"frame",0],["dutchanglecouple","دوربین کمی کج؛ حس پویا و سینمایی","slightly tilted camera angle, dynamic cinematic feel",1,"frame",0],["overtheshoulder","عکاسی از روی شانهٔ یکی از افراد","over-the-shoulder shot",1,"frame",0],["overtheshoulderromance","نمای پشت؛ زن به شانهٔ مرد تکیه داده است","rear view over his shoulder, she leans on his shoulder",1,"frame",0],["frontportraitcouple","پرتره زوج از روبه‌رو","front-facing portrait of the couple",1,"frame",0],["sideprofilecouple","نمای نیم‌رخ زوج","side profile of the couple",1,"frame",0],["fullsideview","نمای بدن زوج از پهلو","full-body side view of the couple",1,"frame",0],["threequartercouple","زاویهٔ سه‌رخ از روبه‌رو","three-quarter front angle",1,"frame",0],["threequarterrear","زاویهٔ سه‌رخ از پشت","three-quarter rear angle",1,"frame",0],["lowanglecouple","عکاسی از زاویهٔ پایین","low-angle shot",1,"frame",0],["highanglecouple","عکاسی از زاویهٔ بالا","high-angle shot",1,"frame",0],["birdseyecouple","عکاسی از بالای سر، مستقیم رو به پایین","bird's-eye view shooting straight down",1,"frame",0],["wormseyeromance","زاویهٔ بسیار پایین و دراماتیک","very low dramatic worm's-eye angle",1,"frame",0],["eyelevelintimacy","دوربین هم‌سطح چشم‌ها","camera at eye level for intimacy",1,"frame",0],["distantcoupleshot","زوج کوچک در قابی وسیع","small couple in a wide frame",1,"frame",0],["closeupfrombehind","نمای نزدیک سر و شانه‌ها از پشت","close-up of heads and shoulders from behind",1,"frame",0],["profilekissshot","نمای نیم‌رخ هنگام بوسیدن","profile view during a kiss",1,"frame",1],["shoulderlevelshot","دوربین هم‌ارتفاع شانه‌های زوج","camera at the couple's shoulder height",1,"frame",0],["diagonalcomposition","ترکیب‌بندی مورب و پویا","dynamic diagonal composition",1,"frame",0],["reflectionangle","عکاسی از زوج از طریق بازتاب","photographed through a reflection",1,"frame",0],["headonshoulder","زن سرش را روی شانهٔ مرد می‌گذارد","she rests her head on his shoulder",2,"pose",0],["headonchest","زن سرش را روی سینهٔ مرد می‌گذارد","she rests her head on his chest",2,"pose",0],["foreheadtouch","پیشانی‌های زوج به هم می‌چسبد","foreheads touching",2,"pose",0],["foreheadkiss","مرد پیشانی زن را می‌بوسد","he kisses her forehead",2,"pose",1],["templekiss","بوسه‌ای ملایم بر شقیقه","a gentle kiss on the temple",2,"pose",1],["cheekkiss","مرد گونهٔ زن را می‌بوسد","he kisses her cheek",2,"pose",1],["nosetouch","بینی‌های زوج به هم برخورد می‌کند","noses touching",2,"pose",1],["facetofaceclose","چهره‌ها از فاصلهٔ نزدیک روبه‌روی هم است","faces close together, facing each other",2,"pose",0],["eyesclosedintimacy","زوج در لحظه‌ای صمیمی چشم‌ها را می‌بندند","eyes closed in an intimate moment",2,"pose",1],["lookingateachother","زوج به یکدیگر نگاه می‌کنند","looking at each other",2,"pose",0],["lookingawaytogether","هر دو به یک جهت نگاه می‌کنند","both looking in the same direction",2,"pose",0],["womanlookingathim","زن از کنار به مرد نگاه می‌کند","she looks at him from the side",2,"pose",0],["manlookingather","مرد با مهربانی به زن نگاه می‌کند","he looks at her tenderly",2,"pose",0],["headtiltromance","سرها با کمی انحنا به هم نزدیک می‌شود","heads tilted slightly toward each other",2,"pose",0],["chinonshoulder","چانهٔ زن روی شانهٔ مرد قرار می‌گیرد","her chin resting on his shoulder",2,"pose",0],["cheektocheek","گونه‌های زوج به هم می‌چسبد","cheek to cheek",2,"pose",1],["backofheadfocus","تمرکز تصویر بر پشت سر","focus on the back of the head",2,"pose",0],["hairoverhisshoulder","موهای زن روی شانهٔ مرد می‌ریزد","her hair falls over his shoulder",2,"pose",0],["gentlefacecupping","مرد صورت زن را آرام در دست می‌گیرد","he gently cups her face",2,"pose",0],["foreheadagainstbackhead","تماس پیشانی یکی با پشت سر دیگری","forehead resting against the other's back of head",2,"pose",0],["backhugcouple","مرد زن را از پشت در آغوش می‌گیرد","he hugs her from behind",3,"pose",0],["frontembrace","زوج از روبه‌رو همدیگر را در آغوش می‌گیرند","a front embrace",3,"pose",0],["tightromantichug","آغوش محکم و سرشار از احساس","a tight, emotional hug",3,"pose",0],["gentlewaisthug","دست‌ها آرام دور کمر حلقه می‌شود","arms wrapped gently around the waist",3,"pose",0],["armsaroundneck","دست‌ها دور گردن شریک عاطفی حلقه می‌شود","arms around the partner's neck",3,"pose",0],["armsaroundshoulder","یک دست دور شانه قرار می‌گیرد","one arm around the shoulder",3,"pose",0],["interlockedarms","راه رفتن با بازوهای در هم حلقه‌شده","walking with arms linked",3,"pose",0],["handholdingcloseup","نمای نزدیک دست‌های به هم گرفته","close-up of held hands",3,"pose",0],["fingersintertwined","انگشت‌های زوج در هم گره می‌خورد","fingers intertwined",3,"pose",0],["handoncheek","یک دست گونهٔ طرف مقابل را لمس می‌کند","a hand touching the other's cheek",3,"pose",0],["handonchest","دست زن روی سینهٔ مرد قرار می‌گیرد","her hand resting on his chest",3,"pose",0],["handonwaist","دست روی کمر قرار می‌گیرد","a hand resting on the waist",3,"pose",0],["gentlebacktouch","لمس ملایم پشت بدن","a gentle touch on the back",3,"pose",0],["hugfrombehindcloseup","نمای نزدیک آغوش از پشت","close-up of a hug from behind",3,"pose",0],["chinrestembrace","تکیه دادن سر یا چانه هنگام در آغوش گرفتن","resting the head or chin during an embrace",3,"pose",0],["protectiveembrace","مرد با حالتی حمایتگر زن را در آغوش می‌گیرد","he holds her in a protective embrace",3,"pose",0],["onearmembrace","در آغوش گرفتن با یک دست","a one-armed embrace",3,"pose",0],["foreheadembrace","آغوش همراه با تماس پیشانی‌ها","an embrace with foreheads touching",3,"pose",0],["comfortinghug","آغوش آرامش‌بخش","a comforting hug",3,"pose",0],["candidembrace","آغوش خودجوش و طبیعی","a spontaneous, natural embrace",3,"pose",0],["walkingcouplebackshot","نمای پشت زوج هنگام راه رفتن","the couple walking, seen from behind",4,"pose",0],["walkinghandinhand","راه رفتن دست‌در‌دست","walking hand in hand",4,"pose",0],["slowwalkromance","قدم زدن آرام و عاشقانه","a slow romantic stroll",4,"pose",0],["walkingbackhug","راه رفتن همراه با آغوش از پشت","walking while hugging from behind",4,"pose",0],["couplewalkingaway","زوج از دوربین دور می‌شوند","the couple walking away from the camera",4,"pose",0],["walkingintosunset","راه رفتن به‌سوی غروب خورشید","walking toward the sunset",4,"pose",0],["crosswalkcouple","راه رفتن زوج روی خط عابر پیاده","the couple crossing at a crosswalk",4,"pose",0],["streetwalkcandid","لحظهٔ طبیعی قدم زدن در خیابان","a candid street walk",4,"pose",0],["sidebysidewalk","راه رفتن در کنار یکدیگر","walking side by side",4,"pose",0],["womanholdinghisarm","زن بازوی مرد را می‌گیرد","she holds his arm",4,"pose",0],["manleadinghergently","مرد زن را آرام همراهی و هدایت می‌کند","he gently leads her",4,"pose",0],["slowdancestanding","رقص آرام در حالت ایستاده","a slow standing dance",4,"pose",0],["spinningheraround","مرد زن را آرام می‌چرخاند","he gently spins her around",4,"pose",0],["pullinghercloser","مرد زن را به خود نزدیک می‌کند","he pulls her closer",4,"pose",0],["standingforeheadtouch","تماس پیشانی‌ها در حالت ایستاده","standing with foreheads touching",4,"pose",0],["backtobackcouple","زوج پشت‌به‌پشت می‌ایستند","standing back to back",4,"pose",0],["leaningagainsteachother","بدن‌ها به یکدیگر تکیه می‌دهد","leaning against each other",4,"pose",0],["wallleanromance","زوج به دیوار تکیه می‌دهند","leaning against a wall together",4,"pose",0],["windowstandingcouple","زوج نزدیک پنجره می‌ایستند","standing near a window",4,"pose",0],["windyhairwalk","راه رفتن با موهایی که در باد حرکت می‌کند","walking with hair moving in the wind",4,"pose",0],["sittingclosecouple","نشستن نزدیک به هم و در کنار یکدیگر","sitting close together side by side",5,"pose",0],["shoulderleanseated","زن هنگام نشستن به شانهٔ مرد تکیه می‌دهد","seated, she leans on his shoulder",5,"pose",0],["laprestromance","زن سرش را روی پاهای مرد می‌گذارد","she rests her head on his lap",5,"pose",1],["couchcuddle","آغوش راحت و صمیمی روی مبل","a cozy cuddle on the couch",5,"pose",0],["windowseatcouple","نشستن با هم کنار پنجره","sitting together by the window",5,"pose",0],["bedsidecoupleportrait","پرتره زوج نشسته بر لبهٔ تخت","a couple portrait seated on the edge of a bed",5,"pose",0],["floorcuddle","نشستن روی زمین و در آغوش گرفتن","sitting on the floor in an embrace",5,"pose",0],["backtobackseated","نشستن پشت‌به‌پشت","sitting back to back",5,"pose",0],["kneelingromance","یکی از افراد مقابل دیگری زانو می‌زند","one partner kneels in front of the other",5,"pose",0],["crossleggedcouple","نشستن چهارزانو و نزدیک به هم","sitting cross-legged close together",5,"pose",0],["legsintertwined","نشستن با پاهای نزدیک یا در هم قرارگرفته","sitting with legs close or intertwined",5,"pose",1],["headinlap","قرار گرفتن سر روی پاهای طرف مقابل","head resting in the partner's lap",5,"pose",1],["sittinghandholding","نشستن همراه با گرفتن دست یکدیگر","sitting while holding hands",5,"pose",0],["seatedforeheadkiss","بوسه بر پیشانی در حالت نشسته","a forehead kiss while seated",5,"pose",1],["tablefortwocandid","لحظهٔ طبیعی نشستن روبه‌روی هم پشت میز","a candid moment seated across a table",5,"pose",0],["cafecoupleportrait","پرتره زوج روی صندلی‌های کافه","a couple portrait on café chairs",5,"pose",0],["balconyseatedromance","نشستن عاشقانه در بالکن","sitting romantically on a balcony",5,"pose",0],["parkbenchcouple","نشستن با هم روی نیمکت پارک","sitting together on a park bench",5,"pose",0],["picnicblanketcouple","نشستن روی زیرانداز پیک‌نیک","sitting on a picnic blanket",5,"pose",0],["cozyblanketcuddle","در آغوش گرفتن زیر یک پتوی گرم","cuddling under a warm blanket",5,"pose",0],["almostkiss","چهره‌ها بسیار نزدیک، درست پیش از بوسه","faces very close, just before a kiss",6,"pose",1],["softromantickiss","بوسهٔ ملایم و طبیعی","a soft, natural kiss",6,"pose",1],["passionatekiss","بوسهٔ پرشور و سرشار از احساس","a passionate, emotional kiss",6,"pose",1],["kissintherain","بوسیدن زیر باران","kissing in the rain",6,"pose",1],["sunsetkiss","بوسه با پس‌زمینهٔ غروب","a kiss against a sunset backdrop",6,"pose",1],["silhouettekiss","بوسه در نمای ضدنور و سایه‌وار","a kiss in backlit silhouette",6,"pose",1],["surprisecheekkiss","بوسهٔ ناگهانی بر گونه","a surprise kiss on the cheek",6,"pose",1],["laughingfaceclose","خندیدن با هم، از فاصلهٔ نزدیک","laughing together up close",6,"pose",0],["nosekissmoment","تماس شیرین بینی‌ها","a sweet nose-to-nose moment",6,"pose",1],["whisperingtoher","مرد در گوش زن زمزمه می‌کند","he whispers in her ear",6,"pose",0],["whisperingtohim","زن در گوش مرد زمزمه می‌کند","she whispers in his ear",6,"pose",0],["playfulforeheadbump","تماس بازیگوشانهٔ پیشانی‌ها","a playful forehead bump",6,"pose",0],["romanticgaze","نگاه عمیق و عاشقانه","a deep romantic gaze",6,"pose",0],["shylookaway","یکی با خجالت نگاهش را برمی‌گرداند","one partner shyly looks away",6,"pose",0],["playfulteasingcouple","تعامل شوخ و بازیگوشانهٔ زوج","a playful, teasing interaction",6,"pose",0],["laughingembrace","خندیدن در آغوش یکدیگر","laughing in each other's arms",6,"pose",0],["romanticstarefrombehind","نگاه عاشقانه از پشت شانهٔ طرف مقابل","a romantic look over the partner's shoulder",6,"pose",0],["gentlehairkiss","بوسهٔ ملایم بر بالای سر یا موها","a gentle kiss on the top of the head or hair",6,"pose",1],["noseagainstcheek","قرار گرفتن آرام بینی روی گونه","nose resting softly against the cheek",6,"pose",1],["emotionalreunionhug","آغوش احساسی پس از دوری طولانی","an emotional reunion hug after a long separation",6,"pose",0],["extremecloseupcouple","نمای بسیار نزدیک از جزئیات چهره‌ها","extreme close-up of facial details",7,"frame",0],["closeupcoupleportrait","پرتره نزدیک از چهرهٔ زوج","close-up portrait of the couple's faces",7,"frame",0],["mediumshotcouple","کادر از کمر به بالا","medium shot from the waist up",7,"frame",0],["mediumfullcouple","کادر از ران به بالا","medium-full shot from the thighs up",7,"frame",0],["fullbodycouple","نمای کامل بدن هر دو نفر","full-body shot of both people",7,"frame",0],["widecinematiccouple","زوج در قاب باز و سینمایی","couple in a wide cinematic frame",7,"frame",0],["ultrawideenvironment","قاب بسیار باز؛ زوج همراه با محیط وسیع","very wide frame showing the couple in a vast environment",7,"frame",0],["negativespacecouple","فضای خالی زیاد اطراف زوج","lots of empty negative space around the couple",7,"frame",0],["centeredcouplecomposition","زوج در مرکز کادر قرار می‌گیرند","couple centered in the frame",7,"frame",0],["offcentercinematic","زوج در یک سمت کادر قرار می‌گیرند","couple placed off-center, cinematic",7,"frame",0],["foregroundframing","عناصر پیش‌زمینه زوج را قاب می‌گیرند","foreground elements framing the couple",7,"frame",0],["doorwayframing","قاب گرفتن زوج با چارچوب در","couple framed by a doorway",7,"frame",0],["windowframecomposition","قاب گرفتن زوج با پنجره","couple framed by a window",7,"frame",0],["silhouetteframing","زوج به‌صورت سایه‌وار، عنصر اصلی قاب هستند","the couple as a silhouette, the main element of the frame",7,"frame",0],["layereddepthshot","چیدمان لایه‌ای پیش‌زمینه، زوج و پس‌زمینه","layered depth: foreground, couple, background",7,"frame",0],["shallowdepthcouple","زوج واضح و پس‌زمینه محو","sharp couple with a blurred background",7,"frame",0],["deepfocuscouple","زوج و محیط هر دو با وضوح بیشتر","deep focus, couple and surroundings both sharp",7,"frame",0],["symmetricalcouple","ترکیب‌بندی متقارن","symmetrical composition",7,"frame",0],["ruleofthirdscouple","قرارگیری زوج بر اساس قانون یک‌سوم","couple placed by the rule of thirds",7,"frame",0],["verticalstorycrop","قاب عمودی ۹:۱۶ مناسب استوری","vertical 9:16 framing for stories",7,"frame",0],["goldenhourglow","نور گرم ساعت طلایی پیش از غروب","warm golden-hour light before sunset",8,"light",0],["softmorninglight","نور نرم صبحگاهی","soft morning light",8,"light",0],["sunsetbacklight","نور غروب از پشت زوج","sunset light from behind the couple",8,"light",0],["sunrisehaze","نور طلوع در فضایی مه‌آلود","sunrise light in a hazy atmosphere",8,"light",0],["bluehourromance","حال‌وهوای آبی پس از غروب","blue-hour mood after sunset",8,"light",0],["moonlitcouple","نور ملایم ماه","soft moonlight",8,"light",0],["rimlightcouple","خط نور روی لبه‌های بدن","rim light outlining the edges of the bodies",8,"light",0],["softwindowlight","نور طبیعی و نرم پنجره","soft natural window light",8,"light",0],["dramaticlowkey","نورپردازی تیره با کنتراست بالا","dark, high-contrast low-key lighting",8,"light",0],["highkeysoftportrait","نورپردازی روشن و ملایم","bright, soft high-key lighting",8,"light",0],["cinematicbacklight","نور سینمایی از پشت","cinematic backlight",8,"light",0],["dappledtreelight","نور لکه‌لکهٔ خورشید از میان برگ‌ها","dappled sunlight through leaves",8,"light",0],["neonromancelight","نور نئون رنگی","colorful neon light",8,"light",0],["warmtungstenlight","نور گرم لامپ تنگستن","warm tungsten bulb light",8,"light",0],["coolmoodylighting","نور سرد با حال‌وهوای احساسی","cool, moody lighting",8,"light",0],["candlelightcouple","نور عاشقانهٔ شمع","romantic candlelight",8,"light",0],["streetlampglow","نور چراغ خیابان در شب","streetlamp glow at night",8,"light",0],["softovercastlight","نور یکنواخت و نرم روز ابری","even, soft overcast light",8,"light",0],["volumetriclightcouple","پرتوهای نور قابل‌مشاهده در هوا","visible light rays in the air",8,"light",0],["lightleakfilm","افکت نشت نور فیلم آنالوگ","analog film light-leak effect",8,"light",0],["romanticbeachcouple","زوج در ساحل","couple on a beach",9,"place",0],["mountainviewcouple","زوج با چشم‌انداز کوهستان","couple with a mountain view",9,"place",0],["citynightcouple","زوج در شهر، هنگام شب","couple in the city at night",9,"place",0],["rainystreetromance","زوج در خیابان خیس پس از باران","couple on a wet street after rain",9,"place",0],["forestromance","زوج در میان جنگل","couple in a forest",9,"place",0],["flowerfieldcouple","زوج در دشت گل","couple in a field of flowers",9,"place",0],["lavenderfieldromance","زوج در مزرعهٔ اسطوخودوس","couple in a lavender field",9,"place",0],["rooftopcouple","زوج روی پشت‌بام","couple on a rooftop",9,"place",0],["trainstationromance","لحظهٔ عاشقانه در ایستگاه قطار","a romantic moment at a train station",9,"place",0],["subwaycouple","زوج در فضای مترو","couple in a subway setting",9,"place",0],["bookstorecouple","زوج در کتاب‌فروشی","couple in a bookstore",9,"place",0],["libraryromance","زوج در کتابخانه","couple in a library",9,"place",0],["cozycafedate","قرار عاشقانه در کافه‌ای دنج","a date in a cozy café",9,"place",0],["luxuryhotelcouple","زوج در هتل لوکس","couple in a luxury hotel",9,"place",0],["apartmentwindowromance","زوج کنار پنجرهٔ آپارتمان","couple by an apartment window",9,"place",0],["oldtowncouple","زوج در خیابان‌های بافت قدیمی شهر","couple in the streets of an old town",9,"place",0],["japanstreetromance","زوج در خیابانی با فضای ژاپنی","couple on a Japanese-style street",9,"place",0],["cherryblossomcouple","زوج زیر شکوفه‌های گیلاس","couple under cherry blossoms",9,"place",0],["christmasstreetcouple","زوج در خیابان با تزئینات کریسمس","couple on a street with Christmas decorations",9,"place",0],["desertsunsetcouple","زوج در منظرهٔ بیابانی هنگام غروب","couple in a desert landscape at sunset",9,"place",0],["slowshuttercouple","ثبت اثر حرکت با سرعت شاتر پایین","motion captured with a slow shutter speed",10,"pose",0],["motionblurbackground","پس‌زمینه با تاری حرکت؛ زوج واضح","motion-blurred background, sharp couple",10,"pose",0],["walkingmotionblur","تاری حرکت هنگام راه رفتن","motion blur while walking",10,"pose",0],["windblownhair","موهای در حال حرکت با باد","hair blowing in the wind",10,"pose",0],["flowingdressmotion","حرکت و موج لباس همراه باد","dress flowing with the wind",10,"pose",0],["spinningdancecouple","چرخیدن زوج هنگام رقص","the couple spinning while dancing",10,"pose",0],["foreheadtouchcandid","تماس خودجوش و طبیعی پیشانی‌ها","a candid forehead touch",10,"pose",0],["candidlaughingwalk","راه رفتن همراه با خندهٔ طبیعی","walking with natural laughter",10,"pose",0],["midstepcouple","ثبت تصویر دقیقاً در میانهٔ قدم برداشتن","caught exactly mid-step",10,"pose",0],["turningbackglance","یکی از افراد به پشت سر نگاه می‌کند","one partner glances back",10,"pose",0],["lookingbacktogether","هر دو برمی‌گردند و به دوربین نگاه می‌کنند","both turn and look back at the camera",10,"pose",0],["handpullingperspective","زاویهٔ دید کسی که با دست همراهی می‌شود","point of view of being led by the hand",10,"pose",0],["runninghandinhand","دویدن دست‌در‌دست","running hand in hand",10,"pose",0],["playfulchase","دنبال کردن بازیگوشانهٔ یکدیگر","a playful chase",10,"pose",0],["jumpingcouple","پریدن هم‌زمان زوج","the couple jumping together",10,"pose",0],["piggybackromance","زن روی پشت مرد قرار می‌گیرد","a piggyback ride",10,"pose",0],["bridalcarry","مرد زن را در آغوش بلند می‌کند","he carries her in his arms",10,"pose",0],["dipkisspose","بوسه با خم شدن نمایشی یکی به عقب","a dramatic dip kiss pose",10,"pose",1],["dancefloorcandid","لحظهٔ خودجوش هنگام رقص","a candid dance-floor moment",10,"pose",0],["unposedromance","ژست طبیعی، گویی از حضور دوربین بی‌خبرند","unposed, as if unaware of the camera",10,"pose",0],["matchingblackoutfits","لباس‌های مشکی هماهنگ","matching black outfits",11,"outfit",0],["whiteoutfitromance","لباس‌های سفید و مینیمال","minimal white outfits",11,"outfit",0],["coupledenimstyle","استایل لباس جین","denim style for both",11,"outfit",0],["cozyknitcouple","پلیورهای بافتنی راحت","cozy knit sweaters",11,"outfit",0],["formalblacktie","استایل رسمی و شیک بلک‌تای","formal black-tie style",11,"outfit",0],["weddingeditorial","استایل عکس ادیتوریال عروسی","wedding editorial style",11,"outfit",0],["casualstreetwearcouple","استایل خیابانی روزمره","casual streetwear style",11,"outfit",0],["oldmoneycouple","استایل کلاسیک و اشرافی","classic old-money style",11,"outfit",0],["minimalistfashioncouple","استایل پوشش مینیمال","minimalist fashion",11,"outfit",0],["summerlinenstyle","لباس‌های کتان تابستانی","summer linen clothing",11,"outfit",0],["leatherjacketcouple","کت چرمی با استایل جسورانه","leather jackets with a bold style",11,"outfit",0],["oversizedhoodiecouple","هودی‌های گشاد و اورسایز","oversized hoodies",11,"outfit",0],["romanticdressflow","پیراهن زنانهٔ لطیف و روان","a soft, flowing dress",11,"outfit",0],["suitanddresscouple","مرد با کت‌وشلوار و زن با پیراهن مجلسی","he in a suit, she in an evening dress",11,"outfit",0],["vintageoutfitcouple","لباس‌های سبک وینتیج","vintage-style outfits",11,"outfit",0],["monochromecouple","لباس‌ها در یک طیف رنگی","outfits in a single color family",11,"outfit",0],["earthtonecouple","لباس‌ها با رنگ‌های خاکی و طبیعی","earth-tone outfits",11,"outfit",0],["raincoatcouple","پوشیدن بارانی در هوای بارانی","raincoats in rainy weather",11,"outfit",0],["wintercozycouple","لباس‌های گرم زمستانی","warm cozy winter clothing",11,"outfit",0],["traditionalwearcouple","لباس‌های سنتی هماهنگ","matching traditional clothing",11,"outfit",0],["couplewithumbrella","هر دو زیر یک چتر","both under one umbrella",12,"outfit",0],["sharedheadphones","استفادهٔ مشترک از هدفون","sharing headphones",12,"outfit",0],["holdingbouquet","زن دسته‌گل در دست دارد","she holds a bouquet",12,"outfit",0],["singleflowerromance","یک شاخه گل به‌عنوان وسیلهٔ صحنه","a single flower as a prop",12,"outfit",0],["couplewithpolaroid","ژست همراه با عکس پولاروید","posing with a Polaroid photo",12,"outfit",0],["filmcameradate","دوربین آنالوگ به‌عنوان اکسسوری برای قرار عاشقانه","a film camera as an accessory on a date",12,"outfit",0],["holdingcoffeecups","در دست گرفتن دو فنجان قهوه","holding two coffee cups",12,"outfit",0],["sharedscarf","استفادهٔ مشترک از یک شال‌گردن","sharing one scarf",12,"outfit",0],["holdinghandsinpockets","قرار گرفتن دست‌ها نزدیک هم در جیب","hands close together in a pocket",12,"outfit",0],["couplewithbicycle","ژست همراه با دوچرخه","posing with a bicycle",12,"outfit",0],["motorcyclecouple","زوج همراه با موتورسیکلت","the couple with a motorcycle",12,"outfit",0],["carwindowromance","لحظهٔ عاشقانه کنار پنجرهٔ خودرو","a romantic moment at a car window",12,"outfit",0],["sunflowerbouquet","دسته‌گل آفتابگردان","a sunflower bouquet",12,"outfit",0],["tulipbouquetcouple","دسته‌گل لاله","a tulip bouquet",12,"outfit",0],["fairylightsprop","ریسهٔ چراغ‌های کوچک","string fairy lights as a prop",12,"outfit",0],["sparklerevening","در دست گرفتن فشفشه در فضای عصرگاهی","holding sparklers in the evening",12,"outfit",0],["booksharingcouple","خواندن یک کتاب با هم","reading a book together",12,"outfit",0],["vinylrecordromance","صفحهٔ گرامافون به‌عنوان وسیلهٔ صحنه","a vinyl record as a prop",12,"outfit",0],["picnicbasketcouple","سبد پیک‌نیک","a picnic basket",12,"outfit",0],["balloonromance","بادکنک به‌عنوان عنصر تصویر","a balloon as a visual element",12,"outfit",0],["lightdrizzlecouple","باران نم‌نم و ملایم","a light, gentle drizzle",13,"weather",0],["heavyrainromance","باران شدید با حال‌وهوای دراماتیک","heavy rain with a dramatic mood",13,"weather",0],["raindropforeground","قطره‌های آب در پیش‌زمینه","water droplets in the foreground",13,"weather",0],["foggyforestcouple","جنگل مه‌آلود","a foggy forest",13,"weather",0],["mistymorningromance","مه نرم صبحگاهی","soft morning mist",13,"weather",0],["snowfallcouple","بارش برف اطراف زوج","snow falling around the couple",13,"weather",0],["snowycuddle","آغوش در فضایی برفی","an embrace in a snowy setting",13,"weather",0],["windysunsetcouple","باد هنگام غروب","wind at sunset",13,"weather",0],["autumnleafcouple","برگ‌های پاییزی","autumn leaves",13,"weather",0],["fallingleavesromance","برگ‌ها در حال ریزش","leaves falling",13,"weather",0],["flowerpetalrain","بارش گلبرگ‌ها","a shower of flower petals",13,"weather",0],["oceanbreeze","نسیم دریا","an ocean breeze",13,"weather",0],["wavesbehindcouple","موج‌های دریا در پس‌زمینه","ocean waves behind the couple",13,"weather",0],["sunflarethroughhair","تابش خورشید از میان موها","sun flare shining through the hair",13,"weather",0],["cloudyromanticmood","آسمان ابری با حس عاشقانه","cloudy sky with a romantic mood",13,"weather",0],["stargazingcouple","تماشای ستاره‌ها با هم","stargazing together",13,"weather",0],["milkywayromance","کهکشان راه شیری در پس‌زمینه","the Milky Way in the background",13,"weather",0],["fireworksbackground","آتش‌بازی در دوردست","fireworks in the distance",13,"weather",0],["goldendustparticles","ذرات غبار طلایی","floating golden dust particles",13,"weather",0],["floatingpetals","گلبرگ‌های معلق در هوا","petals floating in the air",13,"weather",0],["35mmfilmlook","ظاهر عکس ثبت‌شده روی فیلم ۳۵ میلی‌متری","the look of 35mm film",14,"style",0],["analogfilmgrain","بافت دانه‌دانهٔ فیلم آنالوگ","analog film grain",14,"style",0],["cinematictealorange","رنگ‌پردازی سینمایی آبی‌سبز و نارنجی","cinematic teal-and-orange color grading",14,"style",0],["mutedfilmpalette","پالت رنگی ملایم و کم‌اشباع فیلم","a muted, low-saturation film palette",14,"style",0],["softpastelromance","رنگ‌های پاستلی نرم","soft pastel colors",14,"style",0],["moodydesaturated","رنگ‌های کم‌اشباع با حال‌وهوای احساسی","moody desaturated colors",14,"style",0],["vintagefilmflash","فلاش با ظاهر فیلم وینتیج","flash with a vintage film look",14,"style",0],["directflashportrait","فلاش مستقیم با استایل ادیتوریال","direct flash in an editorial style",14,"style",0],["editorialromance","عکاسی عاشقانه به سبک مجله","romantic magazine-style photography",14,"style",0],["fineartcoupleportrait","پرتره زوج به سبک هنری فاین‌آرت","fine-art style couple portrait",14,"style",0],["documentaryromance","عکاسی طبیعی به سبک مستند","natural documentary-style photography",14,"style",0],["indiefilmstill","ظاهر یک فریم از فیلم مستقل","looks like a still from an indie film",14,"style",0],["anamorphiccinema","زیبایی‌شناسی سینمای آنامورفیک","anamorphic cinema aesthetic",14,"style",0],["cinematicletterbox","قاب عریض سینمایی با نوارهای بالا و پایین","wide cinematic letterbox frame",14,"style",0],["dreamysoftfocus","فوکوس نرم و رؤیایی","dreamy soft focus",14,"style",0],["halationfilmglow","هالهٔ نور در نقاط روشن، شبیه فیلم آنالوگ","halation glow in highlights, like analog film",14,"style",0],["highcontrastmonochrome","عکس سیاه‌وسفید با کنتراست بالا","high-contrast black-and-white photo",14,"style",0],["blackandwhitefilm","ظاهر کلاسیک فیلم سیاه‌وسفید","classic black-and-white film look",14,"style",0],["romanticfilmstill","تصویر شبیه فریم یک فیلم عاشقانه","looks like a frame from a romantic film",14,"style",0],["nostalgicmemorylook","ظاهر نوستالژیک و خاطره‌انگیز","a nostalgic, memory-like look",14,"style",0],["portrait85mm","پرسپکتیو لنز پرتره ۸۵ میلی‌متری","85mm portrait lens perspective",15,"lens",0],["wideangle35mm","پرسپکتیو لنز ۳۵ میلی‌متری","35mm lens perspective",15,"lens",0],["ultrawideperspective","پرسپکتیو لنز فوق‌عریض","ultra-wide lens perspective",15,"lens",0],["telephotocompression","فشردگی پرسپکتیو؛ پس‌زمینه نزدیک‌تر به نظر می‌رسد","telephoto compression, background appears closer",15,"lens",0],["fisheyeplayful","اعوجاج هنری و بازیگوشانهٔ لنز چشم‌ماهی","playful fisheye lens distortion",15,"lens",0],["macrohanddetail","نمای ماکرو از جزئیات دست‌ها","macro detail of the hands",15,"lens",0],["bokehbackground","بوکه و محوشدگی نورها در پس‌زمینه","bokeh and blurred lights in the background",15,"lens",0],["foregroundbokeh","بوکه در پیش‌زمینهٔ زوج","bokeh in the foreground of the couple",15,"lens",0],["lensflarecinematic","فلر و بازتاب نور سینمایی در لنز","cinematic lens flare and reflections",15,"lens",0],["prismlightleak","افکت نشت نور منشوری","prism light-leak effect",15,"lens",0],["softvignette","تیره شدن ملایم گوشه‌های عکس","soft vignette darkening the corners",15,"lens",0],["tiltshiftromance","افکت تیلت‌شیفت با ناحیهٔ فوکوس محدود","tilt-shift effect with a narrow focus area",15,"lens",0],["longexposurelights","رد نور با نوردهی طولانی","light trails from a long exposure",15,"lens",0],["doubleexposureromance","ترکیب دو تصویر با افکت نوردهی دوگانه","double-exposure blend of two images",15,"lens",0],["reflectiondistortion","اعوجاج هنری در بازتاب","artistic distortion in a reflection",15,"lens",0],["glassrefraction","شکست نور از میان شیشه","light refracting through glass",15,"lens",0],["shootingthroughcurtain","عکاسی از پشت پرده","shot through a curtain",15,"lens",0],["shootingthroughleaves","عکاسی از میان برگ‌ها","shot through leaves",15,"lens",0],["shootingthroughraindrops","عکاسی از پشت شیشهٔ پوشیده از قطرات باران","shot through glass covered in raindrops",15,"lens",0],["handhelddocumentary","ظاهر عکاسی مستند با دوربین روی دست","handheld documentary look",15,"lens",0],["sofrehaghdcouple","زوج کنار سفرهٔ عقد","the couple at a traditional Persian wedding spread, sofreh aghd",16,"place",0],["mirrorcandlestickframing","آینه و شمعدان سفرهٔ عقد در کادر","the ceremonial mirror and candlesticks in the frame",16,"frame",0],["hennanightcouple","زوج در مراسم حنابندان","the couple at a henna night celebration",16,"place",0],["weddingringcloseup","نمای نزدیک حلقه‌ها","close-up of the wedding rings",16,"frame",0],["veillift","برداشتن آرام تور عروس","gently lifting the bridal veil",16,"pose",0],["firstlookmoment","لحظهٔ اولین نگاه زوج به هم در لباس عروسی","the couple's first look at each other in wedding attire",16,"pose",0],["dresstrainshot","دامن بلند و دنبالهٔ لباس عروس در کادر","the long gown and train in the frame",16,"frame",0],["adjustingtiemoment","زن کراوات یا پاپیون مرد را مرتب می‌کند","she adjusts his tie or bow tie",16,"pose",0],["bouquettossmoment","لحظهٔ پرتاب دسته‌گل","the moment of tossing the bouquet",16,"pose",0],["cakecuttingcouple","زوج هنگام بریدن کیک","the couple cutting the cake",16,"pose",0],["persiangardencouple","زوج در باغ ایرانی با حوض و درخت سرو","couple in a Persian garden with a pool and cypress trees",16,"place",0],["tilearchitecturecouple","زوج مقابل کاشی‌کاری و معماری سنتی","couple in front of traditional tilework and architecture",16,"place",0],["adobealleycouple","زوج در کوچه‌های خشتی شهر کویری","couple in the adobe alleys of a desert town",16,"place",0],["traditionalbazaarcouple","زوج در بازار سنتی","couple in a traditional bazaar",16,"place",0],["yaldanightcouple","زوج در شب یلدا با انار و هندوانه","couple on Yalda night with pomegranates and watermelon",16,"place",0],["nowruzhaftsincouple","زوج کنار سفرهٔ هفت‌سین نوروز","couple beside a Nowruz Haft-sin table",16,"place",0],["modestelegancecouple","پوشش کامل و موقر با ظاهر شیک","modest, covered clothing with an elegant look",16,"outfit",0],["hijabbridalportrait","پرتره عروس با روسری یا شال","bridal portrait with a headscarf or shawl",16,"outfit",0],["respectfuldistancecouple","فاصلهٔ محترمانه بدون تماس؛ نگاه و لبخند","respectful distance without touching, expressed through gaze and smile",16,"pose",0],["familyfriendlyromance","حس رمانتیک مناسب همهٔ سنین؛ دست‌ها نزدیک اما بدون آغوش یا بوسه","romantic feeling suitable for all ages, hands close but no hugging or kissing",16,"pose",0]],"conf":[["snowfallcouple","summerlinenstyle","برف با لباس کتان تابستانی هماهنگ نیست"],["snowycuddle","summerlinenstyle","فضای برفی با لباس کتان تابستانی هماهنگ نیست"],["snowfallcouple","desertsunsetcouple","برف و منظرهٔ بیابانی هم‌زمان باورپذیر نیست"],["autumnleafcouple","cherryblossomcouple","برگ پاییزی و شکوفهٔ بهاری دو فصل متضادند"],["heavyrainromance","sparklerevening","فشفشه زیر باران شدید روشن نمی‌ماند"],["heavyrainromance","candlelightcouple","نور شمع زیر باران شدید باورپذیر نیست"],["candlelightcouple","desertsunsetcouple","نور شمع (فضای بسته) با غروب بیابان (فضای باز) نمی‌خواند"],["ultrawideperspective","extremecloseupcouple","لنز فوق‌عریض روی نمای بسیار نزدیک چهره را کج و بزرگ می‌کند"],["telephotocompression","ultrawideenvironment","فشردگی تله با قاب بسیار باز تناقض دارد"],["blackandwhitefilm","neonromancelight","سیاه‌وسفید رنگ نئون را از بین می‌برد"],["highcontrastmonochrome","neonromancelight","سیاه‌وسفید رنگ نئون را از بین می‌برد"],["blackandwhitefilm","lavenderfieldromance","سیاه‌وسفید رنگ اسطوخودوس را از بین می‌برد"],["blackandwhitefilm","cherryblossomcouple","سیاه‌وسفید رنگ شکوفه‌ها را از بین می‌برد"],["stargazingcouple","goldenhourglow","آسمان پرستاره با نور غروب هم‌زمان نمی‌شود"],["stargazingcouple","softmorninglight","ستاره‌ها در نور صبح دیده نمی‌شوند"],["milkywayromance","sunsetbacklight","راه شیری در غروب دیده نمی‌شود"],["milkywayromance","softwindowlight","راه شیری فضای باز و شب می‌خواهد؛ نور پنجره داخلی است"],["fireworksbackground","softmorninglight","آتش‌بازی شب است و با نور صبح نمی‌خواند"],["citynightcouple","softmorninglight","شب شهر با نور صبح نمی‌خواند"],["citynightcouple","goldenhourglow","شب شهر با نور غروب نمی‌خواند"],["citynightcouple","sunrisehaze","شب شهر با مه‌ی طلوع نمی‌خواند"],["yaldanightcouple","softmorninglight","شب یلدا با نور صبح نمی‌خواند"],["yaldanightcouple","summerlinenstyle","یلدا شب زمستان است؛ لباس کتان تابستانی نمی‌خواند"],["hennanightcouple","softmorninglight","شب حنابندان با نور صبح نمی‌خواند"],["subwaycouple","windysunsetcouple","مترو زیرزمینی است و غروب بادی ندارد"],["subwaycouple","stargazingcouple","مترو زیرزمینی است و آسمان پرستاره ندارد"],["sofrehaghdcouple","heavyrainromance","سفره‌ی عقد فضای داخلی است؛ باران شدید نمی‌خواند"],["desertsunsetcouple","heavyrainromance","باران شدید با منظره‌ی بیابانی کم‌باور است"],["desertsunsetcouple","foggyforestcouple","جنگل مه‌آلود با بیابان هم‌زمان نمی‌شود"],["romanticbeachcouple","snowfallcouple","برف و ساحل کنار هم کم‌باورند"],["cherryblossomcouple","snowfallcouple","شکوفه‌ی بهاری با برف هم‌زمان نمی‌شود"],["cherryblossomcouple","snowycuddle","شکوفه‌ی بهاری با فضای برفی هم‌زمان نمی‌شود"],["flowerfieldcouple","snowfallcouple","مزرعه‌ی گل با برف هم‌زمان نمی‌شود"],["lavenderfieldromance","snowfallcouple","اسطوخودوس با برف هم‌زمان نمی‌شود"],["blackandwhitefilm","goldenhourglow","سیاه‌وسفید رنگ طلایی غروب را از بین می‌برد"],["highcontrastmonochrome","goldenhourglow","سیاه‌وسفید رنگ طلایی غروب را از بین می‌برد"],["blackandwhitefilm","lightleakfilm","سیاه‌وسفید رنگ نشت نور را از بین می‌برد"],["candlelightcouple","sunflarethroughhair","نور شمع (داخلی) با فلر خورشید نمی‌خواند"],["macrohanddetail","fullbodycouple","ماکرو دست با نمای تمام‌قد تناقض دارد"]],"rec":[{"id":"cafe","title":"پرتره‌ی نرم در کافه","use":"پست اینستاگرام برای یک زوج جوان","ratio":"4:5","codes":["sittingclosecouple","mediumshotcouple","softwindowlight","cozycafedate","earthtonecouple","portrait85mm"],"note":"نور پنجره و رنگ خاکی حس گرم و طبیعی می‌دهند"},{"id":"sunset","title":"قدم‌زدن در غروب","use":"استوری یا ریلز با حس سفر","ratio":"9:16","codes":["walkinghandinhand","widecinematiccouple","sunsetbacklight","romanticbeachcouple","summerlinenstyle","35mmfilmlook"],"note":"کادر باز به حرکت و نور غروب جا می‌دهد"},{"id":"neon","title":"شب نئونی پس از باران","use":"تصویر سینمایی برای صفحه‌ی محتوا","ratio":"4:5","codes":["walkingcouplebackshot","mediumfullcouple","neonromancelight","rainystreetromance","raincoatcouple","cinematictealorange"],"note":"رنگ‌پردازی آبی‌سبز و نارنجی با نئون هم‌خوان است"},{"id":"aghd","title":"سفره‌ی عقد سنتی","use":"آلبوم خانوادگی یا کارت دعوت","ratio":"4:5","codes":["sofrehaghdcouple","sittingclosecouple","mediumshotcouple","softwindowlight","traditionalwearcouple","editorialromance"],"note":"می‌توانی آینه و شمعدان را هم در توضیح صحنه بیاوری"},{"id":"modest","title":"باغ ایرانی با حالت محتاط","use":"تصویر مناسب همه‌ی مخاطب‌ها","ratio":"4:5","codes":["respectfuldistancecouple","fullbodycouple","softmorninglight","persiangardencouple","modestelegancecouple","softpastelromance"],"note":"فاصله‌ی محترمانه را با لبخند و نگاه جبران کن"},{"id":"forest","title":"آلبوم فیلم آنالوگ","use":"مجموعه‌ی عکس با حس نوستالژی","ratio":"3:2","codes":["candidlaughingwalk","mediumfullcouple","dappledtreelight","forestromance","earthtonecouple","analogfilmgrain"],"note":"خنده‌ی طبیعی و دانه‌ی فیلم حس خاطره می‌سازند"}],"board":["sidebysidewalk","widecinematiccouple","lookingateachother","mediumshotcouple","walkinghandinhand","handholdingcloseup","couplewalkingaway","sittingclosecouple"]};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const BY={};D.codes.forEach(r=>BY[r[0]]={c:r[0],fa:r[1],en:r[2],cat:r[3],role:r[4],i:r[5]});
+const SLOTS=[["pose","ژست و تعامل"],["frame","کادر و زاویه"],["light","نور"],["place","مکان"],["outfit","لباس و وسیله"],["weather","آب‌وهوا"],["style","سبک رنگ و فیلم"],["lens","لنز و افکت"]];
+const RAND=["pose","frame","light","place","outfit","style"];
+const S={fav:[],board:[],modest:false,sel:{},ratio:"4:5",ref:true,lang:"both",saved:[],mode:"create",tool:"generic",eops:[],theme:"auto",wake:true,intro:0,alb:null,albums:[]};
+try{const o=JSON.parse(localStorage.getItem("ccb1")||"{}");Object.keys(S).forEach(k=>{if(o[k]!==undefined)S[k]=o[k]})}catch(e){}
+S.fav=S.fav.filter(c=>BY[c]);S.board=S.board.filter(b=>b&&BY[b.c]);
+Object.keys(S.sel).forEach(k=>{if(!BY[S.sel[k]])delete S.sel[k]});
+const save=()=>{try{localStorage.setItem("ccb1",JSON.stringify(S))}catch(e){}};
+const vis=r=>!(S.modest&&r.i);
+const norm=s=>String(s).toLowerCase().replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/[\u200c\s]+/g,"");
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),1600)}
+async function copy(t){try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}toast("کپی شد")}
+/* ---------- تب‌ها ---------- */
+let curView="lib",curOut=null;
+function go(v,instant){const run=()=>{curView=v;$$(".view").forEach(e=>e.classList.toggle("on",e.id==="v-"+v));$$("nav button").forEach(b=>{const on=b.dataset.v===v;b.classList.toggle("on",on);on?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current")});scrollTo(0,0);
+ if(v==="build")renderBuild();if(v==="album")renderAlbum();if(v==="rec")renderRec();if(v==="shoot")renderBoard();if(v==="lib")renderLib();
+ updDock();v==="shoot"?wakeOn():wakeOff()};
+ if(!instant&&document.startViewTransition&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.startViewTransition(run);else run()}
+function updDock(){const show=curView==="build"&&!!curOut,d=$("#dock");d.hidden=!show;document.body.classList.toggle("hasdock",show);if(show)$("#dk").textContent=curTool().n+" · "+(S.mode==="edit"?"ویرایش":"ساخت")}
+let wl=null;
+async function wakeOn(){try{if(S.wake&&"wakeLock" in navigator&&!wl){wl=await navigator.wakeLock.request("screen");wl.addEventListener("release",()=>{wl=null})}}catch(e){wl=null}}
+function wakeOff(){try{wl&&wl.release()}catch(e){}wl=null}
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&curView==="shoot")wakeOn()});
+$$("nav button").forEach(b=>b.onclick=()=>go(b.dataset.v));
+/* ---------- کتابخانه ---------- */
+let q="",cat=0,lim=40;
+function renderChips(){const items=[[0,"همه"],[-1,"★ علاقه‌مندی‌ها"],...D.cats.map(c=>[c.n,fa(c.n)+". "+c.t])];
+ $("#chips").innerHTML=items.map(([n,t])=>`<button type="button" class="chip${cat===n?" on":""}" data-n="${n}">${esc(t)}</button>`).join("");
+ $$("#chips .chip").forEach(b=>b.onclick=()=>{cat=+b.dataset.n;lim=40;renderChips();renderLib()})}
+function card(r,ctx){const f=S.fav.includes(r.c);
+ return `<article class="cd"><div class="top"><button type="button" class="codebtn" data-a="cc" data-c="${r.c}" aria-label="کپی کد ${r.c}"><code>${r.c}</code></button><button type="button" class="b${f?" on":""}" data-a="fav" data-c="${r.c}" aria-pressed="${f}" aria-label="علاقه‌مندی">★</button></div>
+ <p class="fa">${esc(r.fa)}</p><p class="en" dir="ltr">${esc(r.en)}</p>
+ <div class="acts"><button type="button" class="b p" data-a="copy" data-c="${r.c}">کپی جمله</button><button type="button" class="b" data-a="use" data-c="${r.c}">به سازنده</button><button type="button" class="b" data-a="bd" data-c="${r.c}">به شات‌لیست</button></div></article>`}
+function renderLib(){const nq=norm(q);
+ let L=D.codes.map(r=>BY[r[0]]).filter(r=>vis(r)&&(cat===0||(cat===-1?S.fav.includes(r.c):r.cat===cat))&&(!nq||norm(r.c+r.fa+r.en).includes(nq)));
+ const info=D.cats.find(c=>c.n===cat);$("#tipbar").textContent=info?info.ins+" — "+info.tip:"";
+ $("#list").innerHTML=L.length?L.slice(0,lim).map(card).join(""):`<div class="empty">${cat===-1?"هنوز کدی را ستاره‌دار نکرده‌ای.":"کدی پیدا نشد. عبارت دیگری را امتحان کن."}</div>`;
+ $("#more").style.display=L.length>lim?"block":"none";$("#more").textContent="نمایش بیشتر ("+fa(L.length-lim)+" کد دیگر)"}
+$("#q").oninput=e=>{q=e.target.value;lim=40;renderLib()};
+$("#more").onclick=()=>{lim+=40;renderLib()};
+document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;const r=BY[b.dataset.c],a=b.dataset.a;if(!r)return;
+ if(a==="copy")copy(r.fa+"\n"+r.en);
+ if(a==="cc")copy(r.c);
+ if(a==="fav"){const i=S.fav.indexOf(r.c);i<0?S.fav.push(r.c):S.fav.splice(i,1);save();renderLib()}
+ if(a==="use"){S.sel[r.role]=r.c;save();toast("به سازنده اضافه شد");}
+ if(a==="bd"){if(!S.board.some(x=>x.c===r.c)){S.board.push({c:r.c,d:0});save();toast("به شات‌لیست اضافه شد")}else toast("قبلاً اضافه شده")}});
+/* ---------- سازنده ---------- */
+function chosen(){return SLOTS.map(([k])=>S.sel[k]).filter(Boolean)}
+function conflicts(sel){return D.conf.filter(([a,b])=>sel.includes(a)&&sel.includes(b))}
+const TOOLS=[
+ {id:"generic",n:"عمومی (فارسی + انگلیسی)",m:["create","edit"],tip:"برای هر ابزاری کار می‌کند. اگر نتیجه ضعیف بود، پروفایل همان ابزار را انتخاب کن."},
+ {id:"gpt",n:"ChatGPT / GPT Image",m:["create","edit"],tip:"عکس مرجع را همراه پیام پیوست کن. اگر چهره تغییر کرد، همان پیام را با «فقط X را عوض کن» تکرار کن."},
+ {id:"gemini",n:"Gemini / Nano Banana",m:["create","edit"],tip:"ساختار پیشنهادی: اقدام + هدف + جزئیات + قیدها. هر بار یک تغییر اصلی بخواه و روی نتیجهٔ قبلی ادامه بده."},
+ {id:"flux",n:"Flux (Kontext)",m:["create","edit"],tip:"دستور کوتاه و مشخص بهتر جواب می‌دهد. تغییرها را یکی‌یکی و پشت‌سرهم بده."},
+ {id:"mj",n:"Midjourney (V7)",m:["create"],tip:"لینک عکس مرجع را به‌جای <REF_URL> بگذار. فقط یک تصویر مرجع و فقط نسخهٔ V7؛ وزن --ow پیش‌فرض ۱۰۰ است و بهتر است زیر ۴۰۰ بماند."},
+ {id:"video",n:"تصویر ← ویدیو (Kling / Veo / Runway)",m:["create"],tip:"عکس نهایی را به‌عنوان فریم اول بده. حرکت کوچک و آرام، چهره‌ها را پایدارتر نگه می‌دارد."}];
+const TOOLMAP=Object.fromEntries(TOOLS.map(t=>[t.id,t]));
+const EOPS=[
+ {id:"retouch",t:"رتوش پوست",fa:"رتوش طبیعی پوست و صورت بدون حالت پلاستیکی؛ منافذ و بافت پوست حفظ شود",en:"natural skin retouching, even out blemishes and tone while keeping pores and texture, no plastic look"},
+ {id:"bg",t:"تعویض پس‌زمینه",fa:"پس‌زمینه با صحنهٔ هدف عوض شود؛ پرسپکتیو، لبه‌ها و جهت نور هماهنگ باشد",en:"replace the background with the target scene, matching perspective, edge detail and light direction"},
+ {id:"outfit",t:"تغییر لباس",fa:"لباس طبق توضیح عوض شود؛ ژست و تناسب بدن و چین‌های پارچه واقعی بماند",en:"change the clothing as described, keep body pose and proportions, realistic fabric folds"},
+ {id:"relight",t:"تغییر نور",fa:"نور و رنگ نور با صحنهٔ هدف هماهنگ شود؛ سایه و هایلایت روی هر دو نفر یکسان باشد",en:"relight the photo to match the target lighting, with consistent shadows and highlights on both people"},
+ {id:"remove",t:"حذف افراد/اشیای اضافه",fa:"افراد و اشیای مزاحم پس‌زمینه حذف و جایشان طبیعی پر شود",en:"remove distracting people and objects from the background and fill the area naturally"},
+ {id:"extend",t:"گسترش کادر",fa:"کادر به نسبت جدید گسترش یابد و صحنه بدون درز ادامه پیدا کند",en:"extend the canvas to the new aspect ratio, continuing the scene seamlessly"},
+ {id:"grade",t:"گرید رنگ و حس فیلم",fa:"گرید رنگ و حس فیلم مطابق توضیح اعمال شود؛ رنگ پوست طبیعی بماند",en:"apply the described color grade and film look consistently, keeping skin tones natural"},
+ {id:"hands",t:"اصلاح دست‌ها",fa:"آناتومی دست‌ها و تعداد انگشت‌ها اصلاح شود",en:"fix the anatomy of hands and fingers, correct number of fingers"},
+ {id:"sharp",t:"وضوح و جزئیات",fa:"وضوح و جزئیات افزایش یابد بدون تغییر چهره‌ها",en:"upscale and sharpen details without altering the faces"}];
+const NOFACE_FA="چهره، هویت، حالت صورت، رنگ پوست، مدل مو و تناسب بدن هر دو نفر دقیقاً حفظ شود";
+const NOFACE_EN="Keep both faces, identity, expressions, skin tone, hairstyle and body proportions exactly unchanged";
+const cap=t=>t.charAt(0).toUpperCase()+t.slice(1);
+function curTool(){const t=TOOLMAP[S.tool];return t&&t.m.includes(S.mode)?t:TOOLS[0]}
+function chosen(){return SLOTS.map(([k])=>S.sel[k]).filter(Boolean)}
+function conflicts(sel){return D.conf.filter(([a,b])=>sel.includes(a)&&sel.includes(b))}
+function renderBuild(){const ch=chosen(),ed=S.mode==="edit";
+ $$("[data-mode]").forEach(b=>{const on=b.dataset.mode===S.mode;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});
+ $("#eopsWrap").hidden=!ed;$("#refw").hidden=ed;
+ $("#slotsT").textContent=ed?"صحنهٔ هدف (اختیاری)":"ترکیب من";
+ $("#eops").innerHTML=EOPS.map(o=>`<button type="button" class="chip${S.eops.includes(o.id)?" on":""}" data-eo="${o.id}" aria-pressed="${S.eops.includes(o.id)}">${esc(o.t)}</button>`).join("");
+ $$("#eops [data-eo]").forEach(b=>b.onclick=()=>{const i=S.eops.indexOf(b.dataset.eo);i<0?S.eops.push(b.dataset.eo):S.eops.splice(i,1);save();renderBuild()});
+ const tl=TOOLS.filter(t=>t.m.includes(S.mode));if(!tl.some(t=>t.id===S.tool))S.tool="generic";
+ $("#tool").innerHTML=tl.map(t=>`<option value="${t.id}">${esc(t.n)}</option>`).join("");$("#tool").value=S.tool;
+ $("#slots").innerHTML=SLOTS.map(([k,n])=>{const r=BY[S.sel[k]];
+  return `<div class="slot"><span class="nm">${n}</span><button type="button" class="pick" data-slot="${k}">${r?`<code>${r.c}</code><span>${esc(r.fa)}</span>`:`<span>انتخاب کن</span>`}</button>${r?`<button type="button" class="x" data-clr="${k}" aria-label="حذف ${n}">×</button>`:""}</div>`}).join("");
+ $$("#slots .pick").forEach(b=>b.onclick=()=>openSheet(b.dataset.slot));
+ $$("#slots .x").forEach(b=>b.onclick=()=>{delete S.sel[b.dataset.clr];save();renderBuild()});
+ const c=$("#cnt");c.textContent=fa(ch.length)+" از ۶ کد";c.className="cnt"+(ch.length>6?" over":"");
+ const cf=conflicts(ch);let w="";
+ if(ch.length>6)w+=`<div class="msg w">بیش از شش کد انتخاب کرده‌ای؛ یکی دو کد کم‌اثر را حذف کن.</div>`;
+ cf.forEach(([a,b,why])=>w+=`<div class="msg bad"><code>${a}</code> و <code>${b}</code>: ${esc(why)}</div>`);
+ if(!cf.length&&ch.length<=6&&(ed?ch.length>0:ch.length>=3))w+=`<div class="msg ok">ترکیب سازگار است.</div>`;
+ $("#warns").innerHTML=w;
+ $("#ratio").value=S.ratio;$("#lang").value=S.lang;$("#ref").checked=S.ref;renderOut()}
+function build(ov){const ch=(ov?ov.codes:chosen()).map(c=>BY[c]),R=ov?ov.ratio:S.ratio,fr=fa(R),TL=ov?(TOOLMAP[S.tool]||TOOLS[0]):curTool(),t=TL.id,ed=!ov&&S.mode==="edit";
+ const ops=ed?EOPS.filter(o=>S.eops.includes(o.id)):[];
+ if(ed?!ops.length:!ch.length)return null;
+ const scFa=ch.map(r=>r.fa).join("؛ "),scEn=ch.map(r=>r.en).join(", "),codes=ch.map(r=>r.c);
+ let f="",e="";
+ if(ed){
+  const keep=NOFACE_EN+"; keep the original pose and composition unless the edit requires otherwise";
+  f="عکس پیوست را ویرایش کن (از نو نساز). تغییرها: "+ops.map(o=>o.fa).join("؛ ")+"."+(ch.length?" مشخصات صحنهٔ هدف: "+scFa+".":"")+" "+NOFACE_FA+"؛ ژست و ترکیب‌بندی اصلی هم عوض نشود مگر خود تغییر لازم کند. نسبت تصویر "+fr+". بدون متن و نشان‌واره.";
+  if(t==="gemini")e="Using the attached photo, "+ops.map(o=>o.en).join(" and ")+"."+(ch.length?" Target scene: "+scEn+".":"")+" Constraints: "+keep+". Aspect ratio "+R+". No text or watermark.";
+  else if(t==="flux")e=ops.map(o=>cap(o.en)).join(". ")+"."+(ch.length?" Scene details: "+scEn+".":"")+" "+keep+".";
+  else e="Edit the attached photo; do not regenerate it. Changes: "+ops.map(o=>o.en).join("; ")+"."+(ch.length?" Target scene: "+scEn+".":"")+" "+keep+". Aspect ratio "+R+". No text or watermark.";
+ }else{
+  const refFa=S.ref?"از روی عکس مرجع، تصویری از همین دو نفر بساز. "+NOFACE_FA+".":"تصویری از یک زوج بساز.";
+  const refEn=S.ref?"Use the attached reference photo of the two people. "+NOFACE_EN+".":"Create an image of a couple.";
+  f=refFa+" ویژگی‌ها: "+scFa+". نسبت تصویر "+fr+". تصویر واقع‌گرایانه با بافت طبیعی پوست؛ بدون اعوجاج چهره، بدون انگشت یا عضو اضافه، بدون متن و نشان‌واره.";
+  if(t==="gpt")e=(S.ref?"Use the attached photo as the identity reference for both people. "+NOFACE_EN+". ":"")+"Create a photorealistic photograph of a couple. Scene: "+scEn+". Aspect ratio "+R+". Natural skin texture, correct hands and anatomy, no text or watermark.";
+  else if(t==="gemini")e=(S.ref?"Using the attached reference photo as the identity source, create":"Create")+" a photorealistic photograph of "+(S.ref?"the same couple":"a couple")+". Scene details: "+scEn+". Constraints: "+(S.ref?NOFACE_EN.charAt(0).toLowerCase()+NOFACE_EN.slice(1)+"; ":"")+"natural skin texture, no extra fingers or limbs, no text or watermark. Aspect ratio "+R+".";
+  else if(t==="flux")e="A photorealistic photograph of "+(S.ref?"the same two people as in the reference image, identical faces and hairstyles":"a couple")+", "+scEn+". Natural skin texture, correct hands, no text.";
+  else if(t==="mj"){f=null;e="couple, "+scEn+", photorealistic, natural skin texture --ar "+R+" --style raw --v 7"+(S.ref?" --oref <REF_URL> --ow 100":"")}
+  else if(t==="video"){
+   f="عکس پیوست را متحرک کن. فقط حرکت کوچک و طبیعی: "+scFa+". حرکت آرام دوربین به جلو، تکان نرم مو و پارچه با نسیم، پلک‌زدن و نفس‌کشیدن طبیعی. چهرهٔ هر دو نفر کاملاً ثابت و بدون تغییر بماند، بدون برش. ۵ ثانیه، نسبت "+fr+".";
+   e="Animate the attached photo of the couple. Subtle natural motion only: "+scEn+". Slow gentle camera push-in, hair and fabric moving softly in the breeze, natural blinking and breathing. Keep both faces stable and identical, no morphing, no cuts. 5 seconds, aspect ratio "+R+".";}
+  else e=refEn+" Scene: "+scEn+". Aspect ratio "+R+". Photorealistic with natural skin texture; no distorted faces, no extra fingers or limbs, no text or watermark.";
+ }
+ if(ov&&ov.anchor&&t!=="video"){if(t==="mj")e+=" --sref <SHOT1_URL>";else{if(f)f+=" تصویر شمارهٔ ۱ همین آلبوم را هم به‌عنوان مرجع هویت، لباس و رنگ‌بندی پیوست کن.";e+=" Also attach shot 1 of this album as the anchor: same couple, same outfit, same color grade."}}
+ return {fa:f,en:e,codes,tip:TL.tip}}
+function primary(o){const l=o.fa?S.lang:"en";return l==="fa"?o.fa:l==="en"?o.en:o.fa+"\n\n"+o.en}
+function renderOut(){const o=build(),h=$("#outs");curOut=o;
+ if(!o){h.innerHTML=`<div class="empty">${S.mode==="edit"?"از بالا حداقل یک نوع تغییر را انتخاب کن.":"از بالا چند نقش را انتخاب کن تا جمله کامل ساخته شود."}</div>`;updDock();return}
+ const l=o.fa?S.lang:"en";let s="";
+ if(l!=="en")s+=`<div class="out"><div class="lb"><span>فارسی</span><button type="button" class="b" data-cp="fa">کپی</button></div><p>${esc(o.fa)}</p></div>`;
+ if(l!=="fa")s+=`<div class="out"><div class="lb"><span>English</span><button type="button" class="b" data-cp="en">کپی</button></div><p class="ltr">${esc(o.en)}</p></div>`;
+ s+=`<p class="tipline">💡 ${esc(o.tip)}</p>`;
+ if(o.codes.length)s+=`<div class="tags">${o.codes.map(c=>`<code>${c}</code>`).join("")}</div>`;
+ if(navigator.share)s+=`<div class="acts" style="margin-top:10px"><button type="button" class="b" id="shr">اشتراک‌گذاری</button></div>`;
+ h.innerHTML=s;
+ $$("[data-cp]").forEach(b=>b.onclick=()=>copy(o[b.dataset.cp]));
+ const sh=$("#shr");if(sh)sh.onclick=()=>navigator.share({text:primary(o)}).catch(()=>{});
+ updDock()}
+$$("[data-mode]").forEach(b=>b.onclick=()=>{S.mode=b.dataset.mode;save();renderBuild()});
+$("#tool").onchange=e=>{S.tool=e.target.value;save();renderBuild()};
+$("#dkcp").onclick=()=>{if(curOut)copy(primary(curOut))};
+$("#lnk").onclick=()=>{const ch=chosen();if(!ch.length)return toast("اول چند کد انتخاب کن");copy(location.href.split("#")[0]+"#c="+ch.join(","))};
+$("#ratio").onchange=e=>{S.ratio=e.target.value;save();renderOut()};
+$("#lang").onchange=e=>{S.lang=e.target.value;save();renderOut()};
+$("#ref").onchange=e=>{S.ref=e.target.checked;save();renderOut()};
+$("#clr").onclick=()=>{S.sel={};save();renderBuild()};
+$("#rnd").onclick=()=>{let best=null;for(let t=0;t<40;t++){const sel={};RAND.forEach(k=>{const p=D.codes.map(r=>BY[r[0]]).filter(r=>r.role===k&&vis(r));if(p.length)sel[k]=p[Math.floor(Math.random()*p.length)].c});
+  if(!conflicts(Object.values(sel)).length){best=sel;break}}
+ if(best){S.sel=best;save();renderBuild()}else toast("دوباره امتحان کن")};
+$("#ssave").onclick=()=>{const ch=chosen();if(!ch.length)return toast("اول چند کد انتخاب کن");
+ const n=($("#sname").value||"").trim()||"ترکیب "+fa(S.saved.length+1);S.saved.unshift({n,sel:{...S.sel},ratio:S.ratio});S.saved=S.saved.slice(0,50);save();$("#sname").value="";toast("ذخیره شد")};
+/* ---------- انتخاب (sheet) ---------- */
+let shSlot="",shTarget="build";function openSheet(k,tg){shSlot=k;shTarget=tg||"build";$("#sh-t").textContent=SLOTS.find(s=>s[0]===k)[1];$("#sh-q").value="";$("#sheet").showModal();fillSheet()}
+function fillSheet(){const nq=norm($("#sh-q").value);const L=D.codes.map(r=>BY[r[0]]).filter(r=>r.role===shSlot&&vis(r)&&(!nq||norm(r.c+r.fa+r.en).includes(nq)));
+ $("#sh-l").innerHTML=L.map(r=>`<article class="cd"><div class="top"><code>${r.c}</code><button type="button" class="b p" data-pick="${r.c}">انتخاب</button></div><p class="fa">${esc(r.fa)}</p><p class="en" dir="ltr">${esc(r.en)}</p></article>`).join("")||`<div class="empty">موردی نیست.</div>`;
+ $$("#sh-l [data-pick]").forEach(b=>b.onclick=()=>{if(shTarget==="album"){S.alb.world[shSlot]=b.dataset.pick;save();closeSheet();renderAlbum()}else{S.sel[shSlot]=b.dataset.pick;save();closeSheet();renderBuild()}})}
+function closeSheet(){$("#sheet").close()}
+$("#sh-q").oninput=fillSheet;$("#sh-x").onclick=closeSheet;
+$$("dialog.sheet").forEach(d=>d.addEventListener("click",e=>{if(e.target===d)d.close()}));
+$$("[data-close]").forEach(b=>b.onclick=()=>b.closest("dialog").close());
+/* ---------- ترکیب‌ها ---------- */
+function loadSel(sel,ratio){S.sel={};Object.keys(sel).forEach(k=>{if(BY[sel[k]])S.sel[k]=sel[k]});if(ratio)S.ratio=ratio;save();go("build")}
+function renderRec(){
+ $("#recs").innerHTML=D.rec.map((r,i)=>`<article class="cd rc"><h3>${esc(r.title)}</h3><p class="muted">${esc(r.use)} · نسبت ${fa(r.ratio)}</p><div class="tg">${r.codes.map(c=>`<code>${c}</code>`).join("")}</div><p class="muted">${esc(r.note)}</p><div class="acts"><button type="button" class="b p" data-r="${i}">باز کردن در سازنده</button></div></article>`).join("");
+ $$("#recs [data-r]").forEach(b=>b.onclick=()=>{const r=D.rec[+b.dataset.r],sel={};r.codes.forEach(c=>{if(BY[c])sel[BY[c].role]=c});loadSel(sel,r.ratio)});
+ $("#mine").innerHTML=S.saved.length?S.saved.map((s,i)=>`<article class="cd rc"><h3>${esc(s.n)}</h3><div class="tg">${Object.values(s.sel).filter(c=>BY[c]).map(c=>`<code>${c}</code>`).join("")}</div><div class="acts"><button type="button" class="b p" data-o="${i}">باز کردن</button><button type="button" class="b" data-d="${i}">حذف</button></div></article>`).join(""):`<div class="empty">هنوز ترکیبی ذخیره نکرده‌ای.</div>`;
+ $$("#mine [data-o]").forEach(b=>b.onclick=()=>{const s=S.saved[+b.dataset.o];loadSel(s.sel,s.ratio)});
+ $$("#mine [data-d]").forEach(b=>b.onclick=()=>{S.saved.splice(+b.dataset.d,1);save();renderRec()})}
+/* ---------- حالت عکاس ---------- */
+function renderBoard(){const L=S.board;$("#bcnt").textContent=fa(L.filter(x=>x.d&&vis(BY[x.c])).length)+" از "+fa(L.filter(x=>vis(BY[x.c])).length);
+ $("#board").innerHTML=L.length?L.map((x,i)=>{const r=BY[x.c];if(!vis(r))return "";return `<div class="bi${x.d?" dn":""}"><input type="checkbox" ${x.d?"checked":""} data-t="${i}" aria-label="انجام شد"><div class="t"><code>${r.c}</code><div>${esc(r.fa)}</div></div><button type="button" class="rm noprint" data-rm="${i}" aria-label="حذف">×</button></div>`}).join(""):`<div class="empty">شات‌لیست خالی است. از کتابخانه کد اضافه کن یا شات‌لیست پیشنهادی را بزن.</div>`;
+ $$("#board [data-t]").forEach(b=>b.onchange=()=>{S.board[+b.dataset.t].d=b.checked?1:0;save();renderBoard()});
+ $$("#board [data-rm]").forEach(b=>b.onclick=()=>{S.board.splice(+b.dataset.rm,1);save();renderBoard()})}
+$("#bsug").onclick=()=>{D.board.forEach(c=>{if(BY[c]&&vis(BY[c])&&!S.board.some(x=>x.c===c))S.board.push({c,d:0})});save();renderBoard()};
+$("#bclr").onclick=()=>{if(!S.board.length||confirm("شات‌لیست پاک شود؟")){S.board=[];save();renderBoard()}};
+$("#bcopy").onclick=()=>copy(S.board.filter(x=>vis(BY[x.c])).map(x=>(x.d?"☑ ":"☐ ")+x.c+" — "+BY[x.c].fa).join("\n")||"");
+$("#bprint").onclick=()=>print();
+/* ---------- حالت محتاط، نصب، آفلاین ---------- */
+function applyModest(){$("#mbadge").hidden=!S.modest}
+$("#modest").onchange=e=>{S.modest=e.target.checked;if(S.modest){Object.keys(S.sel).forEach(k=>{if(BY[S.sel[k]].i)delete S.sel[k]})}save();applyModest();go(curView,true)};
+function applyTheme(){const r=document.documentElement;S.theme==="light"||S.theme==="dark"?r.dataset.theme=S.theme:r.removeAttribute("data-theme")}
+$("#theme").onchange=e=>{S.theme=e.target.value;save();applyTheme()};
+$("#wake").onchange=e=>{S.wake=e.target.checked;save();curView==="shoot"&&(S.wake?wakeOn():wakeOff())};
+async function persistInfo(){const el=$("#persist");try{if(navigator.storage&&navigator.storage.persisted){const p=await navigator.storage.persisted();el.textContent=p?"فعال است":"فعال نیست؛ در کمبود فضا مرورگر ممکن است داده‌ها را پاک کند"}else el.textContent="این مرورگر پشتیبانی نمی‌کند"}catch(e){el.textContent="نامشخص"}}
+$("#pers").onclick=async()=>{try{const ok=navigator.storage&&navigator.storage.persist&&await navigator.storage.persist();toast(ok?"ذخیره‌سازی پایدار شد":"مرورگر اجازه نداد")}catch(e){toast("پشتیبانی نمی‌شود")}persistInfo()};
+$("#gear").onclick=()=>{$("#modest").checked=!!S.modest;$("#theme").value=S.theme;$("#wake").checked=!!S.wake;persistInfo();$("#settings").showModal()};
+$("#exp").onclick=()=>{const d=new Date(),n="duoframe-backup-"+d.toISOString().slice(0,10)+".json",blob=new Blob([JSON.stringify({app:"ccb",v:2,at:d.toISOString(),state:S},null,1)],{type:"application/json"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("فایل پشتیبان ساخته شد")};
+$("#imp").onclick=()=>$("#impf").click();
+$("#impf").onchange=async e=>{const f=e.target.files[0];e.target.value="";if(!f)return;
+ try{const j=JSON.parse(await f.text());if(!j||j.app!=="ccb"||!j.state||typeof j.state!=="object")throw 0;const o=j.state,ok=c=>typeof c==="string"&&BY[c];
+  const n={fav:(Array.isArray(o.fav)?o.fav:[]).filter(ok),board:(Array.isArray(o.board)?o.board:[]).filter(b=>b&&ok(b.c)).map(b=>({c:b.c,d:b.d?1:0})),
+   sel:{},saved:(Array.isArray(o.saved)?o.saved:[]).filter(x=>x&&typeof x.n==="string"&&x.sel&&typeof x.sel==="object").slice(0,50).map(x=>{const sel={};Object.keys(x.sel).forEach(k=>{if(ok(x.sel[k]))sel[k]=x.sel[k]});return {n:x.n.slice(0,60),sel,ratio:RATIOS.includes(x.ratio)?x.ratio:"4:5"}})};
+  if(o.sel&&typeof o.sel==="object")Object.keys(o.sel).forEach(k=>{if(ok(o.sel[k]))n.sel[k]=o.sel[k]});
+  if(!confirm("اطلاعات فعلی با فایل پشتیبان جایگزین شود؟"))return;
+  Object.assign(S,n,{modest:!!o.modest,ratio:RATIOS.includes(o.ratio)?o.ratio:"4:5",ref:o.ref!==false,lang:["both","fa","en"].includes(o.lang)?o.lang:"both",mode:o.mode==="edit"?"edit":"create",tool:TOOLMAP[o.tool]?o.tool:"generic",eops:(Array.isArray(o.eops)?o.eops:[]).filter(x=>EOPS.some(p=>p.id===x)),theme:["light","dark"].includes(o.theme)?o.theme:"auto",wake:o.wake!==false,alb:cleanAlb(o.alb)||newAlb(),albums:(Array.isArray(o.albums)?o.albums:[]).map(cleanAlb).filter(Boolean).slice(0,20)});
+  save();applyTheme();applyModest();$("#modest").checked=S.modest;$("#theme").value=S.theme;$("#wake").checked=S.wake;go(curView,true);toast("بازیابی شد")}
+ catch(err){toast("فایل پشتیبان معتبر نیست")}};
+$("#wipe").onclick=()=>{if(confirm("همهٔ علاقه‌مندی‌ها، شات‌لیست و ترکیب‌های ذخیره‌شده پاک شود؟")){try{localStorage.removeItem("ccb1")}catch(e){}location.reload()}};
+$("#introx").onclick=()=>{S.intro=1;save();$("#intro").hidden=true};
+const RATIOS=["4:5","9:16","1:1","3:2","16:9"];
+let dp;addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e;$("#inst").style.display="inline-block"});
+$("#inst").onclick=async()=>{if(!dp)return;dp.prompt();await dp.userChoice;dp=null;$("#inst").style.display="none"};
+if(/iphone|ipad/i.test(navigator.userAgent)&&!navigator.standalone)$("#iosHint").style.display="block";
+addEventListener("appinstalled",()=>{$("#inst").style.display="none"});
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){
+ const had=!!navigator.serviceWorker.controller;
+ navigator.serviceWorker.register("sw.js").then(reg=>{
+  const show=w=>{if(w&&navigator.serviceWorker.controller){$("#upd").hidden=false;$("#updgo").onclick=()=>w.postMessage("SKIP_WAITING")}};
+  if(reg.waiting)show(reg.waiting);
+  reg.addEventListener("updatefound",()=>{const w=reg.installing;w&&w.addEventListener("statechange",()=>{if(w.state==="installed")show(reg.waiting||w)})});
+  document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")reg.update().catch(()=>{})})
+ }).catch(()=>{});
+ let rl=false;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(!had||rl)return;rl=true;location.reload()})}
+try{if(matchMedia("(display-mode: standalone)").matches&&navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
+/* ---------- برنامه‌ریز آلبوم ---------- */
+const AK={
+ establish:{t:"نمای معرف",why:"محیط را معرفی می‌کند؛ زوج کوچک در صحنهٔ بزرگ.",
+  frame:["widecinematiccouple","ultrawideenvironment","distantcoupleshot","fullbodycouple","negativespacecouple","layereddepthshot","deepfocuscouple"],
+  pose:["walkinghandinhand","sidebysidewalk","slowwalkromance","couplewalkingaway","standingforeheadtouch","leaningagainsteachother","windowstandingcouple"],
+  lens:["wideangle35mm","ultrawideperspective","handhelddocumentary"]},
+ medium:{t:"نمای متوسط",why:"ارتباط دو نفر و لباس‌ها را نشان می‌دهد.",
+  frame:["mediumshotcouple","mediumfullcouple","threequartercouple","eyelevelintimacy","ruleofthirdscouple","centeredcouplecomposition","shoulderlevelshot"],
+  pose:["frontembrace","armsaroundshoulder","interlockedarms","womanholdinghisarm","manleadinghergently","shoulderleanseated","lookingateachother","tablefortwocandid","sittingclosecouple","wallleanromance"],
+  lens:["portrait85mm","wideangle35mm"]},
+ close:{t:"نمای نزدیک احساسی",why:"حس و نگاه؛ قلب آلبوم.",
+  frame:["closeupcoupleportrait","extremecloseupcouple","shallowdepthcouple","sideprofilecouple","frontportraitcouple"],
+  pose:["foreheadtouch","headonshoulder","headonchest","facetofaceclose","lookingateachother","gentlefacecupping","romanticgaze","laughingfaceclose","whisperingtoher","headtiltromance","standingforeheadtouch"],
+  lens:["portrait85mm","bokehbackground","telephotocompression","softvignette"]},
+ detail:{t:"جزئیات",why:"دست‌ها، حلقه، گل؛ تنفس بین عکس‌های اصلی.",
+  frame:["weddingringcloseup","foregroundframing","shallowdepthcouple"],
+  pose:["handholdingcloseup","fingersintertwined","handoncheek","handonchest","handonwaist","gentlebacktouch"],
+  lens:["macrohanddetail","bokehbackground","foregroundbokeh"]},
+ motion:{t:"لحظه در حرکت",why:"انرژی و طبیعی‌بودن؛ آلبوم را زنده می‌کند.",
+  frame:["diagonalcomposition","offcentercinematic","lowanglecouple","dutchanglecouple","ruleofthirdscouple","backviewcouple"],
+  pose:["candidlaughingwalk","midstepcouple","turningbackglance","lookingbacktogether","handpullingperspective","runninghandinhand","playfulchase","spinningdancecouple","windblownhair","flowingdressmotion","unposedromance","dancefloorcandid","piggybackromance","jumpingcouple"],
+  lens:["handhelddocumentary","wideangle35mm","lensflarecinematic"]},
+ creative:{t:"زاویهٔ خلاقانه",why:"یک قاب متفاوت برای جلب نگاه در اسکرول.",
+  frame:["birdseyecouple","highanglecouple","lowanglecouple","dutchanglecouple","reflectionangle","doorwayframing","windowframecomposition","silhouetteframing","symmetricalcouple"],
+  pose:["backtobackcouple","walkingbackhug","hugfrombehindcloseup","backhugcouple","couplewalkingaway","leaningagainsteachother"],
+  lens:["foregroundbokeh","reflectiondistortion","glassrefraction","doubleexposureromance","lensflarecinematic"]},
+ seated:{t:"لحظهٔ آرام نشسته",why:"ریتم را کند می‌کند؛ صمیمیت بدون حرکت.",
+  frame:["mediumshotcouple","windowframecomposition","eyelevelintimacy","threequartercouple"],
+  pose:["windowseatcouple","parkbenchcouple","picnicblanketcouple","cafecoupleportrait","tablefortwocandid","sittinghandholding","shoulderleanseated","crossleggedcouple","balconyseatedromance","cozyblanketcuddle","sittingclosecouple"],
+  lens:["portrait85mm","bokehbackground"]},
+ candid:{t:"خنده و صمیمیت طبیعی",why:"عکس‌های غیرپوز که مخاطب را جذب می‌کند.",
+  frame:["mediumshotcouple","eyelevelintimacy","shoulderlevelshot","threequartercouple"],
+  pose:["laughingfaceclose","laughingembrace","playfulteasingcouple","playfulforeheadbump","whisperingtohim","shylookaway","candidembrace","comfortinghug"],
+  lens:["handhelddocumentary","portrait85mm"]},
+ back:{t:"نمای از پشت",why:"حس داستان و رمز و راز؛ چهره لازم نیست.",
+  frame:["backviewcouple","closeupfrombehind","threequarterrear","overtheshoulder","overtheshoulderromance"],
+  pose:["walkingcouplebackshot","hugfrombehindcloseup","backhugcouple","couplewalkingaway","romanticstarefrombehind","backofheadfocus","hairoverhisshoulder"],
+  lens:["telephotocompression","portrait85mm"]},
+ portrait:{t:"پرتره کلاسیک",why:"عکس اصلی برای چاپ یا تصویر پروفایل.",
+  frame:["frontportraitcouple","threequartercouple","symmetricalcouple","centeredcouplecomposition","closeupcoupleportrait"],
+  pose:["lookingateachother","womanlookingathim","manlookingather","headtiltromance","chinonshoulder","frontembrace","onearmembrace","protectiveembrace","standingforeheadtouch"],
+  lens:["portrait85mm","softvignette"]},
+ ceremony:{t:"لحظهٔ مراسم",why:"لحظه‌ای از مراسم با حالت موقر و مناسب خانواده.",
+  frame:["mirrorcandlestickframing","dresstrainshot","weddingringcloseup","mediumshotcouple","threequartercouple"],
+  pose:["firstlookmoment","adjustingtiemoment","veillift","bouquettossmoment","cakecuttingcouple","respectfuldistancecouple","familyfriendlyromance"],
+  lens:["portrait85mm","bokehbackground"]},
+ ending:{t:"قاب پایانی",why:"آلبوم را آرام می‌بندد؛ دور شدن یا سکوت.",
+  frame:["silhouetteframing","widecinematiccouple","negativespacecouple","distantcoupleshot"],
+  pose:["couplewalkingaway","walkingintosunset","standingforeheadtouch","slowdancestanding","leaningagainsteachother","gentlewaisthug"],
+  lens:["lensflarecinematic","telephotocompression","softvignette"]}};
+const ATPL=[
+ {id:"classic",t:"کلاسیک",ratio:"4:5",seq:["establish","medium","close","detail","motion","back","portrait","seated","candid","creative","medium"]},
+ {id:"ceremony",t:"مراسم و فرهنگ",ratio:"4:5",seq:["establish","ceremony","medium","detail","close","ceremony","back","portrait","candid","seated","ceremony"]},
+ {id:"reels",t:"ریلز / استوری",ratio:"9:16",seq:["motion","establish","creative","candid","back","close","motion","seated","detail","medium","motion"]}];
+const AWORLD=[["place","مکان"],["light","نور"],["outfit","لباس"],["style","سبک"],["weather","آب‌وهوا (اختیاری)"]];
+const AROLES=AWORLD.map(x=>x[0]),AREQ=["place","light","outfit","style"];
+const newAlb=()=>({n:"",tpl:"classic",size:6,ratio:"4:5",world:{},shots:[]});
+function cleanAlb(a){if(!a||typeof a!=="object")return null;const okc=c=>typeof c==="string"&&BY[c];
+ const tpl=ATPL.some(t=>t.id===a.tpl)?a.tpl:"classic",size=[6,9,12].includes(+a.size)?+a.size:6,world={};
+ AROLES.forEach(r=>{if(a.world&&okc(a.world[r])&&BY[a.world[r]].role===r)world[r]=a.world[r]});
+ const shots=(Array.isArray(a.shots)?a.shots:[]).slice(0,12).filter(x=>x&&AK[x.k]).map(x=>({k:x.k,pose:okc(x.pose)?x.pose:null,frame:okc(x.frame)?x.frame:null,lens:okc(x.lens)?x.lens:null,lock:x.lock?1:0}));
+ return {n:typeof a.n==="string"?a.n.slice(0,60):"",tpl,size,ratio:RATIOS.includes(a.ratio)?a.ratio:"4:5",world,shots}}
+const rpick=a=>a[Math.floor(Math.random()*a.length)];
+const okv=c=>BY[c]&&vis(BY[c]);
+function pickPref(a,used){if(!a.length)return null;const f=a.filter(x=>!used.has(x));return rpick(f.length?f:a)}
+function genShot(kind,world,others){
+ const K=AK[kind],wc=Object.values(world).filter(Boolean),us=k=>new Set(others.map(x=>x[k]));
+ const uP=us("pose"),uF=us("frame"),uL=us("lens"),P=K.pose.filter(okv),F=K.frame.filter(okv),L=K.lens.filter(okv);
+ for(let t=0;t<80;t++){
+  const pose=pickPref(P,uP),frame=pickPref(F,uF),lens=t<50?pickPref(L,uL):null;
+  if(!conflicts([...wc,pose,frame,lens].filter(Boolean)).length)return {k:kind,pose,frame,lens,lock:0}}
+ return {k:kind,pose:pickPref(P,uP),frame:pickPref(F,uF),lens:null,lock:0}}
+function randWorld(base,withWeather){
+ const pool=r=>D.codes.map(x=>BY[x[0]]).filter(x=>x.role===r&&vis(x));
+ for(let t=0;t<80;t++){const w=Object.assign({},base);
+  AREQ.forEach(r=>{if(!w[r])w[r]=rpick(pool(r)).c});
+  if(withWeather&&!w.weather&&Math.random()<.35)w.weather=rpick(pool("weather")).c;
+  if(!conflicts(Object.values(w)).length)return w}
+ return Object.assign({},base)}
+const aTpl=()=>ATPL.find(t=>t.id===S.alb.tpl)||ATPL[0];
+function genAlbum(){const A=S.alb,seq=aTpl().seq.slice(0,A.size-1).concat("ending"),old=A.shots||[],keep=old.length===seq.length,shots=[];
+ seq.forEach((k,i)=>{const o=keep&&old[i]&&old[i].lock&&old[i].k===k?old[i]:null;
+  shots.push(o||genShot(k,A.world,shots.concat(keep?old.filter((x,j)=>j>i&&x&&x.lock):[])))});
+ A.shots=shots}
+const shotCodes=(sh,w)=>[sh.pose,sh.frame,w.place,w.light,w.outfit,w.weather,w.style,sh.lens].filter(Boolean);
+const shotPrompt=i=>{const A=S.alb;return build({codes:shotCodes(A.shots[i],A.world),ratio:A.ratio,anchor:i>0})};
+function albumText(){const A=S.alb;return "آلبوم "+(A.n||"بدون‌نام")+" · "+fa(A.shots.length)+" عکس · نسبت "+fa(A.ratio)+"\nقاعده: عکس ۱ را اول بساز و برای بقیه‌ی عکس‌ها به‌عنوان مرجع پیوست کن.\n\n"+A.shots.map((x,i)=>{const o=shotPrompt(i);return "["+fa(i+1)+"] "+AK[x.k].t+"\n"+primary(o)}).join("\n\n")}
+function renderAlbum(){const A=S.alb;
+ Object.keys(A.world).forEach(k=>{if(!okv(A.world[k]))delete A.world[k]});
+ A.shots.forEach((x,i)=>{if([x.pose,x.frame,x.lens].some(c=>c&&!okv(c)))A.shots[i]=Object.assign(genShot(x.k,A.world,A.shots.filter((_,j)=>j!==i)),{lock:x.lock})});
+ $("#atpl").innerHTML=ATPL.map(t=>`<button type="button" class="chip${A.tpl===t.id?" on":""}" data-tpl="${t.id}" aria-pressed="${A.tpl===t.id}">${esc(t.t)}</button>`).join("");
+ $$("#atpl [data-tpl]").forEach(b=>b.onclick=()=>{const t=ATPL.find(x=>x.id===b.dataset.tpl);A.tpl=t.id;A.ratio=t.ratio;A.shots=[];save();renderAlbum()});
+ $("#asize").value=String(A.size);$("#aratio").value=A.ratio;
+ $("#aworld").innerHTML=AWORLD.map(([k,n])=>{const r=BY[A.world[k]];
+  return `<div class="slot"><span class="nm">${n}</span><button type="button" class="pick" data-aslot="${k}">${r?`<code>${r.c}</code><span>${esc(r.fa)}</span>`:`<span>انتخاب کن</span>`}</button>${r?`<button type="button" class="x" data-aclr="${k}" aria-label="حذف ${n}">×</button>`:""}</div>`}).join("");
+ $$("#aworld .pick").forEach(b=>b.onclick=()=>openSheet(b.dataset.aslot,"album"));
+ $$("#aworld .x").forEach(b=>b.onclick=()=>{delete A.world[b.dataset.aclr];save();renderAlbum()});
+ const cf=conflicts(Object.values(A.world));$("#awarn").innerHTML=cf.map(([a,b,why])=>`<div class="msg bad"><code>${a}</code> و <code>${b}</code>: ${esc(why)}</div>`).join("");
+ $("#agen").textContent=A.shots.length?"بازسازی آلبوم (قفل‌ها حفظ می‌شود)":"ساخت آلبوم";
+ $("#ashots").innerHTML=A.shots.map((x,i)=>{const K=AK[x.k],cs=[x.pose,x.frame,x.lens].filter(Boolean);
+  return `<article class="cd rc"><div class="top"><h3>${fa(i+1)} · ${esc(K.t)}</h3>${x.lock?`<span class="muted">🔒 قفل</span>`:""}</div>
+ <p class="muted">${esc(K.why)}${i===0?" این عکس لنگر آلبوم است.":""}</p>
+ <div class="tg">${cs.map(c=>`<code>${c}</code>`).join("")}</div>
+ <p class="muted">${[x.pose,x.frame].filter(Boolean).map(c=>esc(BY[c].fa)).join("؛ ")}</p>
+ <div class="acts"><button type="button" class="b p" data-ac="cp" data-i="${i}">کپی پرامپت</button><button type="button" class="b" data-ac="rr" data-i="${i}"${x.lock?" disabled":""}>عوض‌کن</button><button type="button" class="b${x.lock?" on":""}" data-ac="lk" data-i="${i}" aria-pressed="${!!x.lock}">${x.lock?"باز کردن قفل":"قفل"}</button></div></article>`}).join("");
+ $("#aactions").hidden=!A.shots.length;$("#aname").value=A.n||"";
+ $("#amine").innerHTML=S.albums.length?S.albums.map((a,i)=>`<article class="cd rc"><h3>${esc(a.n||"آلبوم بدون‌نام")}</h3><p class="muted">${esc((ATPL.find(t=>t.id===a.tpl)||ATPL[0]).t)} · ${fa(a.shots.length)} عکس · نسبت ${fa(a.ratio)}</p><div class="acts"><button type="button" class="b p" data-ao="${i}">باز کردن</button><button type="button" class="b" data-ad="${i}">حذف</button></div></article>`).join(""):`<div class="empty">هنوز آلبومی ذخیره نکرده‌ای.</div>`;
+ $$("#amine [data-ao]").forEach(b=>b.onclick=()=>{S.alb=cleanAlb(S.albums[+b.dataset.ao])||newAlb();save();renderAlbum();scrollTo(0,0)});
+ $$("#amine [data-ad]").forEach(b=>b.onclick=()=>{S.albums.splice(+b.dataset.ad,1);save();renderAlbum()})}
+$("#ashots").addEventListener("click",e=>{const b=e.target.closest("[data-ac]");if(!b)return;const A=S.alb,i=+b.dataset.i,a=b.dataset.ac;
+ if(a==="cp"){const o=shotPrompt(i);if(o)copy(primary(o))}
+ if(a==="lk"){A.shots[i].lock=A.shots[i].lock?0:1;save();renderAlbum()}
+ if(a==="rr"&&!A.shots[i].lock){const n=genShot(A.shots[i].k,A.world,A.shots.filter((_,j)=>j!==i));A.shots[i]=n;save();renderAlbum()}});
+$("#asize").onchange=e=>{S.alb.size=+e.target.value;S.alb.shots=[];save();renderAlbum()};
+$("#aratio").onchange=e=>{S.alb.ratio=e.target.value;save();renderAlbum()};
+$("#afrom").onclick=()=>{let n=0;AROLES.forEach(r=>{if(S.sel[r]){S.alb.world[r]=S.sel[r];n++}});save();renderAlbum();toast(n?"دنیای آلبوم از سازنده پر شد":"سازنده خالی است")};
+$("#arnd").onclick=()=>{S.alb.world=randWorld({},true);save();renderAlbum()};
+$("#agen").onclick=()=>{const A=S.alb;
+ if(conflicts(Object.values(A.world)).length)return toast("اول تعارض دنیای آلبوم را برطرف کن");
+ const miss=AREQ.some(r=>!A.world[r]);if(miss){A.world=randWorld(A.world,false);toast("موارد خالی تصادفی پر شد")}
+ genAlbum();save();renderAlbum()};
+$("#aname").oninput=e=>{S.alb.n=e.target.value.slice(0,60);save()};
+$("#acopyall").onclick=()=>copy(albumText());
+$("#asave").onclick=()=>{const A=S.alb;if(!A.shots.length)return;A.n=($("#aname").value||"").trim()||"آلبوم "+fa(S.albums.length+1);
+ S.albums.unshift(cleanAlb(JSON.parse(JSON.stringify(A))));S.albums=S.albums.slice(0,20);save();renderAlbum();toast("آلبوم ذخیره شد")};
+$("#abd").onclick=()=>{let n=0;S.alb.shots.forEach(x=>{if(x.pose&&!S.board.some(b=>b.c===x.pose)){S.board.push({c:x.pose,d:0});n++}});save();toast(n?fa(n)+" ژست به شات‌لیست اضافه شد":"همه قبلاً در شات‌لیست بودند")};
+/* ---------- شروع ---------- */
+S.mode=S.mode==="edit"?"edit":"create";if(!TOOLMAP[S.tool])S.tool="generic";if(!Array.isArray(S.eops))S.eops=[];S.eops=S.eops.filter(x=>EOPS.some(p=>p.id===x));
+if(!["auto","light","dark"].includes(S.theme))S.theme="auto";
+S.alb=cleanAlb(S.alb)||newAlb();S.albums=(Array.isArray(S.albums)?S.albums:[]).map(cleanAlb).filter(Boolean).slice(0,20);
+if(!RATIOS.includes(S.ratio))S.ratio="4:5";
+applyTheme();applyModest();$("#modest").checked=!!S.modest;
+$("#intro").hidden=!!S.intro;
+function fromHash(){const m=/[#&]c=([\w,]+)/.exec(location.hash);if(!m)return false;const sel={};m[1].split(",").forEach(c=>{if(BY[c]&&vis(BY[c]))sel[BY[c].role]=c});if(!Object.keys(sel).length)return false;S.sel=sel;S.mode="create";save();return true}
+const QP=new URLSearchParams(location.search);
+const shared=QP.get("text")||QP.get("title")||QP.get("q");if(shared){q=shared.slice(0,80);$("#q").value=q}
+let startTab=QP.get("tab");if(fromHash())startTab="build";
+renderChips();
+if(["lib","build","album","rec","shoot"].includes(startTab))go(startTab,true);else renderLib();
+</script></body></html>

@@ -1,0 +1,2562 @@
+[
+ {
+  "c": "backviewcouple",
+  "fa": "عکاسی از زوج از پشت سر",
+  "en": "photographed from behind the couple",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "dutchanglecouple",
+  "fa": "دوربین کمی کج؛ حس پویا و سینمایی",
+  "en": "slightly tilted camera angle, dynamic cinematic feel",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "overtheshoulder",
+  "fa": "عکاسی از روی شانهٔ یکی از افراد",
+  "en": "over-the-shoulder shot",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "overtheshoulderromance",
+  "fa": "نمای پشت؛ زن به شانهٔ مرد تکیه داده است",
+  "en": "rear view over his shoulder, she leans on his shoulder",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "frontportraitcouple",
+  "fa": "پرتره زوج از روبه‌رو",
+  "en": "front-facing portrait of the couple",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "sideprofilecouple",
+  "fa": "نمای نیم‌رخ زوج",
+  "en": "side profile of the couple",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "fullsideview",
+  "fa": "نمای بدن زوج از پهلو",
+  "en": "full-body side view of the couple",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "threequartercouple",
+  "fa": "زاویهٔ سه‌رخ از روبه‌رو",
+  "en": "three-quarter front angle",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "threequarterrear",
+  "fa": "زاویهٔ سه‌رخ از پشت",
+  "en": "three-quarter rear angle",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "lowanglecouple",
+  "fa": "عکاسی از زاویهٔ پایین",
+  "en": "low-angle shot",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "highanglecouple",
+  "fa": "عکاسی از زاویهٔ بالا",
+  "en": "high-angle shot",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "birdseyecouple",
+  "fa": "عکاسی از بالای سر، مستقیم رو به پایین",
+  "en": "bird's-eye view shooting straight down",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "wormseyeromance",
+  "fa": "زاویهٔ بسیار پایین و دراماتیک",
+  "en": "very low dramatic worm's-eye angle",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "eyelevelintimacy",
+  "fa": "دوربین هم‌سطح چشم‌ها",
+  "en": "camera at eye level for intimacy",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "distantcoupleshot",
+  "fa": "زوج کوچک در قابی وسیع",
+  "en": "small couple in a wide frame",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "closeupfrombehind",
+  "fa": "نمای نزدیک سر و شانه‌ها از پشت",
+  "en": "close-up of heads and shoulders from behind",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "profilekissshot",
+  "fa": "نمای نیم‌رخ هنگام بوسیدن",
+  "en": "profile view during a kiss",
+  "cat": 1,
+  "role": "frame",
+  "i": 1
+ },
+ {
+  "c": "shoulderlevelshot",
+  "fa": "دوربین هم‌ارتفاع شانه‌های زوج",
+  "en": "camera at the couple's shoulder height",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "diagonalcomposition",
+  "fa": "ترکیب‌بندی مورب و پویا",
+  "en": "dynamic diagonal composition",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "reflectionangle",
+  "fa": "عکاسی از زوج از طریق بازتاب",
+  "en": "photographed through a reflection",
+  "cat": 1,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "headonshoulder",
+  "fa": "زن سرش را روی شانهٔ مرد می‌گذارد",
+  "en": "she rests her head on his shoulder",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "headonchest",
+  "fa": "زن سرش را روی سینهٔ مرد می‌گذارد",
+  "en": "she rests her head on his chest",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "foreheadtouch",
+  "fa": "پیشانی‌های زوج به هم می‌چسبد",
+  "en": "foreheads touching",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "foreheadkiss",
+  "fa": "مرد پیشانی زن را می‌بوسد",
+  "en": "he kisses her forehead",
+  "cat": 2,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "templekiss",
+  "fa": "بوسه‌ای ملایم بر شقیقه",
+  "en": "a gentle kiss on the temple",
+  "cat": 2,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "cheekkiss",
+  "fa": "مرد گونهٔ زن را می‌بوسد",
+  "en": "he kisses her cheek",
+  "cat": 2,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "nosetouch",
+  "fa": "بینی‌های زوج به هم برخورد می‌کند",
+  "en": "noses touching",
+  "cat": 2,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "facetofaceclose",
+  "fa": "چهره‌ها از فاصلهٔ نزدیک روبه‌روی هم است",
+  "en": "faces close together, facing each other",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "eyesclosedintimacy",
+  "fa": "زوج در لحظه‌ای صمیمی چشم‌ها را می‌بندند",
+  "en": "eyes closed in an intimate moment",
+  "cat": 2,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "lookingateachother",
+  "fa": "زوج به یکدیگر نگاه می‌کنند",
+  "en": "looking at each other",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "lookingawaytogether",
+  "fa": "هر دو به یک جهت نگاه می‌کنند",
+  "en": "both looking in the same direction",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "womanlookingathim",
+  "fa": "زن از کنار به مرد نگاه می‌کند",
+  "en": "she looks at him from the side",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "manlookingather",
+  "fa": "مرد با مهربانی به زن نگاه می‌کند",
+  "en": "he looks at her tenderly",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "headtiltromance",
+  "fa": "سرها با کمی انحنا به هم نزدیک می‌شود",
+  "en": "heads tilted slightly toward each other",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "chinonshoulder",
+  "fa": "چانهٔ زن روی شانهٔ مرد قرار می‌گیرد",
+  "en": "her chin resting on his shoulder",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "cheektocheek",
+  "fa": "گونه‌های زوج به هم می‌چسبد",
+  "en": "cheek to cheek",
+  "cat": 2,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "backofheadfocus",
+  "fa": "تمرکز تصویر بر پشت سر",
+  "en": "focus on the back of the head",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "hairoverhisshoulder",
+  "fa": "موهای زن روی شانهٔ مرد می‌ریزد",
+  "en": "her hair falls over his shoulder",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "gentlefacecupping",
+  "fa": "مرد صورت زن را آرام در دست می‌گیرد",
+  "en": "he gently cups her face",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "foreheadagainstbackhead",
+  "fa": "تماس پیشانی یکی با پشت سر دیگری",
+  "en": "forehead resting against the other's back of head",
+  "cat": 2,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "backhugcouple",
+  "fa": "مرد زن را از پشت در آغوش می‌گیرد",
+  "en": "he hugs her from behind",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "frontembrace",
+  "fa": "زوج از روبه‌رو همدیگر را در آغوش می‌گیرند",
+  "en": "a front embrace",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "tightromantichug",
+  "fa": "آغوش محکم و سرشار از احساس",
+  "en": "a tight, emotional hug",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "gentlewaisthug",
+  "fa": "دست‌ها آرام دور کمر حلقه می‌شود",
+  "en": "arms wrapped gently around the waist",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "armsaroundneck",
+  "fa": "دست‌ها دور گردن شریک عاطفی حلقه می‌شود",
+  "en": "arms around the partner's neck",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "armsaroundshoulder",
+  "fa": "یک دست دور شانه قرار می‌گیرد",
+  "en": "one arm around the shoulder",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "interlockedarms",
+  "fa": "راه رفتن با بازوهای در هم حلقه‌شده",
+  "en": "walking with arms linked",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "handholdingcloseup",
+  "fa": "نمای نزدیک دست‌های به هم گرفته",
+  "en": "close-up of held hands",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "fingersintertwined",
+  "fa": "انگشت‌های زوج در هم گره می‌خورد",
+  "en": "fingers intertwined",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "handoncheek",
+  "fa": "یک دست گونهٔ طرف مقابل را لمس می‌کند",
+  "en": "a hand touching the other's cheek",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "handonchest",
+  "fa": "دست زن روی سینهٔ مرد قرار می‌گیرد",
+  "en": "her hand resting on his chest",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "handonwaist",
+  "fa": "دست روی کمر قرار می‌گیرد",
+  "en": "a hand resting on the waist",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "gentlebacktouch",
+  "fa": "لمس ملایم پشت بدن",
+  "en": "a gentle touch on the back",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "hugfrombehindcloseup",
+  "fa": "نمای نزدیک آغوش از پشت",
+  "en": "close-up of a hug from behind",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "chinrestembrace",
+  "fa": "تکیه دادن سر یا چانه هنگام در آغوش گرفتن",
+  "en": "resting the head or chin during an embrace",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "protectiveembrace",
+  "fa": "مرد با حالتی حمایتگر زن را در آغوش می‌گیرد",
+  "en": "he holds her in a protective embrace",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "onearmembrace",
+  "fa": "در آغوش گرفتن با یک دست",
+  "en": "a one-armed embrace",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "foreheadembrace",
+  "fa": "آغوش همراه با تماس پیشانی‌ها",
+  "en": "an embrace with foreheads touching",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "comfortinghug",
+  "fa": "آغوش آرامش‌بخش",
+  "en": "a comforting hug",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "candidembrace",
+  "fa": "آغوش خودجوش و طبیعی",
+  "en": "a spontaneous, natural embrace",
+  "cat": 3,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "walkingcouplebackshot",
+  "fa": "نمای پشت زوج هنگام راه رفتن",
+  "en": "the couple walking, seen from behind",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "walkinghandinhand",
+  "fa": "راه رفتن دست‌در‌دست",
+  "en": "walking hand in hand",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "slowwalkromance",
+  "fa": "قدم زدن آرام و عاشقانه",
+  "en": "a slow romantic stroll",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "walkingbackhug",
+  "fa": "راه رفتن همراه با آغوش از پشت",
+  "en": "walking while hugging from behind",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "couplewalkingaway",
+  "fa": "زوج از دوربین دور می‌شوند",
+  "en": "the couple walking away from the camera",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "walkingintosunset",
+  "fa": "راه رفتن به‌سوی غروب خورشید",
+  "en": "walking toward the sunset",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "crosswalkcouple",
+  "fa": "راه رفتن زوج روی خط عابر پیاده",
+  "en": "the couple crossing at a crosswalk",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "streetwalkcandid",
+  "fa": "لحظهٔ طبیعی قدم زدن در خیابان",
+  "en": "a candid street walk",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "sidebysidewalk",
+  "fa": "راه رفتن در کنار یکدیگر",
+  "en": "walking side by side",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "womanholdinghisarm",
+  "fa": "زن بازوی مرد را می‌گیرد",
+  "en": "she holds his arm",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "manleadinghergently",
+  "fa": "مرد زن را آرام همراهی و هدایت می‌کند",
+  "en": "he gently leads her",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "slowdancestanding",
+  "fa": "رقص آرام در حالت ایستاده",
+  "en": "a slow standing dance",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "spinningheraround",
+  "fa": "مرد زن را آرام می‌چرخاند",
+  "en": "he gently spins her around",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "pullinghercloser",
+  "fa": "مرد زن را به خود نزدیک می‌کند",
+  "en": "he pulls her closer",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "standingforeheadtouch",
+  "fa": "تماس پیشانی‌ها در حالت ایستاده",
+  "en": "standing with foreheads touching",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "backtobackcouple",
+  "fa": "زوج پشت‌به‌پشت می‌ایستند",
+  "en": "standing back to back",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "leaningagainsteachother",
+  "fa": "بدن‌ها به یکدیگر تکیه می‌دهد",
+  "en": "leaning against each other",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "wallleanromance",
+  "fa": "زوج به دیوار تکیه می‌دهند",
+  "en": "leaning against a wall together",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "windowstandingcouple",
+  "fa": "زوج نزدیک پنجره می‌ایستند",
+  "en": "standing near a window",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "windyhairwalk",
+  "fa": "راه رفتن با موهایی که در باد حرکت می‌کند",
+  "en": "walking with hair moving in the wind",
+  "cat": 4,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "sittingclosecouple",
+  "fa": "نشستن نزدیک به هم و در کنار یکدیگر",
+  "en": "sitting close together side by side",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "shoulderleanseated",
+  "fa": "زن هنگام نشستن به شانهٔ مرد تکیه می‌دهد",
+  "en": "seated, she leans on his shoulder",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "laprestromance",
+  "fa": "زن سرش را روی پاهای مرد می‌گذارد",
+  "en": "she rests her head on his lap",
+  "cat": 5,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "couchcuddle",
+  "fa": "آغوش راحت و صمیمی روی مبل",
+  "en": "a cozy cuddle on the couch",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "windowseatcouple",
+  "fa": "نشستن با هم کنار پنجره",
+  "en": "sitting together by the window",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "bedsidecoupleportrait",
+  "fa": "پرتره زوج نشسته بر لبهٔ تخت",
+  "en": "a couple portrait seated on the edge of a bed",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "floorcuddle",
+  "fa": "نشستن روی زمین و در آغوش گرفتن",
+  "en": "sitting on the floor in an embrace",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "backtobackseated",
+  "fa": "نشستن پشت‌به‌پشت",
+  "en": "sitting back to back",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "kneelingromance",
+  "fa": "یکی از افراد مقابل دیگری زانو می‌زند",
+  "en": "one partner kneels in front of the other",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "crossleggedcouple",
+  "fa": "نشستن چهارزانو و نزدیک به هم",
+  "en": "sitting cross-legged close together",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "legsintertwined",
+  "fa": "نشستن با پاهای نزدیک یا در هم قرارگرفته",
+  "en": "sitting with legs close or intertwined",
+  "cat": 5,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "headinlap",
+  "fa": "قرار گرفتن سر روی پاهای طرف مقابل",
+  "en": "head resting in the partner's lap",
+  "cat": 5,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "sittinghandholding",
+  "fa": "نشستن همراه با گرفتن دست یکدیگر",
+  "en": "sitting while holding hands",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "seatedforeheadkiss",
+  "fa": "بوسه بر پیشانی در حالت نشسته",
+  "en": "a forehead kiss while seated",
+  "cat": 5,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "tablefortwocandid",
+  "fa": "لحظهٔ طبیعی نشستن روبه‌روی هم پشت میز",
+  "en": "a candid moment seated across a table",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "cafecoupleportrait",
+  "fa": "پرتره زوج روی صندلی‌های کافه",
+  "en": "a couple portrait on café chairs",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "balconyseatedromance",
+  "fa": "نشستن عاشقانه در بالکن",
+  "en": "sitting romantically on a balcony",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "parkbenchcouple",
+  "fa": "نشستن با هم روی نیمکت پارک",
+  "en": "sitting together on a park bench",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "picnicblanketcouple",
+  "fa": "نشستن روی زیرانداز پیک‌نیک",
+  "en": "sitting on a picnic blanket",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "cozyblanketcuddle",
+  "fa": "در آغوش گرفتن زیر یک پتوی گرم",
+  "en": "cuddling under a warm blanket",
+  "cat": 5,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "almostkiss",
+  "fa": "چهره‌ها بسیار نزدیک، درست پیش از بوسه",
+  "en": "faces very close, just before a kiss",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "softromantickiss",
+  "fa": "بوسهٔ ملایم و طبیعی",
+  "en": "a soft, natural kiss",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "passionatekiss",
+  "fa": "بوسهٔ پرشور و سرشار از احساس",
+  "en": "a passionate, emotional kiss",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "kissintherain",
+  "fa": "بوسیدن زیر باران",
+  "en": "kissing in the rain",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "sunsetkiss",
+  "fa": "بوسه با پس‌زمینهٔ غروب",
+  "en": "a kiss against a sunset backdrop",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "silhouettekiss",
+  "fa": "بوسه در نمای ضدنور و سایه‌وار",
+  "en": "a kiss in backlit silhouette",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "surprisecheekkiss",
+  "fa": "بوسهٔ ناگهانی بر گونه",
+  "en": "a surprise kiss on the cheek",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "laughingfaceclose",
+  "fa": "خندیدن با هم، از فاصلهٔ نزدیک",
+  "en": "laughing together up close",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "nosekissmoment",
+  "fa": "تماس شیرین بینی‌ها",
+  "en": "a sweet nose-to-nose moment",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "whisperingtoher",
+  "fa": "مرد در گوش زن زمزمه می‌کند",
+  "en": "he whispers in her ear",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "whisperingtohim",
+  "fa": "زن در گوش مرد زمزمه می‌کند",
+  "en": "she whispers in his ear",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "playfulforeheadbump",
+  "fa": "تماس بازیگوشانهٔ پیشانی‌ها",
+  "en": "a playful forehead bump",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "romanticgaze",
+  "fa": "نگاه عمیق و عاشقانه",
+  "en": "a deep romantic gaze",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "shylookaway",
+  "fa": "یکی با خجالت نگاهش را برمی‌گرداند",
+  "en": "one partner shyly looks away",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "playfulteasingcouple",
+  "fa": "تعامل شوخ و بازیگوشانهٔ زوج",
+  "en": "a playful, teasing interaction",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "laughingembrace",
+  "fa": "خندیدن در آغوش یکدیگر",
+  "en": "laughing in each other's arms",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "romanticstarefrombehind",
+  "fa": "نگاه عاشقانه از پشت شانهٔ طرف مقابل",
+  "en": "a romantic look over the partner's shoulder",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "gentlehairkiss",
+  "fa": "بوسهٔ ملایم بر بالای سر یا موها",
+  "en": "a gentle kiss on the top of the head or hair",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "noseagainstcheek",
+  "fa": "قرار گرفتن آرام بینی روی گونه",
+  "en": "nose resting softly against the cheek",
+  "cat": 6,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "emotionalreunionhug",
+  "fa": "آغوش احساسی پس از دوری طولانی",
+  "en": "an emotional reunion hug after a long separation",
+  "cat": 6,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "extremecloseupcouple",
+  "fa": "نمای بسیار نزدیک از جزئیات چهره‌ها",
+  "en": "extreme close-up of facial details",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "closeupcoupleportrait",
+  "fa": "پرتره نزدیک از چهرهٔ زوج",
+  "en": "close-up portrait of the couple's faces",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "mediumshotcouple",
+  "fa": "کادر از کمر به بالا",
+  "en": "medium shot from the waist up",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "mediumfullcouple",
+  "fa": "کادر از ران به بالا",
+  "en": "medium-full shot from the thighs up",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "fullbodycouple",
+  "fa": "نمای کامل بدن هر دو نفر",
+  "en": "full-body shot of both people",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "widecinematiccouple",
+  "fa": "زوج در قاب باز و سینمایی",
+  "en": "couple in a wide cinematic frame",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "ultrawideenvironment",
+  "fa": "قاب بسیار باز؛ زوج همراه با محیط وسیع",
+  "en": "very wide frame showing the couple in a vast environment",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "negativespacecouple",
+  "fa": "فضای خالی زیاد اطراف زوج",
+  "en": "lots of empty negative space around the couple",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "centeredcouplecomposition",
+  "fa": "زوج در مرکز کادر قرار می‌گیرند",
+  "en": "couple centered in the frame",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "offcentercinematic",
+  "fa": "زوج در یک سمت کادر قرار می‌گیرند",
+  "en": "couple placed off-center, cinematic",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "foregroundframing",
+  "fa": "عناصر پیش‌زمینه زوج را قاب می‌گیرند",
+  "en": "foreground elements framing the couple",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "doorwayframing",
+  "fa": "قاب گرفتن زوج با چارچوب در",
+  "en": "couple framed by a doorway",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "windowframecomposition",
+  "fa": "قاب گرفتن زوج با پنجره",
+  "en": "couple framed by a window",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "silhouetteframing",
+  "fa": "زوج به‌صورت سایه‌وار، عنصر اصلی قاب هستند",
+  "en": "the couple as a silhouette, the main element of the frame",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "layereddepthshot",
+  "fa": "چیدمان لایه‌ای پیش‌زمینه، زوج و پس‌زمینه",
+  "en": "layered depth: foreground, couple, background",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "shallowdepthcouple",
+  "fa": "زوج واضح و پس‌زمینه محو",
+  "en": "sharp couple with a blurred background",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "deepfocuscouple",
+  "fa": "زوج و محیط هر دو با وضوح بیشتر",
+  "en": "deep focus, couple and surroundings both sharp",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "symmetricalcouple",
+  "fa": "ترکیب‌بندی متقارن",
+  "en": "symmetrical composition",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "ruleofthirdscouple",
+  "fa": "قرارگیری زوج بر اساس قانون یک‌سوم",
+  "en": "couple placed by the rule of thirds",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "verticalstorycrop",
+  "fa": "قاب عمودی ۹:۱۶ مناسب استوری",
+  "en": "vertical 9:16 framing for stories",
+  "cat": 7,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "goldenhourglow",
+  "fa": "نور گرم ساعت طلایی پیش از غروب",
+  "en": "warm golden-hour light before sunset",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "softmorninglight",
+  "fa": "نور نرم صبحگاهی",
+  "en": "soft morning light",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "sunsetbacklight",
+  "fa": "نور غروب از پشت زوج",
+  "en": "sunset light from behind the couple",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "sunrisehaze",
+  "fa": "نور طلوع در فضایی مه‌آلود",
+  "en": "sunrise light in a hazy atmosphere",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "bluehourromance",
+  "fa": "حال‌وهوای آبی پس از غروب",
+  "en": "blue-hour mood after sunset",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "moonlitcouple",
+  "fa": "نور ملایم ماه",
+  "en": "soft moonlight",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "rimlightcouple",
+  "fa": "خط نور روی لبه‌های بدن",
+  "en": "rim light outlining the edges of the bodies",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "softwindowlight",
+  "fa": "نور طبیعی و نرم پنجره",
+  "en": "soft natural window light",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "dramaticlowkey",
+  "fa": "نورپردازی تیره با کنتراست بالا",
+  "en": "dark, high-contrast low-key lighting",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "highkeysoftportrait",
+  "fa": "نورپردازی روشن و ملایم",
+  "en": "bright, soft high-key lighting",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "cinematicbacklight",
+  "fa": "نور سینمایی از پشت",
+  "en": "cinematic backlight",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "dappledtreelight",
+  "fa": "نور لکه‌لکهٔ خورشید از میان برگ‌ها",
+  "en": "dappled sunlight through leaves",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "neonromancelight",
+  "fa": "نور نئون رنگی",
+  "en": "colorful neon light",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "warmtungstenlight",
+  "fa": "نور گرم لامپ تنگستن",
+  "en": "warm tungsten bulb light",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "coolmoodylighting",
+  "fa": "نور سرد با حال‌وهوای احساسی",
+  "en": "cool, moody lighting",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "candlelightcouple",
+  "fa": "نور عاشقانهٔ شمع",
+  "en": "romantic candlelight",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "streetlampglow",
+  "fa": "نور چراغ خیابان در شب",
+  "en": "streetlamp glow at night",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "softovercastlight",
+  "fa": "نور یکنواخت و نرم روز ابری",
+  "en": "even, soft overcast light",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "volumetriclightcouple",
+  "fa": "پرتوهای نور قابل‌مشاهده در هوا",
+  "en": "visible light rays in the air",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "lightleakfilm",
+  "fa": "افکت نشت نور فیلم آنالوگ",
+  "en": "analog film light-leak effect",
+  "cat": 8,
+  "role": "light",
+  "i": 0
+ },
+ {
+  "c": "romanticbeachcouple",
+  "fa": "زوج در ساحل",
+  "en": "couple on a beach",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "mountainviewcouple",
+  "fa": "زوج با چشم‌انداز کوهستان",
+  "en": "couple with a mountain view",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "citynightcouple",
+  "fa": "زوج در شهر، هنگام شب",
+  "en": "couple in the city at night",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "rainystreetromance",
+  "fa": "زوج در خیابان خیس پس از باران",
+  "en": "couple on a wet street after rain",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "forestromance",
+  "fa": "زوج در میان جنگل",
+  "en": "couple in a forest",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "flowerfieldcouple",
+  "fa": "زوج در دشت گل",
+  "en": "couple in a field of flowers",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "lavenderfieldromance",
+  "fa": "زوج در مزرعهٔ اسطوخودوس",
+  "en": "couple in a lavender field",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "rooftopcouple",
+  "fa": "زوج روی پشت‌بام",
+  "en": "couple on a rooftop",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "trainstationromance",
+  "fa": "لحظهٔ عاشقانه در ایستگاه قطار",
+  "en": "a romantic moment at a train station",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "subwaycouple",
+  "fa": "زوج در فضای مترو",
+  "en": "couple in a subway setting",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "bookstorecouple",
+  "fa": "زوج در کتاب‌فروشی",
+  "en": "couple in a bookstore",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "libraryromance",
+  "fa": "زوج در کتابخانه",
+  "en": "couple in a library",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "cozycafedate",
+  "fa": "قرار عاشقانه در کافه‌ای دنج",
+  "en": "a date in a cozy café",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "luxuryhotelcouple",
+  "fa": "زوج در هتل لوکس",
+  "en": "couple in a luxury hotel",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "apartmentwindowromance",
+  "fa": "زوج کنار پنجرهٔ آپارتمان",
+  "en": "couple by an apartment window",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "oldtowncouple",
+  "fa": "زوج در خیابان‌های بافت قدیمی شهر",
+  "en": "couple in the streets of an old town",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "japanstreetromance",
+  "fa": "زوج در خیابانی با فضای ژاپنی",
+  "en": "couple on a Japanese-style street",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "cherryblossomcouple",
+  "fa": "زوج زیر شکوفه‌های گیلاس",
+  "en": "couple under cherry blossoms",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "christmasstreetcouple",
+  "fa": "زوج در خیابان با تزئینات کریسمس",
+  "en": "couple on a street with Christmas decorations",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "desertsunsetcouple",
+  "fa": "زوج در منظرهٔ بیابانی هنگام غروب",
+  "en": "couple in a desert landscape at sunset",
+  "cat": 9,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "slowshuttercouple",
+  "fa": "ثبت اثر حرکت با سرعت شاتر پایین",
+  "en": "motion captured with a slow shutter speed",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "motionblurbackground",
+  "fa": "پس‌زمینه با تاری حرکت؛ زوج واضح",
+  "en": "motion-blurred background, sharp couple",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "walkingmotionblur",
+  "fa": "تاری حرکت هنگام راه رفتن",
+  "en": "motion blur while walking",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "windblownhair",
+  "fa": "موهای در حال حرکت با باد",
+  "en": "hair blowing in the wind",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "flowingdressmotion",
+  "fa": "حرکت و موج لباس همراه باد",
+  "en": "dress flowing with the wind",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "spinningdancecouple",
+  "fa": "چرخیدن زوج هنگام رقص",
+  "en": "the couple spinning while dancing",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "foreheadtouchcandid",
+  "fa": "تماس خودجوش و طبیعی پیشانی‌ها",
+  "en": "a candid forehead touch",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "candidlaughingwalk",
+  "fa": "راه رفتن همراه با خندهٔ طبیعی",
+  "en": "walking with natural laughter",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "midstepcouple",
+  "fa": "ثبت تصویر دقیقاً در میانهٔ قدم برداشتن",
+  "en": "caught exactly mid-step",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "turningbackglance",
+  "fa": "یکی از افراد به پشت سر نگاه می‌کند",
+  "en": "one partner glances back",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "lookingbacktogether",
+  "fa": "هر دو برمی‌گردند و به دوربین نگاه می‌کنند",
+  "en": "both turn and look back at the camera",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "handpullingperspective",
+  "fa": "زاویهٔ دید کسی که با دست همراهی می‌شود",
+  "en": "point of view of being led by the hand",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "runninghandinhand",
+  "fa": "دویدن دست‌در‌دست",
+  "en": "running hand in hand",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "playfulchase",
+  "fa": "دنبال کردن بازیگوشانهٔ یکدیگر",
+  "en": "a playful chase",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "jumpingcouple",
+  "fa": "پریدن هم‌زمان زوج",
+  "en": "the couple jumping together",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "piggybackromance",
+  "fa": "زن روی پشت مرد قرار می‌گیرد",
+  "en": "a piggyback ride",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "bridalcarry",
+  "fa": "مرد زن را در آغوش بلند می‌کند",
+  "en": "he carries her in his arms",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "dipkisspose",
+  "fa": "بوسه با خم شدن نمایشی یکی به عقب",
+  "en": "a dramatic dip kiss pose",
+  "cat": 10,
+  "role": "pose",
+  "i": 1
+ },
+ {
+  "c": "dancefloorcandid",
+  "fa": "لحظهٔ خودجوش هنگام رقص",
+  "en": "a candid dance-floor moment",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "unposedromance",
+  "fa": "ژست طبیعی، گویی از حضور دوربین بی‌خبرند",
+  "en": "unposed, as if unaware of the camera",
+  "cat": 10,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "matchingblackoutfits",
+  "fa": "لباس‌های مشکی هماهنگ",
+  "en": "matching black outfits",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "whiteoutfitromance",
+  "fa": "لباس‌های سفید و مینیمال",
+  "en": "minimal white outfits",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "coupledenimstyle",
+  "fa": "استایل لباس جین",
+  "en": "denim style for both",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "cozyknitcouple",
+  "fa": "پلیورهای بافتنی راحت",
+  "en": "cozy knit sweaters",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "formalblacktie",
+  "fa": "استایل رسمی و شیک بلک‌تای",
+  "en": "formal black-tie style",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "weddingeditorial",
+  "fa": "استایل عکس ادیتوریال عروسی",
+  "en": "wedding editorial style",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "casualstreetwearcouple",
+  "fa": "استایل خیابانی روزمره",
+  "en": "casual streetwear style",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "oldmoneycouple",
+  "fa": "استایل کلاسیک و اشرافی",
+  "en": "classic old-money style",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "minimalistfashioncouple",
+  "fa": "استایل پوشش مینیمال",
+  "en": "minimalist fashion",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "summerlinenstyle",
+  "fa": "لباس‌های کتان تابستانی",
+  "en": "summer linen clothing",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "leatherjacketcouple",
+  "fa": "کت چرمی با استایل جسورانه",
+  "en": "leather jackets with a bold style",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "oversizedhoodiecouple",
+  "fa": "هودی‌های گشاد و اورسایز",
+  "en": "oversized hoodies",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "romanticdressflow",
+  "fa": "پیراهن زنانهٔ لطیف و روان",
+  "en": "a soft, flowing dress",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "suitanddresscouple",
+  "fa": "مرد با کت‌وشلوار و زن با پیراهن مجلسی",
+  "en": "he in a suit, she in an evening dress",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "vintageoutfitcouple",
+  "fa": "لباس‌های سبک وینتیج",
+  "en": "vintage-style outfits",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "monochromecouple",
+  "fa": "لباس‌ها در یک طیف رنگی",
+  "en": "outfits in a single color family",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "earthtonecouple",
+  "fa": "لباس‌ها با رنگ‌های خاکی و طبیعی",
+  "en": "earth-tone outfits",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "raincoatcouple",
+  "fa": "پوشیدن بارانی در هوای بارانی",
+  "en": "raincoats in rainy weather",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "wintercozycouple",
+  "fa": "لباس‌های گرم زمستانی",
+  "en": "warm cozy winter clothing",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "traditionalwearcouple",
+  "fa": "لباس‌های سنتی هماهنگ",
+  "en": "matching traditional clothing",
+  "cat": 11,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "couplewithumbrella",
+  "fa": "هر دو زیر یک چتر",
+  "en": "both under one umbrella",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "sharedheadphones",
+  "fa": "استفادهٔ مشترک از هدفون",
+  "en": "sharing headphones",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "holdingbouquet",
+  "fa": "زن دسته‌گل در دست دارد",
+  "en": "she holds a bouquet",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "singleflowerromance",
+  "fa": "یک شاخه گل به‌عنوان وسیلهٔ صحنه",
+  "en": "a single flower as a prop",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "couplewithpolaroid",
+  "fa": "ژست همراه با عکس پولاروید",
+  "en": "posing with a Polaroid photo",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "filmcameradate",
+  "fa": "دوربین آنالوگ به‌عنوان اکسسوری برای قرار عاشقانه",
+  "en": "a film camera as an accessory on a date",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "holdingcoffeecups",
+  "fa": "در دست گرفتن دو فنجان قهوه",
+  "en": "holding two coffee cups",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "sharedscarf",
+  "fa": "استفادهٔ مشترک از یک شال‌گردن",
+  "en": "sharing one scarf",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "holdinghandsinpockets",
+  "fa": "قرار گرفتن دست‌ها نزدیک هم در جیب",
+  "en": "hands close together in a pocket",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "couplewithbicycle",
+  "fa": "ژست همراه با دوچرخه",
+  "en": "posing with a bicycle",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "motorcyclecouple",
+  "fa": "زوج همراه با موتورسیکلت",
+  "en": "the couple with a motorcycle",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "carwindowromance",
+  "fa": "لحظهٔ عاشقانه کنار پنجرهٔ خودرو",
+  "en": "a romantic moment at a car window",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "sunflowerbouquet",
+  "fa": "دسته‌گل آفتابگردان",
+  "en": "a sunflower bouquet",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "tulipbouquetcouple",
+  "fa": "دسته‌گل لاله",
+  "en": "a tulip bouquet",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "fairylightsprop",
+  "fa": "ریسهٔ چراغ‌های کوچک",
+  "en": "string fairy lights as a prop",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "sparklerevening",
+  "fa": "در دست گرفتن فشفشه در فضای عصرگاهی",
+  "en": "holding sparklers in the evening",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "booksharingcouple",
+  "fa": "خواندن یک کتاب با هم",
+  "en": "reading a book together",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "vinylrecordromance",
+  "fa": "صفحهٔ گرامافون به‌عنوان وسیلهٔ صحنه",
+  "en": "a vinyl record as a prop",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "picnicbasketcouple",
+  "fa": "سبد پیک‌نیک",
+  "en": "a picnic basket",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "balloonromance",
+  "fa": "بادکنک به‌عنوان عنصر تصویر",
+  "en": "a balloon as a visual element",
+  "cat": 12,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "lightdrizzlecouple",
+  "fa": "باران نم‌نم و ملایم",
+  "en": "a light, gentle drizzle",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "heavyrainromance",
+  "fa": "باران شدید با حال‌وهوای دراماتیک",
+  "en": "heavy rain with a dramatic mood",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "raindropforeground",
+  "fa": "قطره‌های آب در پیش‌زمینه",
+  "en": "water droplets in the foreground",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "foggyforestcouple",
+  "fa": "جنگل مه‌آلود",
+  "en": "a foggy forest",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "mistymorningromance",
+  "fa": "مه نرم صبحگاهی",
+  "en": "soft morning mist",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "snowfallcouple",
+  "fa": "بارش برف اطراف زوج",
+  "en": "snow falling around the couple",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "snowycuddle",
+  "fa": "آغوش در فضایی برفی",
+  "en": "an embrace in a snowy setting",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "windysunsetcouple",
+  "fa": "باد هنگام غروب",
+  "en": "wind at sunset",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "autumnleafcouple",
+  "fa": "برگ‌های پاییزی",
+  "en": "autumn leaves",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "fallingleavesromance",
+  "fa": "برگ‌ها در حال ریزش",
+  "en": "leaves falling",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "flowerpetalrain",
+  "fa": "بارش گلبرگ‌ها",
+  "en": "a shower of flower petals",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "oceanbreeze",
+  "fa": "نسیم دریا",
+  "en": "an ocean breeze",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "wavesbehindcouple",
+  "fa": "موج‌های دریا در پس‌زمینه",
+  "en": "ocean waves behind the couple",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "sunflarethroughhair",
+  "fa": "تابش خورشید از میان موها",
+  "en": "sun flare shining through the hair",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "cloudyromanticmood",
+  "fa": "آسمان ابری با حس عاشقانه",
+  "en": "cloudy sky with a romantic mood",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "stargazingcouple",
+  "fa": "تماشای ستاره‌ها با هم",
+  "en": "stargazing together",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "milkywayromance",
+  "fa": "کهکشان راه شیری در پس‌زمینه",
+  "en": "the Milky Way in the background",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "fireworksbackground",
+  "fa": "آتش‌بازی در دوردست",
+  "en": "fireworks in the distance",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "goldendustparticles",
+  "fa": "ذرات غبار طلایی",
+  "en": "floating golden dust particles",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "floatingpetals",
+  "fa": "گلبرگ‌های معلق در هوا",
+  "en": "petals floating in the air",
+  "cat": 13,
+  "role": "weather",
+  "i": 0
+ },
+ {
+  "c": "35mmfilmlook",
+  "fa": "ظاهر عکس ثبت‌شده روی فیلم ۳۵ میلی‌متری",
+  "en": "the look of 35mm film",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "analogfilmgrain",
+  "fa": "بافت دانه‌دانهٔ فیلم آنالوگ",
+  "en": "analog film grain",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "cinematictealorange",
+  "fa": "رنگ‌پردازی سینمایی آبی‌سبز و نارنجی",
+  "en": "cinematic teal-and-orange color grading",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "mutedfilmpalette",
+  "fa": "پالت رنگی ملایم و کم‌اشباع فیلم",
+  "en": "a muted, low-saturation film palette",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "softpastelromance",
+  "fa": "رنگ‌های پاستلی نرم",
+  "en": "soft pastel colors",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "moodydesaturated",
+  "fa": "رنگ‌های کم‌اشباع با حال‌وهوای احساسی",
+  "en": "moody desaturated colors",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "vintagefilmflash",
+  "fa": "فلاش با ظاهر فیلم وینتیج",
+  "en": "flash with a vintage film look",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "directflashportrait",
+  "fa": "فلاش مستقیم با استایل ادیتوریال",
+  "en": "direct flash in an editorial style",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "editorialromance",
+  "fa": "عکاسی عاشقانه به سبک مجله",
+  "en": "romantic magazine-style photography",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "fineartcoupleportrait",
+  "fa": "پرتره زوج به سبک هنری فاین‌آرت",
+  "en": "fine-art style couple portrait",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "documentaryromance",
+  "fa": "عکاسی طبیعی به سبک مستند",
+  "en": "natural documentary-style photography",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "indiefilmstill",
+  "fa": "ظاهر یک فریم از فیلم مستقل",
+  "en": "looks like a still from an indie film",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "anamorphiccinema",
+  "fa": "زیبایی‌شناسی سینمای آنامورفیک",
+  "en": "anamorphic cinema aesthetic",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "cinematicletterbox",
+  "fa": "قاب عریض سینمایی با نوارهای بالا و پایین",
+  "en": "wide cinematic letterbox frame",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "dreamysoftfocus",
+  "fa": "فوکوس نرم و رؤیایی",
+  "en": "dreamy soft focus",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "halationfilmglow",
+  "fa": "هالهٔ نور در نقاط روشن، شبیه فیلم آنالوگ",
+  "en": "halation glow in highlights, like analog film",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "highcontrastmonochrome",
+  "fa": "عکس سیاه‌وسفید با کنتراست بالا",
+  "en": "high-contrast black-and-white photo",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "blackandwhitefilm",
+  "fa": "ظاهر کلاسیک فیلم سیاه‌وسفید",
+  "en": "classic black-and-white film look",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "romanticfilmstill",
+  "fa": "تصویر شبیه فریم یک فیلم عاشقانه",
+  "en": "looks like a frame from a romantic film",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "nostalgicmemorylook",
+  "fa": "ظاهر نوستالژیک و خاطره‌انگیز",
+  "en": "a nostalgic, memory-like look",
+  "cat": 14,
+  "role": "style",
+  "i": 0
+ },
+ {
+  "c": "portrait85mm",
+  "fa": "پرسپکتیو لنز پرتره ۸۵ میلی‌متری",
+  "en": "85mm portrait lens perspective",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "wideangle35mm",
+  "fa": "پرسپکتیو لنز ۳۵ میلی‌متری",
+  "en": "35mm lens perspective",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "ultrawideperspective",
+  "fa": "پرسپکتیو لنز فوق‌عریض",
+  "en": "ultra-wide lens perspective",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "telephotocompression",
+  "fa": "فشردگی پرسپکتیو؛ پس‌زمینه نزدیک‌تر به نظر می‌رسد",
+  "en": "telephoto compression, background appears closer",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "fisheyeplayful",
+  "fa": "اعوجاج هنری و بازیگوشانهٔ لنز چشم‌ماهی",
+  "en": "playful fisheye lens distortion",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "macrohanddetail",
+  "fa": "نمای ماکرو از جزئیات دست‌ها",
+  "en": "macro detail of the hands",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "bokehbackground",
+  "fa": "بوکه و محوشدگی نورها در پس‌زمینه",
+  "en": "bokeh and blurred lights in the background",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "foregroundbokeh",
+  "fa": "بوکه در پیش‌زمینهٔ زوج",
+  "en": "bokeh in the foreground of the couple",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "lensflarecinematic",
+  "fa": "فلر و بازتاب نور سینمایی در لنز",
+  "en": "cinematic lens flare and reflections",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "prismlightleak",
+  "fa": "افکت نشت نور منشوری",
+  "en": "prism light-leak effect",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "softvignette",
+  "fa": "تیره شدن ملایم گوشه‌های عکس",
+  "en": "soft vignette darkening the corners",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "tiltshiftromance",
+  "fa": "افکت تیلت‌شیفت با ناحیهٔ فوکوس محدود",
+  "en": "tilt-shift effect with a narrow focus area",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "longexposurelights",
+  "fa": "رد نور با نوردهی طولانی",
+  "en": "light trails from a long exposure",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "doubleexposureromance",
+  "fa": "ترکیب دو تصویر با افکت نوردهی دوگانه",
+  "en": "double-exposure blend of two images",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "reflectiondistortion",
+  "fa": "اعوجاج هنری در بازتاب",
+  "en": "artistic distortion in a reflection",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "glassrefraction",
+  "fa": "شکست نور از میان شیشه",
+  "en": "light refracting through glass",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "shootingthroughcurtain",
+  "fa": "عکاسی از پشت پرده",
+  "en": "shot through a curtain",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "shootingthroughleaves",
+  "fa": "عکاسی از میان برگ‌ها",
+  "en": "shot through leaves",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "shootingthroughraindrops",
+  "fa": "عکاسی از پشت شیشهٔ پوشیده از قطرات باران",
+  "en": "shot through glass covered in raindrops",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "handhelddocumentary",
+  "fa": "ظاهر عکاسی مستند با دوربین روی دست",
+  "en": "handheld documentary look",
+  "cat": 15,
+  "role": "lens",
+  "i": 0
+ },
+ {
+  "c": "sofrehaghdcouple",
+  "fa": "زوج کنار سفرهٔ عقد",
+  "en": "the couple at a traditional Persian wedding spread, sofreh aghd",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "mirrorcandlestickframing",
+  "fa": "آینه و شمعدان سفرهٔ عقد در کادر",
+  "en": "the ceremonial mirror and candlesticks in the frame",
+  "cat": 16,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "hennanightcouple",
+  "fa": "زوج در مراسم حنابندان",
+  "en": "the couple at a henna night celebration",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "weddingringcloseup",
+  "fa": "نمای نزدیک حلقه‌ها",
+  "en": "close-up of the wedding rings",
+  "cat": 16,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "veillift",
+  "fa": "برداشتن آرام تور عروس",
+  "en": "gently lifting the bridal veil",
+  "cat": 16,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "firstlookmoment",
+  "fa": "لحظهٔ اولین نگاه زوج به هم در لباس عروسی",
+  "en": "the couple's first look at each other in wedding attire",
+  "cat": 16,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "dresstrainshot",
+  "fa": "دامن بلند و دنبالهٔ لباس عروس در کادر",
+  "en": "the long gown and train in the frame",
+  "cat": 16,
+  "role": "frame",
+  "i": 0
+ },
+ {
+  "c": "adjustingtiemoment",
+  "fa": "زن کراوات یا پاپیون مرد را مرتب می‌کند",
+  "en": "she adjusts his tie or bow tie",
+  "cat": 16,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "bouquettossmoment",
+  "fa": "لحظهٔ پرتاب دسته‌گل",
+  "en": "the moment of tossing the bouquet",
+  "cat": 16,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "cakecuttingcouple",
+  "fa": "زوج هنگام بریدن کیک",
+  "en": "the couple cutting the cake",
+  "cat": 16,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "persiangardencouple",
+  "fa": "زوج در باغ ایرانی با حوض و درخت سرو",
+  "en": "couple in a Persian garden with a pool and cypress trees",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "tilearchitecturecouple",
+  "fa": "زوج مقابل کاشی‌کاری و معماری سنتی",
+  "en": "couple in front of traditional tilework and architecture",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "adobealleycouple",
+  "fa": "زوج در کوچه‌های خشتی شهر کویری",
+  "en": "couple in the adobe alleys of a desert town",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "traditionalbazaarcouple",
+  "fa": "زوج در بازار سنتی",
+  "en": "couple in a traditional bazaar",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "yaldanightcouple",
+  "fa": "زوج در شب یلدا با انار و هندوانه",
+  "en": "couple on Yalda night with pomegranates and watermelon",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "nowruzhaftsincouple",
+  "fa": "زوج کنار سفرهٔ هفت‌سین نوروز",
+  "en": "couple beside a Nowruz Haft-sin table",
+  "cat": 16,
+  "role": "place",
+  "i": 0
+ },
+ {
+  "c": "modestelegancecouple",
+  "fa": "پوشش کامل و موقر با ظاهر شیک",
+  "en": "modest, covered clothing with an elegant look",
+  "cat": 16,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "hijabbridalportrait",
+  "fa": "پرتره عروس با روسری یا شال",
+  "en": "bridal portrait with a headscarf or shawl",
+  "cat": 16,
+  "role": "outfit",
+  "i": 0
+ },
+ {
+  "c": "respectfuldistancecouple",
+  "fa": "فاصلهٔ محترمانه بدون تماس؛ نگاه و لبخند",
+  "en": "respectful distance without touching, expressed through gaze and smile",
+  "cat": 16,
+  "role": "pose",
+  "i": 0
+ },
+ {
+  "c": "familyfriendlyromance",
+  "fa": "حس رمانتیک مناسب همهٔ سنین؛ دست‌ها نزدیک اما بدون آغوش یا بوسه",
+  "en": "romantic feeling suitable for all ages, hands close but no hugging or kissing",
+  "cat": 16,
+  "role": "pose",
+  "i": 0
+ }
+]

@@ -1,0 +1,145 @@
+{
+  "id": "./?app=duoframe",
+  "name": "دوقاب | کدساز عکس زوج",
+  "short_name": "دوقاب",
+  "lang": "fa",
+  "dir": "rtl",
+  "description": "۳۲۰ کد عکس زوج؛ سازنده پرامپت برای ساخت و ویرایش تصویر، برنامه‌ریز آلبوم و شات‌لیست عکاس",
+  "start_url": "./app.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#0B0B14",
+  "theme_color": "#0B0B14",
+  "categories": [
+    "photography",
+    "productivity",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "سازنده پرامپت",
+      "short_name": "سازنده",
+      "url": "./app.html?tab=build&source=shortcut",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "برنامه‌ریز آلبوم",
+      "short_name": "آلبوم",
+      "url": "./app.html?tab=album&source=shortcut",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "شات‌لیست عکاس",
+      "short_name": "شات‌لیست",
+      "url": "./app.html?tab=shoot&source=shortcut",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "کتابخانهٔ کدها",
+      "short_name": "کتابخانه",
+      "url": "./app.html?tab=lib&source=shortcut",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "./app.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text"
+    },
+    "enctype": "application/x-www-form-urlencoded"
+  },
+  "screenshots": [
+    {
+      "src": "screenshots/narrow-1.png",
+      "sizes": "780x1688",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "کتابخانهٔ ۳۲۰ کد"
+    },
+    {
+      "src": "screenshots/narrow-2.png",
+      "sizes": "780x1688",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "سازندهٔ پرامپت با پروفایل ابزار"
+    },
+    {
+      "src": "screenshots/narrow-3.png",
+      "sizes": "780x1688",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "حالت ویرایش عکس"
+    },
+    {
+      "src": "screenshots/narrow-4.png",
+      "sizes": "780x1688",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "برنامه‌ریز آلبوم"
+    },
+    {
+      "src": "screenshots/wide-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "نسخهٔ دسکتاپ"
+    }
+  ]
+}

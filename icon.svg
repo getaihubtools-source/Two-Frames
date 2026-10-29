@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+ <radialGradient id="bg" cx="50%" cy="28%" r="85%"><stop offset="0" stop-color="#2A1B5E"/><stop offset=".55" stop-color="#140F2C"/><stop offset="1" stop-color="#0B0B14"/></radialGradient>
+ <linearGradient id="sa" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#E4CCFF"/><stop offset="1" stop-color="#8F63FF"/></linearGradient>
+ <linearGradient id="sb" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#3D8BFF"/></linearGradient>
+ <linearGradient id="ov" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4DDBA" stop-opacity=".55"/><stop offset="1" stop-color="#C9A6FF" stop-opacity=".25"/></linearGradient>
+ <clipPath id="ca"><rect x="118" y="170" width="176" height="220" rx="30" transform="rotate(-9 206 280)"/></clipPath>
+ <filter id="gl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<g transform="translate(256 256) scale(.93) translate(-256 -256)">
+ <rect x="118" y="170" width="176" height="220" rx="30" transform="rotate(-9 206 280)" fill="#C9A6FF" fill-opacity=".10" stroke="url(#sa)" stroke-width="22"/>
+ <g clip-path="url(#ca)"><rect x="218" y="122" width="176" height="220" rx="30" transform="rotate(9 306 232)" fill="url(#ov)"/></g>
+ <rect x="218" y="122" width="176" height="220" rx="30" transform="rotate(9 306 232)" fill="none" stroke="url(#sb)" stroke-width="22"/>
+ <path d="M256 212 C259 241 271 253 300 256 C271 259 259 271 256 300 C253 271 241 259 212 256 C241 253 253 241 256 212Z" fill="#fff" filter="url(#gl)" opacity=".8"/>
+ <path d="M256 212 C259 241 271 253 300 256 C271 259 259 271 256 300 C253 271 241 259 212 256 C241 253 253 241 256 212Z" fill="#FFF8EC"/>
+</g>
+</svg>

@@ -1,0 +1,877 @@
+# راهنمای دستورها: SPEC.md
+
+
+@cover CODE BOOK 320 | کتاب کدهای عکس زوج | ۳۲۰ کد در ۱۶ دسته، با فرمول ترکیب و نمونه‌های کاربردی؛ برای هر ابزار تصویرساز و برای عکاس‌ها | ۳ سطح، ۸ ماژول | راهنمای عملی ساخت و هدایت عکس‌های دونفره
+
+@toc فهرست مطالب
+01 | کد چیست و چطور کار می‌کند
+02 | ژست، زاویه و صمیمیت
+03 | کادر، نور و مکان
+04 | حرکت، لباس و فضا
+05 | سبک و لنز
+06 | مراسم، فرهنگ و حالت محتاط
+07 | ترکیب کدها: فرمول و مثال
+08 | پروژه‌ی نهایی
+
+@map نقشه مسیر یادگیری
+مقدماتی | 01 | کد چیست و چطور کار می‌کند | درک ساده‌ی کد، قاعده‌ی مستقل از ابزار و سه راه استفاده
+مقدماتی | 02 | ژست، زاویه و صمیمیت | شش دسته‌ی اول: زاویه‌ی دوربین، حالت سر، آغوش، ایستاده، نشسته و لحظه‌های صمیمی
+متوسط | 03 | کادر، نور و مکان | اندازه‌ی نما، کیفیت نور و انتخاب مکان مناسب
+متوسط | 04 | حرکت، لباس و فضا | حرکت طبیعی، استایل لباس، وسایل صحنه و آب‌وهوا
+متوسط | 05 | سبک و لنز | رنگ و بافت نهایی عکس و ظاهر لنز
+متوسط | 06 | مراسم، فرهنگ و حالت محتاط | بیست کد بومی برای عقد، حنابندان، مکان‌های ایرانی و پوشش موقر
+پیشرفته | 07 | ترکیب کدها: فرمول و مثال | فرمول شش‌نقشی، تضادها، شش مثال کاربردی و حالت عکاس
+پروژه | 08 | پروژه‌ی نهایی | ساخت یک آلبوم شش‌عکسی هماهنگ
+
+@module 01 | کد چیست و چطور کار می‌کند | درک ساده‌ی کد، قاعده‌ی مستقل از ابزار و سه راه استفاده | سطح مقدماتی
+
+@page مقدماتی | کد عکس یعنی چه؟
+هدف: بدانی کد چیست و چرا باید به جمله تبدیل شود.
+
+[goals پس از این بخش می‌توانی]
+کد را از جمله‌ی کامل تشخیص بدهی
+از هر دسته یک کد سازگار انتخاب کنی
+ترکیب را برای هر ابزار یا هر عکاس قابل‌فهم بنویسی
+
+## تصویر ذهنی ساده
+هر کد یک برچسب کوتاه برای یک تصمیم عکاسی است: ژست، زاویه، نور یا مکان. مثل ردیف‌های یک منو است: از هر بخش یکی انتخاب می‌کنی و سفارش کامل می‌شود.
+
+[concept]
+کد: برچسب انگلیسی کوتاه، مثل `foreheadtouch`.
+توضیح: معنی فارسی و جمله‌ی کامل همان کد.
+ترکیب: انتخاب چند کد سازگار برای ساخت یک صحنه.
+
+[tip نکته‌ی کاربردی]
+کد را تنها ننویس؛ جمله‌ی کاملش را بنویس تا هر ابزار و هر عکاسی منظورت را بفهمد.
+
+@page مقدماتی | بدون وابستگی به ابزار
+هدف: کدها را طوری به کار ببری که با هیچ ابزار خاصی گره نخورند.
+
+این کدها دستور رسمی هیچ ابزاری نیستند؛ میانبر توصیفی‌اند. برای همین هر کد در این کتاب سه چیز دارد: برچسب، توضیح فارسی و یک عبارت انگلیسی کوتاه. هر ابزاری که جمله‌ی کامل را بفهمد، با آن کار می‌کند.
+
+[pipeline]
+نیاز: صحنه‌ای تازه از دو نفر
+درخواست: چند کد سازگار، همراه با عکس مرجع در صورت پشتیبانی ابزار
+پردازش: کدها به یک جمله‌ی کامل تبدیل می‌شوند
+خروجی: تصویر یا دستور هدایت برای عکاس
+نتیجه: صحنه‌ای که با همان جمله قابل تکرار است
+
+[warn حریم خصوصی]
+عکس دیگران را بدون رضایتشان وارد هیچ ابزاری نکن؛ برای کودکان هم هرگز.
+
+[tip اگر ابزار عکس مرجع نمی‌پذیرد]
+ظاهر دو نفر را در یک جمله بنویس: سن تقریبی، مدل مو و رنگ لباس.
+
+@page مقدماتی | سه راه استفاده
+هدف: مسیر استفاده‌ی مناسب خودت را انتخاب کنی.
+
+[grid]
+زوج‌ها: ژست و صحنه را برای عکس خودتان انتخاب کنید و جمله‌اش را بسازید
+تولیدکنندگان محتوا: پست، استوری و ریلز را با ترکیب‌های تکرارپذیر بسازید
+عکاس‌ها: کد را به‌عنوان جمله‌ی هدایت در جلسه‌ی عکاسی به کار ببرید
+
+[prompt بلوک حفظ هویت]
+نقش: تو یک ویرایشگر تصویر هستی که چهره‌ی افراد را دقیق حفظ می‌کند.
+هدف: با استفاده از عکس مرجع، صحنه و ژست را عوض کن، بدون تغییر هویت دو نفر.
+مخاطب: کسی که می‌خواهد خودش و همسرش را در صحنه‌ای تازه ببیند.
+فرمت: یک تصویر واقع‌گرایانه با نسبت تصویر مشخص.
+محدودیت: چهره، رنگ پوست، مدل مو و تناسب بدن هر دو نفر عیناً حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~هدف: حفظ هویت در هر ترکیب
+~ورودی: عکس مرجع و چند کد سازگار
+~خروجی مورد انتظار: همان دو نفر در صحنه‌ی جدید
+~نکته: این بلوک را ابتدای هر درخواست بگذار
+
+@page مقدماتی | مرور و تمرین ماژول ۱
+هدف: آنچه آموختی را با یک تمرین کوتاه تثبیت کنی.
+
+[practice تمرین ماژول ۱]
+یک صحنه‌ی دلخواه را اول بدون کد و فقط با یک جمله‌ی کلی بنویس. بعد همان صحنه را با سه کد از این کتاب بازنویسی کن و دو نتیجه را مقایسه کن.
+
+[remember به خاطر بسپار]
+کد برچسب است، جمله‌ی کامل دستور است
+هر ترکیب را با بلوک حفظ هویت شروع کن
+عکس دیگران را بدون رضایت وارد هیچ ابزاری نکن
+
+@module 02 | ژست، زاویه و صمیمیت | شش دسته‌ی اول: زاویه‌ی دوربین، حالت سر، آغوش، ایستاده، نشسته و لحظه‌های صمیمی | سطح مقدماتی
+
+@page مقدماتی | زاویهٔ دوربین و جهت عکاسی
+هدف: جهت دوربین نسبت به زوج را انتخاب کن.
+
+[tip نکته‌ی کاربردی]
+برای شروع از زاویهٔ هم‌سطح چشم یا سه‌رخ استفاده کن؛ زاویه‌های بسیار پایین یا بالا چهره را تغییر می‌دهند.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`backviewcouple` | عکاسی از زوج از پشت سر | photographed from behind the couple
+`dutchanglecouple` | دوربین کمی کج؛ حس پویا و سینمایی | slightly tilted camera angle, dynamic cinematic feel
+`overtheshoulder` | عکاسی از روی شانهٔ یکی از افراد | over-the-shoulder shot
+`overtheshoulderromance` | نمای پشت؛ زن به شانهٔ مرد تکیه داده است | rear view over his shoulder, she leans on his shoulder
+`frontportraitcouple` | پرتره زوج از روبه‌رو | front-facing portrait of the couple
+`sideprofilecouple` | نمای نیم‌رخ زوج | side profile of the couple
+`fullsideview` | نمای بدن زوج از پهلو | full-body side view of the couple
+`threequartercouple` | زاویهٔ سه‌رخ از روبه‌رو | three-quarter front angle
+`threequarterrear` | زاویهٔ سه‌رخ از پشت | three-quarter rear angle
+`lowanglecouple` | عکاسی از زاویهٔ پایین | low-angle shot
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`highanglecouple` | عکاسی از زاویهٔ بالا | high-angle shot
+`birdseyecouple` | عکاسی از بالای سر، مستقیم رو به پایین | bird's-eye view shooting straight down
+`wormseyeromance` | زاویهٔ بسیار پایین و دراماتیک | very low dramatic worm's-eye angle
+`eyelevelintimacy` | دوربین هم‌سطح چشم‌ها | camera at eye level for intimacy
+`distantcoupleshot` | زوج کوچک در قابی وسیع | small couple in a wide frame
+`closeupfrombehind` | نمای نزدیک سر و شانه‌ها از پشت | close-up of heads and shoulders from behind
+`profilekissshot` | نمای نیم‌رخ هنگام بوسیدن | profile view during a kiss
+`shoulderlevelshot` | دوربین هم‌ارتفاع شانه‌های زوج | camera at the couple's shoulder height
+`diagonalcomposition` | ترکیب‌بندی مورب و پویا | dynamic diagonal composition
+`reflectionangle` | عکاسی از زوج از طریق بازتاب | photographed through a reflection
+
+@page مقدماتی | حالت سر و شانه‌ها
+هدف: جهت نگاه، تماس چهره‌ها و حالت سر را مشخص کن.
+
+[tip نکته‌ی کاربردی]
+در هر درخواست فقط یک حالت سر انتخاب کن؛ چند تماس هم‌زمان چهره‌ها را به‌هم می‌ریزد.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`headonshoulder` | زن سرش را روی شانهٔ مرد می‌گذارد | she rests her head on his shoulder
+`headonchest` | زن سرش را روی سینهٔ مرد می‌گذارد | she rests her head on his chest
+`foreheadtouch` | پیشانی‌های زوج به هم می‌چسبد | foreheads touching
+`foreheadkiss` | مرد پیشانی زن را می‌بوسد | he kisses her forehead
+`templekiss` | بوسه‌ای ملایم بر شقیقه | a gentle kiss on the temple
+`cheekkiss` | مرد گونهٔ زن را می‌بوسد | he kisses her cheek
+`nosetouch` | بینی‌های زوج به هم برخورد می‌کند | noses touching
+`facetofaceclose` | چهره‌ها از فاصلهٔ نزدیک روبه‌روی هم است | faces close together, facing each other
+`eyesclosedintimacy` | زوج در لحظه‌ای صمیمی چشم‌ها را می‌بندند | eyes closed in an intimate moment
+`lookingateachother` | زوج به یکدیگر نگاه می‌کنند | looking at each other
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`lookingawaytogether` | هر دو به یک جهت نگاه می‌کنند | both looking in the same direction
+`womanlookingathim` | زن از کنار به مرد نگاه می‌کند | she looks at him from the side
+`manlookingather` | مرد با مهربانی به زن نگاه می‌کند | he looks at her tenderly
+`headtiltromance` | سرها با کمی انحنا به هم نزدیک می‌شود | heads tilted slightly toward each other
+`chinonshoulder` | چانهٔ زن روی شانهٔ مرد قرار می‌گیرد | her chin resting on his shoulder
+`cheektocheek` | گونه‌های زوج به هم می‌چسبد | cheek to cheek
+`backofheadfocus` | تمرکز تصویر بر پشت سر | focus on the back of the head
+`hairoverhisshoulder` | موهای زن روی شانهٔ مرد می‌ریزد | her hair falls over his shoulder
+`gentlefacecupping` | مرد صورت زن را آرام در دست می‌گیرد | he gently cups her face
+`foreheadagainstbackhead` | تماس پیشانی یکی با پشت سر دیگری | forehead resting against the other's back of head
+
+@page مقدماتی | آغوش و لمس عاشقانه
+هدف: نوع آغوش و محل قرارگیری دست‌ها را انتخاب کن.
+
+[tip نکته‌ی کاربردی]
+اگر دست‌ها خراب درمی‌آید، محل دست را دقیق بنویس؛ مثلاً «دست راست روی کمر».
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`backhugcouple` | مرد زن را از پشت در آغوش می‌گیرد | he hugs her from behind
+`frontembrace` | زوج از روبه‌رو همدیگر را در آغوش می‌گیرند | a front embrace
+`tightromantichug` | آغوش محکم و سرشار از احساس | a tight, emotional hug
+`gentlewaisthug` | دست‌ها آرام دور کمر حلقه می‌شود | arms wrapped gently around the waist
+`armsaroundneck` | دست‌ها دور گردن شریک عاطفی حلقه می‌شود | arms around the partner's neck
+`armsaroundshoulder` | یک دست دور شانه قرار می‌گیرد | one arm around the shoulder
+`interlockedarms` | راه رفتن با بازوهای در هم حلقه‌شده | walking with arms linked
+`handholdingcloseup` | نمای نزدیک دست‌های به هم گرفته | close-up of held hands
+`fingersintertwined` | انگشت‌های زوج در هم گره می‌خورد | fingers intertwined
+`handoncheek` | یک دست گونهٔ طرف مقابل را لمس می‌کند | a hand touching the other's cheek
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`handonchest` | دست زن روی سینهٔ مرد قرار می‌گیرد | her hand resting on his chest
+`handonwaist` | دست روی کمر قرار می‌گیرد | a hand resting on the waist
+`gentlebacktouch` | لمس ملایم پشت بدن | a gentle touch on the back
+`hugfrombehindcloseup` | نمای نزدیک آغوش از پشت | close-up of a hug from behind
+`chinrestembrace` | تکیه دادن سر یا چانه هنگام در آغوش گرفتن | resting the head or chin during an embrace
+`protectiveembrace` | مرد با حالتی حمایتگر زن را در آغوش می‌گیرد | he holds her in a protective embrace
+`onearmembrace` | در آغوش گرفتن با یک دست | a one-armed embrace
+`foreheadembrace` | آغوش همراه با تماس پیشانی‌ها | an embrace with foreheads touching
+`comfortinghug` | آغوش آرامش‌بخش | a comforting hug
+`candidembrace` | آغوش خودجوش و طبیعی | a spontaneous, natural embrace
+
+@page مقدماتی | ژست‌های ایستاده و راه رفتن
+هدف: حالت بدن و نحوهٔ حرکت در حالت ایستاده را تعیین کن.
+
+[tip نکته‌ی کاربردی]
+برای راه رفتن، جهت حرکت را هم بنویس: به‌سوی دوربین، دور از دوربین یا کنار هم.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`walkingcouplebackshot` | نمای پشت زوج هنگام راه رفتن | the couple walking, seen from behind
+`walkinghandinhand` | راه رفتن دست‌در‌دست | walking hand in hand
+`slowwalkromance` | قدم زدن آرام و عاشقانه | a slow romantic stroll
+`walkingbackhug` | راه رفتن همراه با آغوش از پشت | walking while hugging from behind
+`couplewalkingaway` | زوج از دوربین دور می‌شوند | the couple walking away from the camera
+`walkingintosunset` | راه رفتن به‌سوی غروب خورشید | walking toward the sunset
+`crosswalkcouple` | راه رفتن زوج روی خط عابر پیاده | the couple crossing at a crosswalk
+`streetwalkcandid` | لحظهٔ طبیعی قدم زدن در خیابان | a candid street walk
+`sidebysidewalk` | راه رفتن در کنار یکدیگر | walking side by side
+`womanholdinghisarm` | زن بازوی مرد را می‌گیرد | she holds his arm
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`manleadinghergently` | مرد زن را آرام همراهی و هدایت می‌کند | he gently leads her
+`slowdancestanding` | رقص آرام در حالت ایستاده | a slow standing dance
+`spinningheraround` | مرد زن را آرام می‌چرخاند | he gently spins her around
+`pullinghercloser` | مرد زن را به خود نزدیک می‌کند | he pulls her closer
+`standingforeheadtouch` | تماس پیشانی‌ها در حالت ایستاده | standing with foreheads touching
+`backtobackcouple` | زوج پشت‌به‌پشت می‌ایستند | standing back to back
+`leaningagainsteachother` | بدن‌ها به یکدیگر تکیه می‌دهد | leaning against each other
+`wallleanromance` | زوج به دیوار تکیه می‌دهند | leaning against a wall together
+`windowstandingcouple` | زوج نزدیک پنجره می‌ایستند | standing near a window
+`windyhairwalk` | راه رفتن با موهایی که در باد حرکت می‌کند | walking with hair moving in the wind
+
+@page مقدماتی | ژست‌های نشسته و استراحت
+هدف: ژست‌های آرام برای موقعیت‌های نشسته و استراحت.
+
+[tip نکته‌ی کاربردی]
+ژست نشسته را با محل نشستن بنویس (مبل، نیمکت، زیرانداز)؛ وضعیت پاها از همان معلوم می‌شود.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`sittingclosecouple` | نشستن نزدیک به هم و در کنار یکدیگر | sitting close together side by side
+`shoulderleanseated` | زن هنگام نشستن به شانهٔ مرد تکیه می‌دهد | seated, she leans on his shoulder
+`laprestromance` | زن سرش را روی پاهای مرد می‌گذارد | she rests her head on his lap
+`couchcuddle` | آغوش راحت و صمیمی روی مبل | a cozy cuddle on the couch
+`windowseatcouple` | نشستن با هم کنار پنجره | sitting together by the window
+`bedsidecoupleportrait` | پرتره زوج نشسته بر لبهٔ تخت | a couple portrait seated on the edge of a bed
+`floorcuddle` | نشستن روی زمین و در آغوش گرفتن | sitting on the floor in an embrace
+`backtobackseated` | نشستن پشت‌به‌پشت | sitting back to back
+`kneelingromance` | یکی از افراد مقابل دیگری زانو می‌زند | one partner kneels in front of the other
+`crossleggedcouple` | نشستن چهارزانو و نزدیک به هم | sitting cross-legged close together
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`legsintertwined` | نشستن با پاهای نزدیک یا در هم قرارگرفته | sitting with legs close or intertwined
+`headinlap` | قرار گرفتن سر روی پاهای طرف مقابل | head resting in the partner's lap
+`sittinghandholding` | نشستن همراه با گرفتن دست یکدیگر | sitting while holding hands
+`seatedforeheadkiss` | بوسه بر پیشانی در حالت نشسته | a forehead kiss while seated
+`tablefortwocandid` | لحظهٔ طبیعی نشستن روبه‌روی هم پشت میز | a candid moment seated across a table
+`cafecoupleportrait` | پرتره زوج روی صندلی‌های کافه | a couple portrait on café chairs
+`balconyseatedromance` | نشستن عاشقانه در بالکن | sitting romantically on a balcony
+`parkbenchcouple` | نشستن با هم روی نیمکت پارک | sitting together on a park bench
+`picnicblanketcouple` | نشستن روی زیرانداز پیک‌نیک | sitting on a picnic blanket
+`cozyblanketcuddle` | در آغوش گرفتن زیر یک پتوی گرم | cuddling under a warm blanket
+
+@page مقدماتی | لحظه‌های عاشقانه و صمیمیت
+هدف: حس و تعامل میان دو نفر را در تصویر مشخص کن.
+
+[tip نکته‌ی کاربردی]
+کد صمیمیت را با نور نرم یا ضدنور بنویس؛ حس تصویر محترمانه‌تر و سینمایی‌تر می‌شود.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`almostkiss` | چهره‌ها بسیار نزدیک، درست پیش از بوسه | faces very close, just before a kiss
+`softromantickiss` | بوسهٔ ملایم و طبیعی | a soft, natural kiss
+`passionatekiss` | بوسهٔ پرشور و سرشار از احساس | a passionate, emotional kiss
+`kissintherain` | بوسیدن زیر باران | kissing in the rain
+`sunsetkiss` | بوسه با پس‌زمینهٔ غروب | a kiss against a sunset backdrop
+`silhouettekiss` | بوسه در نمای ضدنور و سایه‌وار | a kiss in backlit silhouette
+`surprisecheekkiss` | بوسهٔ ناگهانی بر گونه | a surprise kiss on the cheek
+`laughingfaceclose` | خندیدن با هم، از فاصلهٔ نزدیک | laughing together up close
+`nosekissmoment` | تماس شیرین بینی‌ها | a sweet nose-to-nose moment
+`whisperingtoher` | مرد در گوش زن زمزمه می‌کند | he whispers in her ear
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`whisperingtohim` | زن در گوش مرد زمزمه می‌کند | she whispers in his ear
+`playfulforeheadbump` | تماس بازیگوشانهٔ پیشانی‌ها | a playful forehead bump
+`romanticgaze` | نگاه عمیق و عاشقانه | a deep romantic gaze
+`shylookaway` | یکی با خجالت نگاهش را برمی‌گرداند | one partner shyly looks away
+`playfulteasingcouple` | تعامل شوخ و بازیگوشانهٔ زوج | a playful, teasing interaction
+`laughingembrace` | خندیدن در آغوش یکدیگر | laughing in each other's arms
+`romanticstarefrombehind` | نگاه عاشقانه از پشت شانهٔ طرف مقابل | a romantic look over the partner's shoulder
+`gentlehairkiss` | بوسهٔ ملایم بر بالای سر یا موها | a gentle kiss on the top of the head or hair
+`noseagainstcheek` | قرار گرفتن آرام بینی روی گونه | nose resting softly against the cheek
+`emotionalreunionhug` | آغوش احساسی پس از دوری طولانی | an emotional reunion hug after a long separation
+
+@page مقدماتی | مرور و تمرین ماژول 2
+هدف: تثبیت آموخته‌های این ماژول با تمرین و مرور.
+
+[practice تمرین ماژول 2]
+از دسته‌های ۱ تا ۶ یک زاویه، یک حالت سر و یک لمس انتخاب کن و با آن‌ها یک جمله‌ی کامل بساز؛ هر بار فقط یک کد را عوض کن و تفاوت را ببین.
+
+[remember به خاطر بسپار]
+هر درخواست یک ژست اصلی دارد
+محل دست‌ها را دقیق بنویس
+کد صمیمیت را با نور نرم بنویس
+
+@module 03 | کادر، نور و مکان | اندازه‌ی نما، کیفیت نور و انتخاب مکان مناسب | سطح متوسط
+
+@page متوسط | کادربندی، برش و ترکیب‌بندی
+هدف: اندازهٔ نما و جایگاه زوج در کادر را انتخاب کن.
+
+[tip نکته‌ی کاربردی]
+کادر را همیشه پیش از نور و مکان انتخاب کن؛ کادر مشخص می‌کند چه چیزی در تصویر دیده می‌شود.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`extremecloseupcouple` | نمای بسیار نزدیک از جزئیات چهره‌ها | extreme close-up of facial details
+`closeupcoupleportrait` | پرتره نزدیک از چهرهٔ زوج | close-up portrait of the couple's faces
+`mediumshotcouple` | کادر از کمر به بالا | medium shot from the waist up
+`mediumfullcouple` | کادر از ران به بالا | medium-full shot from the thighs up
+`fullbodycouple` | نمای کامل بدن هر دو نفر | full-body shot of both people
+`widecinematiccouple` | زوج در قاب باز و سینمایی | couple in a wide cinematic frame
+`ultrawideenvironment` | قاب بسیار باز؛ زوج همراه با محیط وسیع | very wide frame showing the couple in a vast environment
+`negativespacecouple` | فضای خالی زیاد اطراف زوج | lots of empty negative space around the couple
+`centeredcouplecomposition` | زوج در مرکز کادر قرار می‌گیرند | couple centered in the frame
+`offcentercinematic` | زوج در یک سمت کادر قرار می‌گیرند | couple placed off-center, cinematic
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`foregroundframing` | عناصر پیش‌زمینه زوج را قاب می‌گیرند | foreground elements framing the couple
+`doorwayframing` | قاب گرفتن زوج با چارچوب در | couple framed by a doorway
+`windowframecomposition` | قاب گرفتن زوج با پنجره | couple framed by a window
+`silhouetteframing` | زوج به‌صورت سایه‌وار، عنصر اصلی قاب هستند | the couple as a silhouette, the main element of the frame
+`layereddepthshot` | چیدمان لایه‌ای پیش‌زمینه، زوج و پس‌زمینه | layered depth: foreground, couple, background
+`shallowdepthcouple` | زوج واضح و پس‌زمینه محو | sharp couple with a blurred background
+`deepfocuscouple` | زوج و محیط هر دو با وضوح بیشتر | deep focus, couple and surroundings both sharp
+`symmetricalcouple` | ترکیب‌بندی متقارن | symmetrical composition
+`ruleofthirdscouple` | قرارگیری زوج بر اساس قانون یک‌سوم | couple placed by the rule of thirds
+`verticalstorycrop` | قاب عمودی ۹:۱۶ مناسب استوری | vertical 9:16 framing for stories
+
+@page متوسط | نورپردازی و حال‌وهوای نور
+هدف: کیفیت، جهت و رنگ نور را مشخص کن.
+
+[tip نکته‌ی کاربردی]
+از نقش نور فقط یک کد بنویس؛ دو منبع نور رقیب تصویر را گنگ می‌کند.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`goldenhourglow` | نور گرم ساعت طلایی پیش از غروب | warm golden-hour light before sunset
+`softmorninglight` | نور نرم صبحگاهی | soft morning light
+`sunsetbacklight` | نور غروب از پشت زوج | sunset light from behind the couple
+`sunrisehaze` | نور طلوع در فضایی مه‌آلود | sunrise light in a hazy atmosphere
+`bluehourromance` | حال‌وهوای آبی پس از غروب | blue-hour mood after sunset
+`moonlitcouple` | نور ملایم ماه | soft moonlight
+`rimlightcouple` | خط نور روی لبه‌های بدن | rim light outlining the edges of the bodies
+`softwindowlight` | نور طبیعی و نرم پنجره | soft natural window light
+`dramaticlowkey` | نورپردازی تیره با کنتراست بالا | dark, high-contrast low-key lighting
+`highkeysoftportrait` | نورپردازی روشن و ملایم | bright, soft high-key lighting
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`cinematicbacklight` | نور سینمایی از پشت | cinematic backlight
+`dappledtreelight` | نور لکه‌لکهٔ خورشید از میان برگ‌ها | dappled sunlight through leaves
+`neonromancelight` | نور نئون رنگی | colorful neon light
+`warmtungstenlight` | نور گرم لامپ تنگستن | warm tungsten bulb light
+`coolmoodylighting` | نور سرد با حال‌وهوای احساسی | cool, moody lighting
+`candlelightcouple` | نور عاشقانهٔ شمع | romantic candlelight
+`streetlampglow` | نور چراغ خیابان در شب | streetlamp glow at night
+`softovercastlight` | نور یکنواخت و نرم روز ابری | even, soft overcast light
+`volumetriclightcouple` | پرتوهای نور قابل‌مشاهده در هوا | visible light rays in the air
+`lightleakfilm` | افکت نشت نور فیلم آنالوگ | analog film light-leak effect
+
+@page متوسط | مکان و پس‌زمینهٔ عکس
+هدف: محیطی متناسب با حال‌وهوای عکس انتخاب کن.
+
+[tip نکته‌ی کاربردی]
+مکان را کوتاه و مشخص بنویس؛ توصیف‌های طولانی مکان، زوج را در تصویر کوچک می‌کند.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`romanticbeachcouple` | زوج در ساحل | couple on a beach
+`mountainviewcouple` | زوج با چشم‌انداز کوهستان | couple with a mountain view
+`citynightcouple` | زوج در شهر، هنگام شب | couple in the city at night
+`rainystreetromance` | زوج در خیابان خیس پس از باران | couple on a wet street after rain
+`forestromance` | زوج در میان جنگل | couple in a forest
+`flowerfieldcouple` | زوج در دشت گل | couple in a field of flowers
+`lavenderfieldromance` | زوج در مزرعهٔ اسطوخودوس | couple in a lavender field
+`rooftopcouple` | زوج روی پشت‌بام | couple on a rooftop
+`trainstationromance` | لحظهٔ عاشقانه در ایستگاه قطار | a romantic moment at a train station
+`subwaycouple` | زوج در فضای مترو | couple in a subway setting
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`bookstorecouple` | زوج در کتاب‌فروشی | couple in a bookstore
+`libraryromance` | زوج در کتابخانه | couple in a library
+`cozycafedate` | قرار عاشقانه در کافه‌ای دنج | a date in a cozy café
+`luxuryhotelcouple` | زوج در هتل لوکس | couple in a luxury hotel
+`apartmentwindowromance` | زوج کنار پنجرهٔ آپارتمان | couple by an apartment window
+`oldtowncouple` | زوج در خیابان‌های بافت قدیمی شهر | couple in the streets of an old town
+`japanstreetromance` | زوج در خیابانی با فضای ژاپنی | couple on a Japanese-style street
+`cherryblossomcouple` | زوج زیر شکوفه‌های گیلاس | couple under cherry blossoms
+`christmasstreetcouple` | زوج در خیابان با تزئینات کریسمس | couple on a street with Christmas decorations
+`desertsunsetcouple` | زوج در منظرهٔ بیابانی هنگام غروب | couple in a desert landscape at sunset
+
+@page متوسط | مرور و تمرین ماژول 3
+هدف: تثبیت آموخته‌های این ماژول با تمرین و مرور.
+
+[practice تمرین ماژول 3]
+برای یک صحنه‌ی ثابت، سه کادر، سه نور و سه مکان مختلف را جداگانه امتحان کن و بهترین ترکیب را یادداشت کن.
+
+[remember به خاطر بسپار]
+اول کادر، بعد نور، بعد مکان
+از نقش نور فقط یک کد بنویس
+مکان را کوتاه و مشخص بنویس
+
+@module 04 | حرکت، لباس و فضا | حرکت طبیعی، استایل لباس، وسایل صحنه و آب‌وهوا | سطح متوسط
+
+@page متوسط | حرکت، پویایی و لحظه‌های طبیعی
+هدف: حرکت و لحظه‌های خودجوش را به تصویر اضافه کن.
+
+[tip نکته‌ی کاربردی]
+حرکت در کادر باز بهتر درمی‌آید؛ برای نمای نزدیک، کدهای حرکت را کم کن.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`slowshuttercouple` | ثبت اثر حرکت با سرعت شاتر پایین | motion captured with a slow shutter speed
+`motionblurbackground` | پس‌زمینه با تاری حرکت؛ زوج واضح | motion-blurred background, sharp couple
+`walkingmotionblur` | تاری حرکت هنگام راه رفتن | motion blur while walking
+`windblownhair` | موهای در حال حرکت با باد | hair blowing in the wind
+`flowingdressmotion` | حرکت و موج لباس همراه باد | dress flowing with the wind
+`spinningdancecouple` | چرخیدن زوج هنگام رقص | the couple spinning while dancing
+`foreheadtouchcandid` | تماس خودجوش و طبیعی پیشانی‌ها | a candid forehead touch
+`candidlaughingwalk` | راه رفتن همراه با خندهٔ طبیعی | walking with natural laughter
+`midstepcouple` | ثبت تصویر دقیقاً در میانهٔ قدم برداشتن | caught exactly mid-step
+`turningbackglance` | یکی از افراد به پشت سر نگاه می‌کند | one partner glances back
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`lookingbacktogether` | هر دو برمی‌گردند و به دوربین نگاه می‌کنند | both turn and look back at the camera
+`handpullingperspective` | زاویهٔ دید کسی که با دست همراهی می‌شود | point of view of being led by the hand
+`runninghandinhand` | دویدن دست‌در‌دست | running hand in hand
+`playfulchase` | دنبال کردن بازیگوشانهٔ یکدیگر | a playful chase
+`jumpingcouple` | پریدن هم‌زمان زوج | the couple jumping together
+`piggybackromance` | زن روی پشت مرد قرار می‌گیرد | a piggyback ride
+`bridalcarry` | مرد زن را در آغوش بلند می‌کند | he carries her in his arms
+`dipkisspose` | بوسه با خم شدن نمایشی یکی به عقب | a dramatic dip kiss pose
+`dancefloorcandid` | لحظهٔ خودجوش هنگام رقص | a candid dance-floor moment
+`unposedromance` | ژست طبیعی، گویی از حضور دوربین بی‌خبرند | unposed, as if unaware of the camera
+
+@page متوسط | لباس و استایل زوج
+هدف: هماهنگی پوشش و سبک لباس‌ها را مشخص کن.
+
+[tip نکته‌ی کاربردی]
+لباس را با فصل و مکان هماهنگ کن؛ لباس تابستانی در صحنهٔ برفی تصویر را ناهماهنگ می‌کند.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`matchingblackoutfits` | لباس‌های مشکی هماهنگ | matching black outfits
+`whiteoutfitromance` | لباس‌های سفید و مینیمال | minimal white outfits
+`coupledenimstyle` | استایل لباس جین | denim style for both
+`cozyknitcouple` | پلیورهای بافتنی راحت | cozy knit sweaters
+`formalblacktie` | استایل رسمی و شیک بلک‌تای | formal black-tie style
+`weddingeditorial` | استایل عکس ادیتوریال عروسی | wedding editorial style
+`casualstreetwearcouple` | استایل خیابانی روزمره | casual streetwear style
+`oldmoneycouple` | استایل کلاسیک و اشرافی | classic old-money style
+`minimalistfashioncouple` | استایل پوشش مینیمال | minimalist fashion
+`summerlinenstyle` | لباس‌های کتان تابستانی | summer linen clothing
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`leatherjacketcouple` | کت چرمی با استایل جسورانه | leather jackets with a bold style
+`oversizedhoodiecouple` | هودی‌های گشاد و اورسایز | oversized hoodies
+`romanticdressflow` | پیراهن زنانهٔ لطیف و روان | a soft, flowing dress
+`suitanddresscouple` | مرد با کت‌وشلوار و زن با پیراهن مجلسی | he in a suit, she in an evening dress
+`vintageoutfitcouple` | لباس‌های سبک وینتیج | vintage-style outfits
+`monochromecouple` | لباس‌ها در یک طیف رنگی | outfits in a single color family
+`earthtonecouple` | لباس‌ها با رنگ‌های خاکی و طبیعی | earth-tone outfits
+`raincoatcouple` | پوشیدن بارانی در هوای بارانی | raincoats in rainy weather
+`wintercozycouple` | لباس‌های گرم زمستانی | warm cozy winter clothing
+`traditionalwearcouple` | لباس‌های سنتی هماهنگ | matching traditional clothing
+
+@page متوسط | وسایل صحنه و اکسسوری
+هدف: وسیله‌ای متناسب با موقعیت عکس انتخاب کن.
+
+[tip نکته‌ی کاربردی]
+فقط یک وسیله بگذار تا نگاه بیننده روی خود زوج بماند.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`couplewithumbrella` | هر دو زیر یک چتر | both under one umbrella
+`sharedheadphones` | استفادهٔ مشترک از هدفون | sharing headphones
+`holdingbouquet` | زن دسته‌گل در دست دارد | she holds a bouquet
+`singleflowerromance` | یک شاخه گل به‌عنوان وسیلهٔ صحنه | a single flower as a prop
+`couplewithpolaroid` | ژست همراه با عکس پولاروید | posing with a Polaroid photo
+`filmcameradate` | دوربین آنالوگ به‌عنوان اکسسوری برای قرار عاشقانه | a film camera as an accessory on a date
+`holdingcoffeecups` | در دست گرفتن دو فنجان قهوه | holding two coffee cups
+`sharedscarf` | استفادهٔ مشترک از یک شال‌گردن | sharing one scarf
+`holdinghandsinpockets` | قرار گرفتن دست‌ها نزدیک هم در جیب | hands close together in a pocket
+`couplewithbicycle` | ژست همراه با دوچرخه | posing with a bicycle
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`motorcyclecouple` | زوج همراه با موتورسیکلت | the couple with a motorcycle
+`carwindowromance` | لحظهٔ عاشقانه کنار پنجرهٔ خودرو | a romantic moment at a car window
+`sunflowerbouquet` | دسته‌گل آفتابگردان | a sunflower bouquet
+`tulipbouquetcouple` | دسته‌گل لاله | a tulip bouquet
+`fairylightsprop` | ریسهٔ چراغ‌های کوچک | string fairy lights as a prop
+`sparklerevening` | در دست گرفتن فشفشه در فضای عصرگاهی | holding sparklers in the evening
+`booksharingcouple` | خواندن یک کتاب با هم | reading a book together
+`vinylrecordromance` | صفحهٔ گرامافون به‌عنوان وسیلهٔ صحنه | a vinyl record as a prop
+`picnicbasketcouple` | سبد پیک‌نیک | a picnic basket
+`balloonromance` | بادکنک به‌عنوان عنصر تصویر | a balloon as a visual element
+
+@page متوسط | آب‌وهوا و عناصر طبیعی
+هدف: وضعیت هوا و عناصر طبیعی صحنه را تعیین کن.
+
+[tip نکته‌ی کاربردی]
+آب‌وهوا با نور هم‌زمان تصمیم می‌گیرد؛ باران را با نور ابری یا نئون هماهنگ کن، نه با نور مستقیم غروب.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`lightdrizzlecouple` | باران نم‌نم و ملایم | a light, gentle drizzle
+`heavyrainromance` | باران شدید با حال‌وهوای دراماتیک | heavy rain with a dramatic mood
+`raindropforeground` | قطره‌های آب در پیش‌زمینه | water droplets in the foreground
+`foggyforestcouple` | جنگل مه‌آلود | a foggy forest
+`mistymorningromance` | مه نرم صبحگاهی | soft morning mist
+`snowfallcouple` | بارش برف اطراف زوج | snow falling around the couple
+`snowycuddle` | آغوش در فضایی برفی | an embrace in a snowy setting
+`windysunsetcouple` | باد هنگام غروب | wind at sunset
+`autumnleafcouple` | برگ‌های پاییزی | autumn leaves
+`fallingleavesromance` | برگ‌ها در حال ریزش | leaves falling
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`flowerpetalrain` | بارش گلبرگ‌ها | a shower of flower petals
+`oceanbreeze` | نسیم دریا | an ocean breeze
+`wavesbehindcouple` | موج‌های دریا در پس‌زمینه | ocean waves behind the couple
+`sunflarethroughhair` | تابش خورشید از میان موها | sun flare shining through the hair
+`cloudyromanticmood` | آسمان ابری با حس عاشقانه | cloudy sky with a romantic mood
+`stargazingcouple` | تماشای ستاره‌ها با هم | stargazing together
+`milkywayromance` | کهکشان راه شیری در پس‌زمینه | the Milky Way in the background
+`fireworksbackground` | آتش‌بازی در دوردست | fireworks in the distance
+`goldendustparticles` | ذرات غبار طلایی | floating golden dust particles
+`floatingpetals` | گلبرگ‌های معلق در هوا | petals floating in the air
+
+@page متوسط | مرور و تمرین ماژول 4
+هدف: تثبیت آموخته‌های این ماژول با تمرین و مرور.
+
+[practice تمرین ماژول 4]
+یک ژست ثابت را با یک کد حرکت، یک لباس و یک عنصر آب‌وهوا ترکیب کن و بررسی کن لباس با فصل و مکان جور است یا نه.
+
+[remember به خاطر بسپار]
+حرکت به کادر باز نیاز دارد
+لباس با فصل هماهنگ باشد
+فقط یک وسیله بگذار
+
+@module 05 | سبک و لنز | رنگ و بافت نهایی عکس و ظاهر لنز | سطح متوسط
+
+@page متوسط | سبک فیلم و عکاسی
+هدف: بافت، رنگ و سبک نهایی عکس را انتخاب کن.
+
+[tip نکته‌ی کاربردی]
+سبک رنگ و بافت را تعیین می‌کند؛ یک سبک بنویس، نه سه سبک.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`35mmfilmlook` | ظاهر عکس ثبت‌شده روی فیلم ۳۵ میلی‌متری | the look of 35mm film
+`analogfilmgrain` | بافت دانه‌دانهٔ فیلم آنالوگ | analog film grain
+`cinematictealorange` | رنگ‌پردازی سینمایی آبی‌سبز و نارنجی | cinematic teal-and-orange color grading
+`mutedfilmpalette` | پالت رنگی ملایم و کم‌اشباع فیلم | a muted, low-saturation film palette
+`softpastelromance` | رنگ‌های پاستلی نرم | soft pastel colors
+`moodydesaturated` | رنگ‌های کم‌اشباع با حال‌وهوای احساسی | moody desaturated colors
+`vintagefilmflash` | فلاش با ظاهر فیلم وینتیج | flash with a vintage film look
+`directflashportrait` | فلاش مستقیم با استایل ادیتوریال | direct flash in an editorial style
+`editorialromance` | عکاسی عاشقانه به سبک مجله | romantic magazine-style photography
+`fineartcoupleportrait` | پرتره زوج به سبک هنری فاین‌آرت | fine-art style couple portrait
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`documentaryromance` | عکاسی طبیعی به سبک مستند | natural documentary-style photography
+`indiefilmstill` | ظاهر یک فریم از فیلم مستقل | looks like a still from an indie film
+`anamorphiccinema` | زیبایی‌شناسی سینمای آنامورفیک | anamorphic cinema aesthetic
+`cinematicletterbox` | قاب عریض سینمایی با نوارهای بالا و پایین | wide cinematic letterbox frame
+`dreamysoftfocus` | فوکوس نرم و رؤیایی | dreamy soft focus
+`halationfilmglow` | هالهٔ نور در نقاط روشن، شبیه فیلم آنالوگ | halation glow in highlights, like analog film
+`highcontrastmonochrome` | عکس سیاه‌وسفید با کنتراست بالا | high-contrast black-and-white photo
+`blackandwhitefilm` | ظاهر کلاسیک فیلم سیاه‌وسفید | classic black-and-white film look
+`romanticfilmstill` | تصویر شبیه فریم یک فیلم عاشقانه | looks like a frame from a romantic film
+`nostalgicmemorylook` | ظاهر نوستالژیک و خاطره‌انگیز | a nostalgic, memory-like look
+
+@page متوسط | لنز و افکت‌های دوربین
+هدف: ظاهر لنز و افکت‌های بصری تصویر را مشخص کن.
+
+[tip نکته‌ی کاربردی]
+لنز را آخر بنویس؛ ۸۵ میلی‌متری برای چهره و ۳۵ میلی‌متری برای نشان‌دادن محیط مناسب‌تر است.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`portrait85mm` | پرسپکتیو لنز پرتره ۸۵ میلی‌متری | 85mm portrait lens perspective
+`wideangle35mm` | پرسپکتیو لنز ۳۵ میلی‌متری | 35mm lens perspective
+`ultrawideperspective` | پرسپکتیو لنز فوق‌عریض | ultra-wide lens perspective
+`telephotocompression` | فشردگی پرسپکتیو؛ پس‌زمینه نزدیک‌تر به نظر می‌رسد | telephoto compression, background appears closer
+`fisheyeplayful` | اعوجاج هنری و بازیگوشانهٔ لنز چشم‌ماهی | playful fisheye lens distortion
+`macrohanddetail` | نمای ماکرو از جزئیات دست‌ها | macro detail of the hands
+`bokehbackground` | بوکه و محوشدگی نورها در پس‌زمینه | bokeh and blurred lights in the background
+`foregroundbokeh` | بوکه در پیش‌زمینهٔ زوج | bokeh in the foreground of the couple
+`lensflarecinematic` | فلر و بازتاب نور سینمایی در لنز | cinematic lens flare and reflections
+`prismlightleak` | افکت نشت نور منشوری | prism light-leak effect
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`softvignette` | تیره شدن ملایم گوشه‌های عکس | soft vignette darkening the corners
+`tiltshiftromance` | افکت تیلت‌شیفت با ناحیهٔ فوکوس محدود | tilt-shift effect with a narrow focus area
+`longexposurelights` | رد نور با نوردهی طولانی | light trails from a long exposure
+`doubleexposureromance` | ترکیب دو تصویر با افکت نوردهی دوگانه | double-exposure blend of two images
+`reflectiondistortion` | اعوجاج هنری در بازتاب | artistic distortion in a reflection
+`glassrefraction` | شکست نور از میان شیشه | light refracting through glass
+`shootingthroughcurtain` | عکاسی از پشت پرده | shot through a curtain
+`shootingthroughleaves` | عکاسی از میان برگ‌ها | shot through leaves
+`shootingthroughraindrops` | عکاسی از پشت شیشهٔ پوشیده از قطرات باران | shot through glass covered in raindrops
+`handhelddocumentary` | ظاهر عکاسی مستند با دوربین روی دست | handheld documentary look
+
+@page متوسط | مرور و تمرین ماژول 5
+هدف: تثبیت آموخته‌های این ماژول با تمرین و مرور.
+
+[practice تمرین ماژول 5]
+یک ترکیب ثابت را یک بار با سبک فیلم و یک بار با سبک سیاه‌وسفید بنویس و تفاوت حال‌وهوا را مقایسه کن.
+
+[remember به خاطر بسپار]
+یک سبک بنویس، نه سه سبک
+لنز را آخر بنویس
+۸۵ میلی‌متری برای چهره، ۳۵ برای محیط
+
+@module 06 | مراسم، فرهنگ و حالت محتاط | بیست کد بومی برای عقد، حنابندان، مکان‌های ایرانی و پوشش موقر | سطح متوسط
+
+@page متوسط | مراسم، فرهنگ و حالت محتاط
+هدف: فرهنگ، مراسم و پوشش را متناسب با مخاطب و موقعیت انتخاب کن.
+
+[tip نکته‌ی کاربردی]
+اگر مخاطب تصویر حالت محتاط می‌خواهد، یکی از کدهای فاصلهٔ محترمانه یا پوشش موقر را در ابتدای ترکیب بگذار.
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`sofrehaghdcouple` | زوج کنار سفرهٔ عقد | the couple at a traditional Persian wedding spread, sofreh aghd
+`mirrorcandlestickframing` | آینه و شمعدان سفرهٔ عقد در کادر | the ceremonial mirror and candlesticks in the frame
+`hennanightcouple` | زوج در مراسم حنابندان | the couple at a henna night celebration
+`weddingringcloseup` | نمای نزدیک حلقه‌ها | close-up of the wedding rings
+`veillift` | برداشتن آرام تور عروس | gently lifting the bridal veil
+`firstlookmoment` | لحظهٔ اولین نگاه زوج به هم در لباس عروسی | the couple's first look at each other in wedding attire
+`dresstrainshot` | دامن بلند و دنبالهٔ لباس عروس در کادر | the long gown and train in the frame
+`adjustingtiemoment` | زن کراوات یا پاپیون مرد را مرتب می‌کند | she adjusts his tie or bow tie
+`bouquettossmoment` | لحظهٔ پرتاب دسته‌گل | the moment of tossing the bouquet
+`cakecuttingcouple` | زوج هنگام بریدن کیک | the couple cutting the cake
+
+[table]
+کد | توضیح فارسی | عبارت انگلیسی
+`persiangardencouple` | زوج در باغ ایرانی با حوض و درخت سرو | couple in a Persian garden with a pool and cypress trees
+`tilearchitecturecouple` | زوج مقابل کاشی‌کاری و معماری سنتی | couple in front of traditional tilework and architecture
+`adobealleycouple` | زوج در کوچه‌های خشتی شهر کویری | couple in the adobe alleys of a desert town
+`traditionalbazaarcouple` | زوج در بازار سنتی | couple in a traditional bazaar
+`yaldanightcouple` | زوج در شب یلدا با انار و هندوانه | couple on Yalda night with pomegranates and watermelon
+`nowruzhaftsincouple` | زوج کنار سفرهٔ هفت‌سین نوروز | couple beside a Nowruz Haft-sin table
+`modestelegancecouple` | پوشش کامل و موقر با ظاهر شیک | modest, covered clothing with an elegant look
+`hijabbridalportrait` | پرتره عروس با روسری یا شال | bridal portrait with a headscarf or shawl
+`respectfuldistancecouple` | فاصلهٔ محترمانه بدون تماس؛ نگاه و لبخند | respectful distance without touching, expressed through gaze and smile
+`familyfriendlyromance` | حس رمانتیک مناسب همهٔ سنین؛ دست‌ها نزدیک اما بدون آغوش یا بوسه | romantic feeling suitable for all ages, hands close but no hugging or kissing
+
+@page متوسط | مرور و تمرین ماژول 6
+هدف: تثبیت آموخته‌های این ماژول با تمرین و مرور.
+
+[practice تمرین ماژول 6]
+یک ترکیب مناسب مراسم عقد و یک ترکیب با حالت محتاط بساز و بررسی کن هر دو برای مخاطب خودت مناسب است.
+
+[remember به خاطر بسپار]
+کدهای بومی را با کدهای عمومی ترکیب کن
+حالت محتاط یک انتخاب است، نه محدودیت
+پوشش و فاصله را از ابتدا مشخص کن
+
+@module 07 | ترکیب کدها: فرمول و مثال | فرمول شش‌نقشی، تضادها، شش مثال کاربردی و حالت عکاس | سطح پیشرفته
+
+@page متوسط | فرمول ترکیب: شش نقش
+هدف: برای هر صحنه از هر نقش یک کد انتخاب کنی.
+
+[flow]
+ژست > کادر > نور > مکان > لباس > سبک
+
+[table]
+نقش | دسته‌ها | نمونه
+ژست و تعامل | ۲ تا ۶ و ۱۰ | `foreheadtouch`
+کادر و زاویه | ۱ و ۷ | `mediumshotcouple`
+نور | ۸ | `softwindowlight`
+مکان | ۹ و ۱۶ | `cozycafedate`
+لباس و وسیله | ۱۱ و ۱۲ | `earthtonecouple`
+سبک و لنز | ۱۴ و ۱۵ | `35mmfilmlook`
+
+## پنج قاعده‌ی ترکیب
+[steps]
+اول هدف تصویر را در یک جمله بنویس
+از هر نقش بیشتر از یک کد برندار
+مجموع کدها از شش بیشتر نشود
+به همان ترتیب فرمول بنویس و هر کد را به جمله تبدیل کن
+بعد از اولین نتیجه فقط یک چیز را عوض کن
+
+@page پیشرفته | قالب جمله‌ی ترکیبی
+هدف: ترکیب انتخاب‌شده را در یک قالب پنج‌بخشی و مستقل از ابزار بنویسی.
+
+[prompt قالب آماده]
+نقش: تو یک عکاس پرتره‌ی زوج هستی.
+هدف: از عکس مرجع، تصویری با این ویژگی‌ها بساز: ‹ژست›؛ ‹کادر›؛ ‹نور›؛ ‹مکان›؛ ‹لباس›؛ ‹سبک›.
+مخاطب: ‹کاربرد تصویر؛ مثلاً پست، استوری یا آلبوم›.
+فرمت: یک تصویر واقع‌گرایانه با نسبت ‹۴:۵ یا ۹:۱۶›.
+محدودیت: هویت دو نفر حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~هدف: ساخت درخواست کامل از کدهای انتخاب‌شده
+~ورودی: شش توضیح فارسی از جدول‌های کتاب
+~خروجی مورد انتظار: یک صحنه‌ی هماهنگ
+~نکته: ‹…› را با توضیح همان کد پر کن
+
+[beforeafter]
+قبل: یک عکس عاشقانه بساز.
+بعد: پرتره‌ی روبه‌رو، پیشانی‌ها در تماس، نور نرم پنجره، کافه‌ی دنج، لباس خاکی و ظاهر لنز پرتره.
+
+@page پیشرفته | تضادها: کدهایی که با هم نمی‌سازند
+هدف: ترکیب‌هایی را که تصویر را خراب می‌کنند پیش از ساخت تشخیص بدهی.
+
+[table]
+دو کد | دلیل تضاد | راه‌حل
+`candlelightcouple` و `goldenhourglow` | دو منبع نور گرم رقیب | یکی را نگه دار؛ شمع برای داخل، ساعت طلایی برای بیرون
+`fisheyeplayful` و `portrait85mm` | اعوجاج و فشردگی لنز مخالف هم‌اند | ۸۵ برای چهره، چشم‌ماهی فقط برای صحنه‌ی بازیگوش
+`ultrawideenvironment` و `extremecloseupcouple` | کادر بسیار باز و بسیار بسته با هم | یک اندازه‌ی نما انتخاب کن
+`blackandwhitefilm` و `cinematictealorange` | بی‌رنگی و رنگ‌پردازی با هم | یک سبک رنگی را نگه دار
+`snowfallcouple` و `summerlinenstyle` | برف با لباس تابستانی | لباس گرم زمستانی
+`highkeysoftportrait` و `dramaticlowkey` | نور روشن و تیره با هم | یک فضای نوری انتخاب کن
+`shallowdepthcouple` و `deepfocuscouple` | دو عمق میدان متضاد | یک عمق میدان انتخاب کن
+`silhouetteframing` و `closeupcoupleportrait` | سایه‌وار یعنی جزئیات چهره دیده نمی‌شود | یکی از دو حالت را نگه دار
+
+[warn قاعده‌ی کلی]
+اگر دو کد از یک نقش را هم‌زمان نوشتی، آن‌ها را رقیب هم در نظر بگیر و یکی را حذف کن.
+
+@page پیشرفته | مثال‌های کاربردی ۱ و ۲
+هدف: دیدن ترکیب شش‌کدی در دو موقعیت واقعی.
+
+## مثال 1: پرتره‌ی نرم در کافه
+[prompt پرتره‌ی نرم در کافه]
+نقش: تو یک عکاس پرتره‌ی زوج هستی.
+هدف: از عکس مرجع، تصویری با این ویژگی‌ها بساز: نشستن نزدیک به هم و در کنار یکدیگر؛ کادر از کمر به بالا؛ نور طبیعی و نرم پنجره؛ قرار عاشقانه در کافه‌ای دنج؛ لباس‌ها با رنگ‌های خاکی و طبیعی؛ پرسپکتیو لنز پرتره ۸۵ میلی‌متری.
+مخاطب: پست اینستاگرام برای یک زوج جوان.
+فرمت: یک تصویر واقع‌گرایانه با نسبت ۴:۵.
+محدودیت: هویت دو نفر حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~کدها: `sittingclosecouple` `mediumshotcouple` `softwindowlight` `cozycafedate` `earthtonecouple` `portrait85mm`
+~نکته: نور پنجره و رنگ خاکی حس گرم و طبیعی می‌دهند
+
+
+## مثال 2: قدم‌زدن در غروب
+[prompt قدم‌زدن در غروب]
+نقش: تو یک عکاس پرتره‌ی زوج هستی.
+هدف: از عکس مرجع، تصویری با این ویژگی‌ها بساز: راه رفتن دست‌در‌دست؛ زوج در قاب باز و سینمایی؛ نور غروب از پشت زوج؛ زوج در ساحل؛ لباس‌های کتان تابستانی؛ ظاهر عکس ثبت‌شده روی فیلم ۳۵ میلی‌متری.
+مخاطب: استوری یا ریلز با حس سفر.
+فرمت: یک تصویر واقع‌گرایانه با نسبت ۹:۱۶.
+محدودیت: هویت دو نفر حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~کدها: `walkinghandinhand` `widecinematiccouple` `sunsetbacklight` `romanticbeachcouple` `summerlinenstyle` `35mmfilmlook`
+~نکته: کادر باز به حرکت و نور غروب جا می‌دهد
+
+
+@page پیشرفته | مثال‌های کاربردی ۳ و ۴
+هدف: دیدن ترکیب شش‌کدی در دو موقعیت واقعی.
+
+## مثال 3: شب نئونی پس از باران
+[prompt شب نئونی پس از باران]
+نقش: تو یک عکاس پرتره‌ی زوج هستی.
+هدف: از عکس مرجع، تصویری با این ویژگی‌ها بساز: نمای پشت زوج هنگام راه رفتن؛ کادر از ران به بالا؛ نور نئون رنگی؛ زوج در خیابان خیس پس از باران؛ پوشیدن بارانی در هوای بارانی؛ رنگ‌پردازی سینمایی آبی‌سبز و نارنجی.
+مخاطب: تصویر سینمایی برای صفحه‌ی محتوا.
+فرمت: یک تصویر واقع‌گرایانه با نسبت ۴:۵.
+محدودیت: هویت دو نفر حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~کدها: `walkingcouplebackshot` `mediumfullcouple` `neonromancelight` `rainystreetromance` `raincoatcouple` `cinematictealorange`
+~نکته: رنگ‌پردازی آبی‌سبز و نارنجی با نئون هم‌خوان است
+
+
+## مثال 4: سفره‌ی عقد سنتی
+[prompt سفره‌ی عقد سنتی]
+نقش: تو یک عکاس پرتره‌ی زوج هستی.
+هدف: از عکس مرجع، تصویری با این ویژگی‌ها بساز: زوج کنار سفرهٔ عقد؛ نشستن نزدیک به هم و در کنار یکدیگر؛ کادر از کمر به بالا؛ نور طبیعی و نرم پنجره؛ لباس‌های سنتی هماهنگ؛ عکاسی عاشقانه به سبک مجله.
+مخاطب: آلبوم خانوادگی یا کارت دعوت.
+فرمت: یک تصویر واقع‌گرایانه با نسبت ۴:۵.
+محدودیت: هویت دو نفر حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~کدها: `sofrehaghdcouple` `sittingclosecouple` `mediumshotcouple` `softwindowlight` `traditionalwearcouple` `editorialromance`
+~نکته: می‌توانی آینه و شمعدان را هم در توضیح صحنه بیاوری
+
+
+@page پیشرفته | مثال‌های کاربردی ۵ و ۶
+هدف: دیدن ترکیب شش‌کدی در دو موقعیت واقعی.
+
+## مثال 5: باغ ایرانی با حالت محتاط
+[prompt باغ ایرانی با حالت محتاط]
+نقش: تو یک عکاس پرتره‌ی زوج هستی.
+هدف: از عکس مرجع، تصویری با این ویژگی‌ها بساز: فاصلهٔ محترمانه بدون تماس؛ نگاه و لبخند؛ نمای کامل بدن هر دو نفر؛ نور نرم صبحگاهی؛ زوج در باغ ایرانی با حوض و درخت سرو؛ پوشش کامل و موقر با ظاهر شیک؛ رنگ‌های پاستلی نرم.
+مخاطب: تصویر مناسب همه‌ی مخاطب‌ها.
+فرمت: یک تصویر واقع‌گرایانه با نسبت ۴:۵.
+محدودیت: هویت دو نفر حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~کدها: `respectfuldistancecouple` `fullbodycouple` `softmorninglight` `persiangardencouple` `modestelegancecouple` `softpastelromance`
+~نکته: فاصله‌ی محترمانه را با لبخند و نگاه جبران کن
+
+
+## مثال 6: آلبوم فیلم آنالوگ
+[prompt آلبوم فیلم آنالوگ]
+نقش: تو یک عکاس پرتره‌ی زوج هستی.
+هدف: از عکس مرجع، تصویری با این ویژگی‌ها بساز: راه رفتن همراه با خندهٔ طبیعی؛ کادر از ران به بالا؛ نور لکه‌لکهٔ خورشید از میان برگ‌ها؛ زوج در میان جنگل؛ لباس‌ها با رنگ‌های خاکی و طبیعی؛ بافت دانه‌دانهٔ فیلم آنالوگ.
+مخاطب: مجموعه‌ی عکس با حس نوستالژی.
+فرمت: یک تصویر واقع‌گرایانه با نسبت ۳:۲.
+محدودیت: هویت دو نفر حفظ شود؛ بدون متن، نشان‌واره و اعوجاج چهره.
+~کدها: `candidlaughingwalk` `mediumfullcouple` `dappledtreelight` `forestromance` `earthtonecouple` `analogfilmgrain`
+~نکته: خنده‌ی طبیعی و دانه‌ی فیلم حس خاطره می‌سازند
+
+
+@page پیشرفته | حالت عکاس: کد به‌عنوان جمله‌ی هدایت
+هدف: کدها را در جلسه‌ی عکاسی به جمله‌ی کوتاه و قابل‌اجرا برای زوج تبدیل کنی.
+
+[table]
+کد | جمله‌ی هدایت
+`foreheadtouch` | پیشانی‌هاتون رو آروم کنار هم بذارید
+`walkinghandinhand` | دست‌در‌دست، آهسته به‌طرف نور قدم بردارید
+`shylookaway` | یکی‌تون با لبخند نگاهش رو برگردونه
+`laughingembrace` | همدیگه رو بغل کنید و بخندید
+`turningbackglance` | یکی‌تون وسط قدم‌زدن به پشت سر نگاه کنه
+`sittingclosecouple` | کنار هم بشینید و شونه‌هاتون رو بهم بچسبونید
+`handholdingcloseup` | دست‌هاتون رو بیارید جلو، من از نزدیک می‌گیرم
+`windyhairwalk` | آهسته قدم بزنید تا باد موها رو حرکت بده
+
+[example شات‌لیست نمونه]
+۱. شروع آرام: `sidebysidewalk` با `widecinematiccouple`
+۲. ارتباط: `lookingateachother` با `mediumshotcouple`
+۳. حرکت: `walkinghandinhand` با `softmorninglight`
+۴. جزئیات: `handholdingcloseup` با `portrait85mm`
+۵. پایان: `couplewalkingaway` با `widecinematiccouple`
+
+@page پیشرفته | عیب‌یابی: وقتی نتیجه خراب شد
+هدف: مشکل رایج نتیجه را بشناسی و در یک قدم اصلاح کنی.
+
+[faq]
+س: چهره‌ها عوض شده، چه کنم؟
+ج: بلوک حفظ هویت را اول درخواست بگذار، عکس مرجع واضح و روبه‌رو بده و تعداد کدها را کم کن.
+س: دست‌ها یا انگشت‌ها خراب است.
+ج: محل دست را دقیق بنویس و کادر را از کمر به بالا یا نزدیک‌تر انتخاب کن تا دست‌ها کمتر دیده شوند.
+س: نور با مکان نمی‌خواند.
+ج: فقط یک کد نور بنویس و جدول تضادها را مرور کن.
+س: تصویر مصنوعی به نظر می‌رسد.
+ج: کدهای سبک و لنز را کم کن و یک حالت خودجوش مثل خنده یا نگاه برگردانده اضافه کن.
+س: ترکیب شلوغ شده.
+ج: از شش کد کمتر بنویس و هر بار فقط یک کد را عوض کن.
+س: نتیجه از مرجع دور است.
+ج: توضیح ظاهر دو نفر را کوتاه بنویس و تغییرها را مرحله‌به‌مرحله انجام بده، نه یک‌جا.
+
+@page پیشرفته | مرور و تمرین ماژول ۷
+هدف: ترکیب‌سازی را با یک تمرین کامل ببندی.
+
+[practice تمرین ماژول ۷]
+یک موقعیت واقعی از زندگی خودت را انتخاب کن (قرار، سفر یا مراسم) و با فرمول شش‌نقشی یک ترکیب بساز. تضادها را بررسی کن و بعد از نتیجه فقط یک کد را عوض کن.
+
+[ref مرجع سریع فرمول]
+ژست: چه کاری می‌کنند
+کادر: از چه فاصله‌ای دیده می‌شوند
+نور: نور از کجا و با چه رنگی
+مکان: کجا هستند
+لباس: چه می‌پوشند
+سبک: عکس چه ظاهری دارد
+
+@module 08 | پروژه‌ی نهایی | ساخت یک آلبوم شش‌عکسی هماهنگ | سطح پروژه
+
+@page پروژه | آلبوم شش‌عکسی
+هدف: همه‌ی مهارت‌ها را در یک خروجی واقعی کنار هم بگذاری.
+
+[project پروژه‌ی نهایی — آلبوم شش‌عکسی هماهنگ]
+یک زوج، یک فضا و شش صحنه. لباس، پالت رنگ و سبک را برای همه‌ی صحنه‌ها ثابت نگه دار؛ فقط ژست و کادر را عوض کن.
+
+[check]
+شش ترکیب هرکدام با حداکثر شش کد نوشته شده
+بلوک حفظ هویت در همه‌ی ترکیب‌ها هست
+جدول تضادها برای هر ترکیب بررسی شده
+لباس، پالت رنگ و سبک در شش صحنه یکسان است
+از شش تصویر، سه تصویر بهتر انتخاب و دلیل آن نوشته شده
+
+[end پایان کتاب]
+با تمام‌شدن این پروژه، دیگر فقط کدها را نمی‌خوانی؛ ساختن صحنه را هم بلدی.
+
+@back کتاب کدهای عکس زوج
