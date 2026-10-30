@@ -114,6 +114,7 @@ code,.ltr{direction:ltr;unicode-bidi:isolate;font-family:var(--mono)}
 .copy{font-size:12.5px;padding:2px 12px;border-radius:99px;border:1px solid #ffffff2a;color:#E7E2F8}
 .copy:hover{background:#ffffff14}
 .bad-out{opacity:.55}
+.demo-note{font-size:12.5px;color:#A9A4C8;margin-top:10px}
 
 /* ---------- بخش‌های روشن ---------- */
 section{position:relative}
@@ -228,12 +229,12 @@ dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF
    <p class="lead">ژست، نور، لباس و مکان را از ۳۲۰ کد انتخاب کن. دوقاب جملهٔ کامل را برای ChatGPT، Gemini، Midjourney یا Flux می‌سازد؛ برای عکس تازه، ویرایش عکس موجود و برنامه‌ریزی کل آلبوم.</p>
    <div class="cta-row">
     <a class="btn btn-main" href="app.html" data-install data-state="ready"><span class="on-ready"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>نصب برنامه</span><span class="on-installed"><svg viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l4 4-4 4M14 12H4"/></svg>ورود به برنامه</span><span class="on-pending">در حال نصب…</span></a>
-    <a class="btn btn-ghost" href="app.html" data-try>امتحان در مرورگر</a>
+    <a class="btn btn-ghost" href="https://t.me/aihub_tools" target="_blank" rel="noopener" data-buy>خرید لایسنس</a>
    </div>
    <p class="state-note" data-note aria-live="polite"></p>
    <ul class="facts">
-    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>بعد از نصب بدون اینترنت هم کار می‌کند</li>
-    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>ثبت‌نام ندارد</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>بعد از فعال‌سازی بدون اینترنت هم کار می‌کند</li>
+    <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>حساب کاربری ندارد؛ فقط یک کد لایسنس یک‌ساله</li>
     <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>عکس‌هایت آپلود نمی‌شود؛ برنامه فقط متن می‌سازد</li>
    </ul>
   </div>
@@ -243,6 +244,7 @@ dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF
    <div id="rows"></div>
    <div id="msg"></div>
    <div class="sentence"><div class="lb"><span>English</span><button class="copy" id="copy" type="button">کپی</button></div><p id="out"></p></div>
+   <p class="demo-note">نمونهٔ ساده‌شده؛ برنامهٔ کامل با کد لایسنس فعال می‌شود.</p>
   </div>
  </div>
 </section>
@@ -312,7 +314,7 @@ dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF
 <section class="install" id="install">
  <div class="wrap">
   <h2>روی صفحهٔ اصلی گوشی‌ات بنشیند</h2>
-  <p class="sub">نصب چند ثانیه طول می‌کشد و نیازی به فروشگاه اپ ندارد.</p>
+  <p class="sub">نصب چند ثانیه طول می‌کشد و نیازی به فروشگاه اپ ندارد. برای ورود به برنامه، کد لایسنس لازم است.</p>
   <div class="cta-row" style="margin-top:26px">
    <a class="btn btn-main" href="app.html" data-install data-state="ready"><span class="on-ready"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>نصب برنامه</span><span class="on-installed"><svg viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l4 4-4 4M14 12H4"/></svg>ورود به برنامه</span><span class="on-pending">در حال نصب…</span></a>
   </div>
@@ -330,13 +332,16 @@ dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF
  <div class="wrap">
   <h2>سوال‌های رایج</h2>
   <div class="faq">
-   <details><summary>بدون اینترنت کار می‌کند؟</summary><p>بعد از اولین باز شدن و نصب کامل، بله. فقط به‌روزرسانی و اشتراک‌گذاری لینک به اینترنت نیاز دارند.</p></details>
+   <details><summary>بدون اینترنت کار می‌کند؟</summary><p>بعد از فعال‌سازی، بله. فعال‌سازی بار اول و تأیید دوره‌ای لایسنس (هر ۷ روز، در صورت اتصال) به اینترنت نیاز دارند؛ قطعی اینترنت برنامه را قفل نمی‌کند.</p></details>
+   <details><summary>لایسنس چطور کار می‌کند؟</summary><p>هر کد یک‌ساله است و روی حداکثر ۳ دستگاه فعال می‌شود. فعال‌سازی بار اول آنلاین است؛ اگر اتصال برقرار نشد، VPN را روشن کن. اگر اصلاً به سرور وصل نمی‌شوی، از «فعال‌سازی دستی» استفاده کن: کد دستگاهت را برای پشتیبانی می‌فرستی و کد مخصوص همان دستگاه را می‌گیری.</p></details>
+   <details><summary>چطور لایسنس بگیرم؟</summary><p>از طریق پشتیبانی در تلگرام: <a href="https://t.me/aihub_tools" target="_blank" rel="noopener" class="ltr">@aihub_tools</a>. بعد از دریافت کد، برنامه را نصب کن و در صفحهٔ فعال‌سازی وارد کن.</p></details>
+   <details><summary>بعد از تمام شدن یک سال چه می‌شود؟</summary><p>برنامه قفل می‌شود، ولی دکمهٔ دانلود پشتیبان همیشه آزاد است و اطلاعاتت پاک نمی‌شود. با تمدید از پشتیبانی، دوباره فعال می‌کنی.</p></details>
    <details><summary>عکس‌های من جایی آپلود می‌شود؟</summary><p>نه. دوقاب اصلاً عکس نمی‌گیرد. فقط متن می‌سازد و فهرست‌هایت را روی دستگاه خودت ذخیره می‌کند. عکس مرجع را خودت در ابزار AI پیوست می‌کنی.</p></details>
    <details><summary>خودِ دوقاب عکس می‌سازد؟</summary><p>نه. جملهٔ آماده می‌دهد تا در ابزار دلخواهت بچسبانی. هزینهٔ ساخت تصویر با همان ابزار است.</p></details>
    <details><summary>ثبات چهره تضمین است؟</summary><p>هیچ پرامپتی ثبات را صددرصد تضمین نمی‌کند. جمله‌های قفل هویت و روش لنگر آلبوم شانس را بالا می‌برند. اگر یک عکس خراب شد، فقط همان را دوباره بساز.</p></details>
    <details><summary>روی آیفون هم نصب می‌شود؟</summary><p>بله، از Safari: دکمهٔ اشتراک‌گذاری ← افزودن به صفحهٔ اصلی.</p></details>
    <details><summary>برنامه چطور به‌روز می‌شود؟</summary><p>خودکار. وقتی نسخهٔ جدید آماده شود، داخل برنامه پیام «به‌روزرسانی» می‌بینی.</p></details>
-   <details><summary>اگر برنامه را پاک کنم چه می‌شود؟</summary><p>اطلاعات ذخیره‌شده هم پاک می‌شود. قبلش از «تنظیمات ← دریافت فایل پشتیبان» استفاده کن.</p></details>
+   <details><summary>اگر برنامه را پاک کنم چه می‌شود؟</summary><p>اطلاعات ذخیره‌شده هم پاک می‌شود و نصب دوباره، یک دستگاه جدید حساب می‌شود (یکی از ۳ ظرفیت). قبلش از «تنظیمات ← دریافت فایل پشتیبان» استفاده کن و اگر ظرفیت پر شد، از پشتیبانی بخواه یک دستگاه را آزاد کند.</p></details>
   </div>
  </div>
 </section>
@@ -407,7 +412,7 @@ $("#sheet").innerHTML=SH.map(tile).join("");
 
 /* ---------- نصب ← ورود ---------- */
 const KEY="duoframe-installed";
-const btns=$$("[data-install]"),notes=$$("[data-note]"),tryBtn=$("[data-try]");
+const btns=$$("[data-install]"),notes=$$("[data-note]");
 const ua=navigator.userAgent||"";
 const isIOS=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
 const standalone=()=>matchMedia("(display-mode: standalone)").matches||matchMedia("(display-mode: window-controls-overlay)").matches||navigator.standalone===true;
@@ -415,8 +420,7 @@ let dp=null,state="ready";
 const get=()=>{try{return localStorage.getItem(KEY)==="1"}catch(e){return false}};
 const set=v=>{try{v?localStorage.setItem(KEY,"1"):localStorage.removeItem(KEY)}catch(e){}};
 function setState(st){state=st;btns.forEach(b=>b.dataset.state=st);
- if(tryBtn)tryBtn.hidden=st==="installed";
- const msg=st==="installed"?`دوقاب روی دستگاهت نصب است. <a href="#" data-reset>نصب نیست؟</a>`:st==="pending"?"نصب شروع شد، چند ثانیه صبر کن.":"";
+ const msg=st==="installed"?`دوقاب روی دستگاهت نصب است؛ برای ورود، کد لایسنس را وارد کن. <a href="#" data-reset>نصب نیست؟</a>`:st==="pending"?"نصب شروع شد، چند ثانیه صبر کن.":"";
  notes.forEach(n=>n.innerHTML=msg)}
 document.addEventListener("click",e=>{const r=e.target.closest("[data-reset]");if(!r)return;e.preventDefault();set(false);setState("ready")});
 const STEPS={
