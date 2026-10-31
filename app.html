@@ -6,18 +6,20 @@
 <script>try{var t=JSON.parse(localStorage.getItem("ccb1")||"{}").theme;if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>دوقاب | کدساز عکس زوج</title>
+<title>دوقاب | کدساز عکس عاشقانه</title>
 <style>
 @font-face{font-family:"Vazirmatn";src:url(fonts/Vazirmatn.woff2) format("woff2");font-weight:100 900;font-display:swap}
 :root{--ink:#0B0B14;--ink2:#12121F;--lav:#C9A6FF;--violet:#7C4DFF;--blue:#3D7BFF;
 --bg:#F6F5FB;--card:#fff;--text:#17172B;--muted:#65656D;--line:#E6E2F5;--soft:#F1EEFF;--okbg:#E9FBF3;--ok:#128A55;--warnbg:#FFF1E0;--warn:#B4740A;--badbg:#FFEDEC;--bad:#C22A2E;
---g:linear-gradient(135deg,#7C4DFF,#3D7BFF)}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0B0B14;--card:#14141F;--text:#EEEAFB;--muted:#9C9CB3;--line:#26263A;--soft:#1D1832;--okbg:#0F2A21;--ok:#4BD39B;--warnbg:#2B2113;--warn:#F0B75A;--badbg:#2E1719;--bad:#FF8A8D}}
-:root[data-theme=dark]{--bg:#0B0B14;--card:#14141F;--text:#EEEAFB;--muted:#9C9CB3;--line:#26263A;--soft:#1D1832;--okbg:#0F2A21;--ok:#4BD39B;--warnbg:#2B2113;--warn:#F0B75A;--badbg:#2E1719;--bad:#FF8A8D}
+--g:linear-gradient(135deg,#7C4DFF,#3D7BFF);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#0B0B14;--card:#14141F;--text:#EEEAFB;--muted:#9C9CB3;--line:#26263A;--soft:#1D1832;--okbg:#0F2A21;--ok:#4BD39B;--warnbg:#2B2113;--warn:#F0B75A;--badbg:#2E1719;--bad:#FF8A8D}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#0B0B14;--card:#14141F;--text:#EEEAFB;--muted:#9C9CB3;--line:#26263A;--soft:#1D1832;--okbg:#0F2A21;--ok:#4BD39B;--warnbg:#2B2113;--warn:#F0B75A;--badbg:#2E1719;--bad:#FF8A8D}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%}
 body{font-family:"Vazirmatn","Vazir",Tahoma,"Noto Sans Arabic",sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.9;min-height:100vh;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 button,input,select{font:inherit;color:inherit}
+select,input[type=text],input[type=search],textarea{background-color:var(--card);color:var(--text)}
+select option,select optgroup{background:var(--card);color:var(--text)}
 button{cursor:pointer;border:0;background:none}
 :focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:8px}
 code,.ltr{direction:ltr;unicode-bidi:isolate;font-family:"JetBrains Mono","DejaVu Sans Mono",Consolas,monospace}
@@ -44,6 +46,11 @@ h2{font-size:17px;font-weight:800;margin:4px 0 10px}
 .acts{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
 .b{padding:2px 12px;border-radius:99px;border:1px solid var(--line);font-size:12.5px;line-height:2;background:var(--card)}
 .b.p{background:var(--g);color:#fff;border-color:transparent;font-weight:700}
+.b.fav{width:34px;height:30px;padding:0;display:inline-flex;align-items:center;justify-content:center;color:var(--muted)}
+.b.fav svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linejoin:round;transition:transform .18s}
+.b.fav:active svg{transform:scale(.8)}
+.b.fav.on{color:#F0447C;border-color:#F0447C66;background:#F0447C14}
+.b.fav.on svg{fill:#F0447C}
 .b.on{color:#E8A400;border-color:#E8A400}
 .more{display:block;margin:14px auto;padding:6px 22px}
 .empty{text-align:center;color:var(--muted);padding:34px 10px}
@@ -92,6 +99,7 @@ nav button.on{color:var(--violet);font-weight:800}
 :root{color-scheme:light dark}:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 [hidden]{display:none!important}
 body{min-height:100dvh}
+#settings .in{max-width:480px}
 dialog.sheet{border:0;padding:0;background:transparent;color:inherit;width:100%;height:100%;max-width:none;max-height:none;margin:0;inset:0;overflow:hidden}
 dialog.sheet::backdrop{background:#0009}
 dialog.sheet[open]{display:flex;align-items:flex-end}
@@ -114,6 +122,8 @@ dialog.sheet[open]{display:flex;align-items:flex-end}
 body.hasdock{padding-bottom:calc(136px + env(safe-area-inset-bottom))}
 body.hasdock #toast{bottom:calc(140px + env(safe-area-inset-bottom))}
 #upd{position:fixed;inset-inline:12px;top:calc(64px + env(safe-area-inset-top));max-width:736px;margin:0 auto;background:var(--card);color:var(--text);border:1px solid var(--violet);border-radius:14px;padding:8px 8px 8px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:70;font-size:13.5px;box-shadow:0 6px 20px #0004}
+.guide{display:flex;gap:8px;align-items:flex-start;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:0 0 12px;font-size:13px;line-height:1.9;color:var(--text)}
+.guide:before{content:"i";flex:none;width:18px;height:18px;margin-top:5px;border-radius:50%;background:var(--violet);color:#fff;font:700 12px/18px Georgia,serif;text-align:center}
 .intro{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:12px;font-size:13.5px}
 .intro b{display:block;margin-bottom:2px}
 .intro ol{padding-right:20px}
@@ -148,7 +158,15 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 .licman p{font-size:13px;color:#B7B2D2;margin:8px 0}
 .lklink{margin-top:14px;font-size:13.5px;color:#EBD8B8;text-decoration:underline;text-underline-offset:4px}
 .lfoot{margin-top:14px;font-size:12.5px;color:#A9A4C8}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.soc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
+.soc a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);text-decoration:none;font-size:13px;font-weight:700}
+.soc a:active{background:var(--soft)}
+.soc svg{width:22px;height:22px;fill:none;stroke:var(--violet);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.soc small{font-size:10.5px;font-weight:400;color:var(--muted)}
+.copy{font-size:12px;line-height:1.9;color:var(--muted);border-top:1px solid var(--line);margin-top:12px;padding-top:10px}
 .licst{font-size:13.5px;line-height:2}
+.licres{margin-top:8px;font-size:13px;line-height:1.9}.licres .ok{color:var(--ok)}.licres .bad{color:var(--bad)}.licres .wr{color:var(--warn)}
 .licst b{font-weight:800}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 
@@ -167,6 +185,7 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 <main>
 <div class="msg w" id="licBanner" role="status" hidden></div>
 <section id="v-lib" class="view on">
+ <p class="guide">کتابخانهٔ ۳۲۰ کد عکس عاشقانه. روی هر کد بزن تا کپی شود، با قلب ذخیره‌اش کن و با فیلترها بین دسته‌ها بگرد. کدها را در «سازنده» به یک پرامپت کامل تبدیل کن.</p>
  <div class="intro" id="intro" hidden><b>شروع سریع</b><ol><li>از کتابخانه چند کد بردار (یا «غافلگیرم کن» را در سازنده بزن).</li><li>در سازنده ابزارت را انتخاب کن تا جمله مخصوص همان ابزار ساخته شود.</li><li>عکس داری؟ حالت «ویرایش عکس» را بزن و فقط تغییر لازم را بخواه.</li></ol><button class="b p" id="introx" type="button">متوجه شدم</button></div>
  <input class="search" id="q" type="search" placeholder="جستجوی کد، فارسی یا انگلیسی" aria-label="جستجو">
  <div class="chips" id="chips"></div>
@@ -175,6 +194,7 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
  <button class="b more" id="more" type="button">نمایش بیشتر</button>
 </section>
 <section id="v-build" class="view">
+ <p class="guide">برای هر نقش (ژست، کادر، نور…) یک کد انتخاب کن، ابزارت را بزن و پرامپت آمادهٔ کپی را بگیر. «ویرایش عکس» برای تغییر عکسی است که از قبل داری.</p>
  <details class="how"><summary>راهنمای ترکیب در یک نگاه</summary>
   <ol><li>از هر نقش حداکثر یک کد بردار.</li><li>مجموع کدها از شش بیشتر نشود.</li><li>پس از اولین نتیجه فقط یک کد را عوض کن.</li><li>خروجی یک جمله‌ی کامل است و به هیچ ابزار خاصی وابسته نیست.</li></ol>
   <p class="muted" id="iosHint" style="display:none;margin-top:6px">برای نصب روی آیفون: دکمه‌ی اشتراک‌گذاری و بعد «Add to Home Screen».</p></details>
@@ -195,7 +215,7 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 </section>
 <section id="v-album" class="view">
  <h2>برنامه‌ریز آلبوم</h2>
- <p class="muted">دنیای آلبوم (مکان، نور، لباس، سبک) ثابت می‌ماند و فقط ژست، کادر و لنز بین عکس‌ها عوض می‌شود؛ مثل یک آلبوم واقعی با ریتم نمای باز، متوسط، نزدیک و جزئیات.</p>
+ <p class="guide">دنیای آلبوم (مکان، نور، لباس، سبک) ثابت می‌ماند و فقط ژست، کادر و لنز بین عکس‌ها عوض می‌شود؛ مثل یک آلبوم واقعی با ریتم نمای باز، متوسط، نزدیک و جزئیات.</p>
  <details class="how"><summary>قاعدهٔ ثبات چهره و لباس در آلبوم</summary>
   <ol><li>عکس ۱ «لنگر» آلبوم است. چند بار بسازش و بهترین نسخه را نگه دار.</li><li>برای عکس‌های بعدی، عکس مرجع اصلی و همان عکس ۱ را هم پیوست کن.</li><li>اگر یک عکس خراب شد، فقط همان را «عوض‌کن» بزن؛ قفل‌شده‌ها دست نمی‌خورند.</li><li>دنیای آلبوم را وسط کار عوض نکن، وگرنه ثبات از بین می‌رود.</li></ol></details>
  <h2 style="margin-top:12px">الگوی آلبوم</h2><div class="chips wrap" id="atpl"></div>
@@ -212,13 +232,13 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
  <h2 style="margin-top:22px">آلبوم‌های من</h2><div id="amine"></div>
 </section>
 <section id="v-rec" class="view">
- <h2>ترکیب‌های آماده</h2><p class="muted">شش ترکیب شش‌کدی تست‌نشده برای شروع؛ همه را در سازنده می‌توانی تغییر بدهی.</p>
+ <h2>ترکیب‌های آماده</h2><p class="guide">شش ترکیب آمادهٔ شش‌کدی برای شروع سریع. «باز کردن در سازنده» را بزن و هر کدش را عوض کن؛ ترکیب‌های خودت هم پایین ذخیره می‌شود.</p>
  <div id="recs"></div>
  <h2 style="margin-top:22px">ترکیب‌های من</h2><div id="mine"></div>
 </section>
 <section id="v-shoot" class="view">
  <div class="bar noprint"><h2>شات‌لیست عکاس</h2><span class="muted" id="bcnt"></span></div>
- <p class="muted noprint">کدها را از کتابخانه به شات‌لیست اضافه کن و حین جلسه تیک بزن.</p>
+ <p class="guide noprint">ویژهٔ عکاس: ژست‌هایی که می‌خواهی در جلسه بگیری را اینجا جمع کن، حین عکاسی تیک بزن و لیست را کپی یا چاپ کن. «شات‌لیست پیشنهادی» یک شروع آماده می‌دهد.</p>
  <div class="bar noprint"><button class="b p" id="bsug" type="button">افزودن شات‌لیست پیشنهادی</button><button class="b" id="bcopy" type="button">کپی لیست</button><button class="b" id="bprint" type="button">چاپ</button><button class="b" id="bclr" type="button">پاک‌کردن</button></div>
  <div id="board"></div>
 </section>
@@ -237,14 +257,24 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 <div class="row"><div><b>ظاهر</b><div class="muted">پیش‌فرض: مطابق تنظیم دستگاه</div></div><select id="theme" aria-label="ظاهر"><option value="auto">خودکار</option><option value="light">روشن</option><option value="dark">تاریک</option></select></div>
 <label class="row"><div><b>حالت محتاط</b><div class="muted">کدهای بوسه و تماس نزدیک در همه‌جا پنهان می‌شود</div></div><input type="checkbox" id="modest"></label>
 <label class="row"><div><b>روشن‌ماندن صفحه در شات‌لیست</b><div class="muted">حین جلسهٔ عکاسی صفحه خاموش نشود</div></div><input type="checkbox" id="wake"></label>
-<h3>لایسنس</h3>
+<h3>کد فعال‌سازی</h3>
 <div id="licCard"></div>
 <h3>پشتیبان‌گیری</h3>
 <p class="muted">علاقه‌مندی‌ها، شات‌لیست و ترکیب‌های ذخیره‌شده فقط روی همین دستگاه ذخیره می‌شوند. از آن‌ها پشتیبان بگیر تا با پاک‌شدن داده‌های مرورگر از دست نروند.</p>
 <div class="acts"><button class="b p" id="exp" type="button">دریافت فایل پشتیبان</button><button class="b" id="imp" type="button">بازیابی از فایل</button><input type="file" id="impf" accept="application/json,.json" hidden></div>
 <div class="row"><div><b>ذخیره‌سازی پایدار</b><div class="muted" id="persist">…</div></div><button class="b" id="pers" type="button">درخواست</button></div>
 <button class="b danger" id="wipe" type="button">پاک‌کردن همهٔ داده‌ها</button>
-<p class="muted" style="margin-top:12px">دوقاب · کدساز عکس زوج · نسخهٔ ۲٫۳ · AIhub Tools</p>
+<h3>دربارهٔ برنامه</h3>
+<p class="muted">دوقاب کدساز عکس عاشقانه است: ۳۲۰ کد آمادهٔ ژست، کادر، نور، لباس و مکان که با هم به یک پرامپت کامل برای ابزارهای هوش مصنوعی تبدیل می‌شوند. برنامه‌ریز آلبوم و شات‌لیست عکاس هم دارد و بعد از فعال‌سازی بدون اینترنت کار می‌کند. ساختهٔ AIhub Tools.</p>
+<h3>ارتباط با ما و پشتیبانی</h3>
+<p class="muted">برای خرید و تمدید کد فعال‌سازی، سؤال و گزارش مشکل، از یکی از راه‌ها پیام بدهید: <span class="ltr">@aihub_tools</span></p>
+<div class="soc">
+ <a href="https://t.me/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg>تلگرام<small class="ltr">@aihub_tools</small></a>
+ <a href="https://rubika.ir/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9 9h4a2 2 0 010 4H9m3 0l3 3"/></svg>روبیکا<small class="ltr">@aihub_tools</small></a>
+ <a href="https://instagram.com/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/></svg>اینستاگرام<small class="ltr">@aihub_tools</small></a>
+</div>
+<p class="copy">© ۱۴۰۵ AIhub Tools. همهٔ حقوق این برنامه، شامل کدها، محتوا و طراحی، محفوظ است. کپی، بازنشر، اشتراک‌گذاری کد فعال‌سازی و فروش مجدد بدون اجازهٔ کتبی ممنوع است.</p>
+<p class="muted" style="margin-top:8px">دوقاب · کدساز عکس عاشقانه · نسخهٔ ۲٫۴</p>
 </div></div></dialog>
 <div id="upd" role="alert" hidden><span>نسخهٔ جدید آماده است</span><button id="updgo" class="b p" type="button">به‌روزرسانی</button></div>
 
@@ -279,11 +309,11 @@ document.addEventListener("visibilitychange",()=>{if(document.visibilityState===
 $$("nav button").forEach(b=>b.onclick=()=>go(b.dataset.v));
 /* ---------- کتابخانه ---------- */
 let q="",cat=0,lim=40;
-function renderChips(){const items=[[0,"همه"],[-1,"★ علاقه‌مندی‌ها"],...D.cats.map(c=>[c.n,fa(c.n)+". "+c.t])];
+function renderChips(){const items=[[0,"همه"],[-1,"♡ علاقه‌مندی‌ها"],...D.cats.map(c=>[c.n,fa(c.n)+". "+c.t])];
  $("#chips").innerHTML=items.map(([n,t])=>`<button type="button" class="chip${cat===n?" on":""}" data-n="${n}">${esc(t)}</button>`).join("");
  $$("#chips .chip").forEach(b=>b.onclick=()=>{cat=+b.dataset.n;lim=40;renderChips();renderLib()})}
 function card(r,ctx){const f=S.fav.includes(r.c);
- return `<article class="cd"><div class="top"><button type="button" class="codebtn" data-a="cc" data-c="${r.c}" aria-label="کپی کد ${r.c}"><code>${r.c}</code></button><button type="button" class="b${f?" on":""}" data-a="fav" data-c="${r.c}" aria-pressed="${f}" aria-label="علاقه‌مندی">★</button></div>
+ return `<article class="cd"><div class="top"><button type="button" class="codebtn" data-a="cc" data-c="${r.c}" aria-label="کپی کد ${r.c}"><code>${r.c}</code></button><button type="button" class="b fav${f?" on":""}" data-a="fav" data-c="${r.c}" aria-pressed="${f}" aria-label="${f?"حذف از علاقه‌مندی‌ها":"افزودن به علاقه‌مندی‌ها"}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.6s-7.6-4.7-9.4-9.5C1.4 7.7 3.4 4.6 6.6 4.6c2 0 3.6 1.1 5.4 3.2 1.8-2.1 3.4-3.2 5.4-3.2 3.2 0 5.2 3.1 4 6.5-1.8 4.8-9.4 9.5-9.4 9.5z"/></svg></button></div>
  <p class="fa">${esc(r.fa)}</p><p class="en" dir="ltr">${esc(r.en)}</p>
  <div class="acts"><button type="button" class="b p" data-a="copy" data-c="${r.c}">کپی جمله</button><button type="button" class="b" data-a="use" data-c="${r.c}">به سازنده</button><button type="button" class="b" data-a="bd" data-c="${r.c}">به شات‌لیست</button></div></article>`}
 function renderLib(){const nq=norm(q);
@@ -307,6 +337,13 @@ const TOOLS=[
  {id:"gpt",n:"ChatGPT / GPT Image",m:["create","edit"],tip:"عکس مرجع را همراه پیام پیوست کن. اگر چهره تغییر کرد، همان پیام را با «فقط X را عوض کن» تکرار کن."},
  {id:"gemini",n:"Gemini / Nano Banana",m:["create","edit"],tip:"ساختار پیشنهادی: اقدام + هدف + جزئیات + قیدها. هر بار یک تغییر اصلی بخواه و روی نتیجهٔ قبلی ادامه بده."},
  {id:"flux",n:"Flux (Kontext)",m:["create","edit"],tip:"دستور کوتاه و مشخص بهتر جواب می‌دهد. تغییرها را یکی‌یکی و پشت‌سرهم بده."},
+ {id:"grok",n:"Grok (Aurora / Imagine)",m:["create","edit"],tip:"در Grok عکس مرجع را پیوست کن و پرامپت را بچسبان. اگر چهره‌ها عوض شد، همان پرامپت را با «چهره‌ها دقیقاً مثل عکس مرجع» تکرار کن."},
+ {id:"seedream",n:"Seedream / Dreamina (ByteDance)",m:["create","edit"],tip:"مناسب پرامپت طبیعی و دقیق، با تصویر مرجع. برای حفظ هویت، عکس مرجع را در بخش Reference بارگذاری کن."},
+ {id:"ideogram",n:"Ideogram",m:["create"],tip:"برای هویت دو نفر از Character Reference استفاده کن. پرامپت را کوتاه نگه دار و هر بار یک ویژگی را عوض کن."},
+ {id:"leonardo",n:"Leonardo AI",m:["create","edit"],tip:"عکس مرجع را در Image Guidance (Character Reference) بگذار. اگر نتیجه کارتونی شد، مدل واقع‌گرا را انتخاب کن."},
+ {id:"firefly",n:"Adobe Firefly",m:["create","edit"],tip:"برای حفظ چهره‌ها از Reference Image و برای ویرایش از Generative Fill استفاده کن. پرامپت طبیعی و بدون پارامتر بنویس."},
+ {id:"qwen",n:"Qwen-Image / Wan / Hunyuan",m:["create","edit"],tip:"مدل‌های متن‌باز؛ پرامپت انگلیسی دقیق‌تر جواب می‌دهد. «زبان خروجی» را روی انگلیسی بگذار."},
+ {id:"sd",n:"Stable Diffusion / SDXL / ComfyUI",m:["create"],tip:"پرامپت مثبت و منفی جداست. برای حفظ هویت از IP-Adapter یا InstantID استفاده کن."},
  {id:"mj",n:"Midjourney (V7)",m:["create"],tip:"لینک عکس مرجع را به‌جای <REF_URL> بگذار. فقط یک تصویر مرجع و فقط نسخهٔ V7؛ وزن --ow پیش‌فرض ۱۰۰ است و بهتر است زیر ۴۰۰ بماند."},
  {id:"video",n:"تصویر ← ویدیو (Kling / Veo / Runway)",m:["create"],tip:"عکس نهایی را به‌عنوان فریم اول بده. حرکت کوچک و آرام، چهره‌ها را پایدارتر نگه می‌دارد."}];
 const TOOLMAP=Object.fromEntries(TOOLS.map(t=>[t.id,t]));
@@ -363,6 +400,7 @@ function build(ov){const ch=(ov?ov.codes:chosen()).map(c=>BY[c]),R=ov?ov.ratio:S
   if(t==="gpt")e=(S.ref?"Use the attached photo as the identity reference for both people. "+NOFACE_EN+". ":"")+"Create a photorealistic photograph of a couple. Scene: "+scEn+". Aspect ratio "+R+". Natural skin texture, correct hands and anatomy, no text or watermark.";
   else if(t==="gemini")e=(S.ref?"Using the attached reference photo as the identity source, create":"Create")+" a photorealistic photograph of "+(S.ref?"the same couple":"a couple")+". Scene details: "+scEn+". Constraints: "+(S.ref?NOFACE_EN.charAt(0).toLowerCase()+NOFACE_EN.slice(1)+"; ":"")+"natural skin texture, no extra fingers or limbs, no text or watermark. Aspect ratio "+R+".";
   else if(t==="flux")e="A photorealistic photograph of "+(S.ref?"the same two people as in the reference image, identical faces and hairstyles":"a couple")+", "+scEn+". Natural skin texture, correct hands, no text.";
+  else if(t==="sd"){f=null;e="photorealistic photograph of a couple, "+scEn+", natural skin texture, detailed, sharp focus, 8k\nNegative prompt: extra fingers, extra limbs, deformed hands, distorted faces, blurry, text, watermark, plastic skin\nAspect ratio: "+R}
   else if(t==="mj"){f=null;e="couple, "+scEn+", photorealistic, natural skin texture --ar "+R+" --style raw --v 7"+(S.ref?" --oref <REF_URL> --ow 100":"")}
   else if(t==="video"){
    f="عکس پیوست را متحرک کن. فقط حرکت کوچک و طبیعی: "+scFa+". حرکت آرام دوربین به جلو، تکان نرم مو و پارچه با نسیم، پلک‌زدن و نفس‌کشیدن طبیعی. چهرهٔ هر دو نفر کاملاً ثابت و بدون تغییر بماند، بدون برش. ۵ ثانیه، نسبت "+fr+".";
@@ -587,7 +625,7 @@ $("#acopyall").onclick=()=>copy(albumText());
 $("#asave").onclick=()=>{const A=S.alb;if(!A.shots.length)return;A.n=($("#aname").value||"").trim()||"آلبوم "+fa(S.albums.length+1);
  S.albums.unshift(cleanAlb(JSON.parse(JSON.stringify(A))));S.albums=S.albums.slice(0,20);save();renderAlbum();toast("آلبوم ذخیره شد")};
 $("#abd").onclick=()=>{let n=0;S.alb.shots.forEach(x=>{if(x.pose&&!S.board.some(b=>b.c===x.pose)){S.board.push({c:x.pose,d:0});n++}});save();toast(n?fa(n)+" ژست به شات‌لیست اضافه شد":"همه قبلاً در شات‌لیست بودند")};
-/* ---------- لایسنس و فعال‌سازی (Worker مشترک AIhub، توکن امضاشدهٔ ECDSA P-256) ----------
+/* ---------- کد فعال‌سازی و فعال‌سازی (Worker مشترک AIhub، توکن امضاشدهٔ ECDSA P-256) ----------
    مثل پولینو: فعال‌سازی یک‌بار آنلاین؛ بعد آفلاین. تأیید دوره‌ای هر ۷ روز (در صورت اتصال).
    قطعی اینترنت هرگز برنامه را قفل نمی‌کند. در حالت منقضی/باطل، دانلود پشتیبان همیشه آزاد است. */
 const LIC_API='https://aihub-license.get-aihubtools.workers.dev',LIC_PRODUCT='duoframe',LIC_PUBLIC_JWK={"kty":"EC","crv":"P-256","x":"oaMsNWVXFBV3s7IW55TXXWc8b2fUkG6x-CQOunje2fM","y":"CpMhKno5HTtkUg7r9kykintWA_g-9E8xavFNyGJycDg"},LIC_ENFORCE=true;
@@ -626,11 +664,11 @@ async function licCheck(token){
  return{ok:true,payload:p}}
 const LIC_MSG={
  notfound:'این کد معتبر نیست. نوشتار آن را دوباره بررسی کنید.',
- revoked:'این لایسنس غیرفعال شده است. با پشتیبانی تماس بگیرید ('+LIC_SUPPORT+').',
- expired:'اشتراک این لایسنس تمام شده است. برای تمدید با پشتیبانی تماس بگیرید ('+LIC_SUPPORT+'). بعد از تمدید، دکمهٔ «فعال‌سازی» را دوباره بزنید.',
- devices:'ظرفیت ۳ دستگاه این لایسنس پر شده است. از پشتیبانی ('+LIC_SUPPORT+') بخواهید یک دستگاه را آزاد کند.',
+ revoked:'این کد غیرفعال شده است. با پشتیبانی تماس بگیرید ('+LIC_SUPPORT+').',
+ expired:'اشتراک این کد تمام شده است. برای تمدید با پشتیبانی تماس بگیرید ('+LIC_SUPPORT+'). بعد از تمدید، دکمهٔ «فعال‌سازی» را دوباره بزنید.',
+ devices:'ظرفیت ۳ دستگاه این کد پر شده است. از پشتیبانی ('+LIC_SUPPORT+') بخواهید یک دستگاه را آزاد کند.',
  product:'این کد برای دوقاب نیست.',
- device:'این دستگاه برای این لایسنس فعال نیست؛ دوباره فعال‌سازی کنید.',
+ device:'این دستگاه برای این کد فعال نیست؛ دوباره فعال‌سازی کنید.',
  sig:'کد فعال‌سازی معتبر نیست یا برای این دستگاه صادر نشده است.',
  net:'اتصال به سرور برقرار نشد. VPN را روشن کنید و دوباره تلاش کنید، یا از «فعال‌سازی دستی» پایین صفحه استفاده کنید.'};
 async function licCall(action,extra){
@@ -673,7 +711,7 @@ const licBusy=on=>{LIC.busy=on;$$('#lock [data-lic=activate],#lock [data-lic=man
 async function licActivate(){
  if(LIC.busy)return;
  const code=(($('#licKey')||{}).value||'').trim().toUpperCase().replace(/\s+/g,'');
- if(!/^[A-Z0-9-]{8,40}$/.test(code)){licSetMsg('کد لایسنس را وارد کنید (مثلاً DUO-XXXX-XXXX-XXXX).');return}
+ if(!/^[A-Z0-9-]{8,40}$/.test(code)){licSetMsg('کد فعال‌سازی را وارد کنید (مثلاً DUO-XXXX-XXXX-XXXX).');return}
  licBusy(true);licSetMsg('در حال اتصال به سرور…','ok');
  const r=await licCall('activate',{license:code,device:LIC.row.dev,product:LIC_PRODUCT});
  licBusy(false);
@@ -686,7 +724,7 @@ async function licActivate(){
 async function licManual(){
  if(LIC.busy)return;
  const token=(($('#licTok')||{}).value||'').replace(/\s+/g,'');
- if(!token){licSetMsg('کد فعال‌سازی دستی را بچسبانید.');return}
+ if(!token){licSetMsg('کد دستی را بچسبانید.');return}
  const c=await licCheck(token);
  if(!c.ok){licSetMsg(c.reason==='expired'?LIC_MSG.expired:c.reason==='device'?'این کد برای دستگاه دیگری صادر شده است. کد دستگاه خودتان را برای پشتیبانی بفرستید.':LIC_MSG[c.reason]||LIC_MSG.sig);return}
  await licStore(c.payload.l,token,c.payload);licAfter()}
@@ -699,31 +737,49 @@ function showLicense(){
  document.body.classList.add('locked');
  const r=LIC.row||{},expired=LIC.state==='expired'||LIC.state==='revoked',hasData=(S.fav&&S.fav.length)||(S.board&&S.board.length)||(S.saved&&S.saved.length)||(S.albums&&S.albums.length);
  $('#lock').innerHTML='<div class="lockbox"><img class="lm" src="icon-192.png" width="64" height="64" alt=""><h1>'+(expired?'اشتراک شما تمام شده':'فعال‌سازی دوقاب')+'</h1>'
-  +'<p class="lsub">'+(expired?'برای ادامه، اشتراک را تمدید و دوباره فعال کنید.':'کد لایسنسی که از پشتیبانی گرفته‌اید را وارد کنید.')+'</p>'
+  +'<p class="lsub">'+(expired?'برای ادامه، اشتراک را تمدید و دوباره فعال کنید.':'کد فعال‌سازی‌ای که از پشتیبانی گرفته‌اید را وارد کنید.')+'</p>'
   +'<div class="lnote">برای فعال‌سازی (فقط یک بار) به <b>اینترنت</b> نیاز دارید؛ اگر اتصال برقرار نشد، VPN را روشن کنید. بعد از فعال‌سازی، برنامه بدون اینترنت کار می‌کند.</div>'
-  +'<label for="licKey">کد لایسنس</label><input id="licKey" dir="ltr" autocomplete="off" spellcheck="false" placeholder="DUO-XXXX-XXXX-XXXX" value="'+esc(r.license||'')+'">'
+  +'<label for="licKey">کد فعال‌سازی</label><input id="licKey" dir="ltr" autocomplete="off" spellcheck="false" placeholder="DUO-XXXX-XXXX-XXXX" value="'+esc(r.license||'')+'">'
   +'<div class="lmsg" id="licMsg" role="alert">'+esc(LIC.msg||'')+'</div>'
   +'<button class="lbtn" type="button" data-lic="activate">فعال‌سازی</button>'
-  +'<a class="lbuy" href="'+LIC_BUY+'" target="_blank" rel="noopener">خرید لایسنس</a>'
+  +'<a class="lbuy" href="'+LIC_BUY+'" target="_blank" rel="noopener">خرید کد فعال‌سازی</a>'
   +'<div class="licdev"><span>کد دستگاه شما</span><b dir="ltr">'+esc(r.dev||'')+'</b><button type="button" data-lic="copydev">کپی</button></div>'
-  +'<details class="licman"><summary>فعال‌سازی دستی (وقتی اتصال به سرور برقرار نمی‌شود)</summary><p>کد دستگاه بالا را برای پشتیبانی ('+LIC_SUPPORT+') بفرستید. یک «کد فعال‌سازی دستی» می‌گیرید؛ آن را اینجا بچسبانید.</p><textarea id="licTok" dir="ltr" rows="3" spellcheck="false" placeholder="کد فعال‌سازی دستی"></textarea><button class="lbtn sec" type="button" data-lic="manual">فعال‌سازی با کد دستی</button></details>'
+  +'<details class="licman"><summary>فعال‌سازی دستی (وقتی اتصال به سرور برقرار نمی‌شود)</summary><p>کد دستگاه بالا را برای پشتیبانی ('+LIC_SUPPORT+') بفرستید. یک «کد دستی» مخصوص همین دستگاه می‌گیرید؛ آن را اینجا بچسبانید.</p><textarea id="licTok" dir="ltr" rows="3" spellcheck="false" placeholder="کد دستی (مخصوص این دستگاه)"></textarea><button class="lbtn sec" type="button" data-lic="manual">فعال‌سازی با کد دستی</button></details>'
   +(hasData?'<button class="lklink" type="button" data-lic="backup">دانلود پشتیبان از اطلاعات من</button>':'')
   +'<p class="lfoot">پشتیبانی: '+LIC_SUPPORT+'</p></div>';
  const k=$('#licKey');
  if(k){k.addEventListener('input',()=>{k.value=k.value.toUpperCase().replace(/\s+/g,'')});k.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();licActivate()}})}}
-/* ---------- کارت لایسنس در تنظیمات و هشدار تمدید ---------- */
+/* ---------- کارت کد فعال‌سازی در تنظیمات و هشدار تمدید ---------- */
 const licDaysLeft=()=>LIC.row&&LIC.row.exp?Math.floor((LIC.row.exp-licNow())/864e5):null;
 function licDate(ms){try{return new Intl.DateTimeFormat('fa-IR-u-ca-persian',{year:'numeric',month:'long',day:'numeric',timeZone:'Asia/Tehran'}).format(new Date(ms))}catch(e){return new Date(ms).toLocaleDateString('fa-IR')}}
 function updLicUI(){
  const card=$('#licCard'),ban=$('#licBanner');
  if(!LIC_ENFORCE||!LIC.row||!LIC.row.token||LIC.blocked){if(card)card.innerHTML='';if(ban)ban.hidden=true;return}
  const left=licDaysLeft(),last=LIC.row.checkedAt?Math.floor((Date.now()-LIC.row.checkedAt)/864e5):null;
- if(card)card.innerHTML='<p class="licst">وضعیت: <b>فعال</b>'+(LIC.row.exp?' · تا '+esc(licDate(LIC.row.exp))+(left!==null?' ('+fa(Math.max(0,left))+' روز مانده)':''):'')+'<br>کد: <span class="ltr">…'+esc(String(LIC.row.license||'').slice(-9))+'</span> · دستگاه: <span class="ltr">'+esc(LIC.row.dev)+'</span>'+(last!==null?'<br>آخرین تأیید آنلاین: '+(last===0?'امروز':fa(last)+' روز پیش'):'')+'</p><div class="acts"><button class="b" type="button" data-lic="check">بررسی آنلاین و تمدید</button></div><p class="muted" style="margin-top:6px">برای تمدید با '+LIC_SUPPORT+' تماس بگیرید؛ بعد از تمدید این دکمه را بزنید.</p>';
+ if(card)card.innerHTML='<p class="licst">وضعیت: <b>فعال</b>'+(LIC.row.exp?' · تا '+esc(licDate(LIC.row.exp))+(left!==null?' ('+fa(Math.max(0,left))+' روز مانده)':''):'')+'<br>کد: <span class="ltr">…'+esc(String(LIC.row.license||'').slice(-9))+'</span> · دستگاه: <span class="ltr">'+esc(LIC.row.dev)+'</span>'+(last!==null?'<br>آخرین تأیید آنلاین: '+(last===0?'امروز':fa(last)+' روز پیش'):'')+'</p><div class="acts"><button class="b p" type="button" data-lic="offline">بررسی آفلاین</button><button class="b" type="button" data-lic="check">بررسی آنلاین / تمدید</button></div><div id="licRes" class="licres" aria-live="polite"></div><p class="muted" style="margin-top:6px">برای تمدید با '+LIC_SUPPORT+' تماس بگیرید؛ بعد از تمدید این دکمه را بزنید.</p>';
  if(ban){if(left!==null&&left<=30){ban.hidden=false;ban.textContent='اشتراک شما '+(left<=0?'امروز':fa(left)+' روز دیگر')+' تمام می‌شود. برای تمدید با '+LIC_SUPPORT.replace(/[⁦⁩]/g,'')+' تماس بگیرید.'}else ban.hidden=true}}
+async function licCheckOffline(){
+ const box=$('#licRes');if(!box)return;
+ const row=LIC.row||{};let h='';
+ const line=(ok,t)=>'<div class="'+(ok===true?'ok':ok===false?'bad':'wr')+'">'+(ok===true?'✓ ':ok===false?'✗ ':'! ')+esc(t)+'</div>';
+ if(!row.token){box.innerHTML=line(false,'کدی روی این دستگاه ذخیره نیست.');return}
+ const p=await licVerify(row.token);
+ h+=line(!!p,p?'امضای دیجیتال کد معتبر است':'امضای دیجیتال معتبر نیست');
+ if(p){
+  h+=line(p.p===LIC_PRODUCT,p.p===LIC_PRODUCT?'کد مخصوص دوقاب است':'کد برای محصول دیگری است');
+  h+=line(p.d===row.dev,p.d===row.dev?'کد روی همین دستگاه ثبت شده':'کد برای دستگاه دیگری صادر شده');
+  const left=Math.floor((p.exp-licNow())/864e5);
+  h+=line(left>=0,left>=0?'مدت اعتبار: '+fa(left)+' روز مانده':'اشتراک تمام شده است');
+  if(Date.now()<(row.lastSeen||0)-864e5)h+=line(null,'ساعت دستگاه عقب‌تر از آخرین استفاده است؛ ساعت را درست کنید.');
+ }
+ const days=row.checkedAt?Math.floor((Date.now()-row.checkedAt)/864e5):null;
+ h+=line(days===null||days<=LIC_REVAL_DAYS*2?true:null,days===null?'هنوز تأیید آنلاین انجام نشده':'آخرین تأیید آنلاین: '+(days===0?'امروز':fa(days)+' روز پیش'));
+ h+='<div class="muted" style="margin-top:4px">این بررسی بدون اینترنت است و فقط اعتبار ذخیره‌شده را می‌سنجد؛ لغو یا تمدید را فقط «بررسی آنلاین» می‌بیند.</div>';
+ box.innerHTML=h}
 async function licCheckNow(){
  toast('در حال بررسی…');
  const r=await licBackground(true);
- if(r==='ok'){toast('لایسنس تأیید شد');updLicUI()}
+ if(r==='ok'){toast('کد فعال‌سازی تأیید شد');updLicUI()}
  else if(r==='offline')toast('اتصال برقرار نشد؛ VPN را روشن کنید');
  else if(r==='sig')toast('پاسخ سرور معتبر نبود')}
 document.addEventListener('click',async e=>{
@@ -733,6 +789,7 @@ document.addEventListener('click',async e=>{
  else if(a==='manual')licManual();
  else if(a==='backup')dlBackup();
  else if(a==='check')licCheckNow();
+ else if(a==='offline')licCheckOffline();
  else if(a==='copydev'){try{await navigator.clipboard.writeText(LIC.row.dev);b.textContent='کپی شد ✓'}catch(_){b.textContent='دستی کپی کنید'}}});
 async function licBoot(){
  try{await licInit()}catch(e){LIC.blocked=true;LIC.state='none'}
