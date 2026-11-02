@@ -1,7 +1,7 @@
 /* دوقاب — Service Worker
    هر بار فایل‌های برنامه تغییر کرد، فقط عدد نسخه را بالا ببر. */
-const V='duoframe-v2.4.0';
-const SHELL=['./','index.html','app.html','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','fonts/Vazirmatn.woff2'];
+const V='duoframe-v2.6.0';
+const SHELL=['./','index.html','app.html','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','favicon-32.png','fonts/Vazirmatn.woff2'];
 
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL.map(u=>new Request(u,{cache:'reload'})))));
@@ -27,8 +27,10 @@ self.addEventListener('fetch',e=>{
   const u=new URL(r.url);
   if(u.origin!==location.origin)return;
   if(r.mode==='navigate'){
-    // صفحهٔ معرفی (index.html) و خود برنامه (app.html) هرکدام پوستهٔ خودشان را دارند
-    const key=u.pathname.endsWith('/app.html')?'app.html':'index.html';
+    // فقط این دو صفحه پوستهٔ کش‌شده دارند؛ هر آدرس دیگری به شبکه می‌رود (دیگر به‌اشتباه صفحهٔ معرفی نشان داده نمی‌شود)
+    const p=u.pathname;
+    const key=p.endsWith('/app.html')?'app.html':(p.endsWith('/')||p.endsWith('/index.html'))?'index.html':null;
+    if(!key)return;
     return e.respondWith(swr(key,r,e));
   }
   e.respondWith(swr(r,r,e));

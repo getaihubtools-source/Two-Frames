@@ -5,6 +5,7 @@
 <meta name="color-scheme" content="light dark">
 <script>try{var t=JSON.parse(localStorage.getItem("ccb1")||"{}").theme;if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="fonts/Vazirmatn.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>دوقاب | کدساز عکس عاشقانه</title>
 <style>
@@ -99,6 +100,46 @@ nav button.on{color:var(--violet);font-weight:800}
 :root{color-scheme:light dark}:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 [hidden]{display:none!important}
 body{min-height:100dvh}
+
+/* ---- اسپلش ---- */
+#splash{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;color:#fff;background:#0B0B14;transition:opacity .5s ease,transform .5s ease,visibility 0s .5s}
+#splash.out{opacity:0;transform:scale(1.04);visibility:hidden;pointer-events:none}
+#splash .sp-bg{position:absolute;inset:-20%;background:radial-gradient(40% 35% at 78% 18%,#7C4DFF66,transparent 70%),radial-gradient(45% 40% at 18% 86%,#3D7BFF55,transparent 70%),radial-gradient(30% 25% at 50% 50%,#C9A6FF18,transparent 70%);animation:spDrift 9s ease-in-out infinite alternate}
+#splash .sp-dots{position:absolute;inset:0;background-image:radial-gradient(#ffffff22 1px,transparent 1.2px);background-size:26px 26px;-webkit-mask-image:radial-gradient(circle at 50% 46%,#000 0,transparent 62%);mask-image:radial-gradient(circle at 50% 46%,#000 0,transparent 62%);opacity:.55}
+#splash .sp-core{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px}
+#splash .sp-logo{position:relative;width:112px;height:112px;display:grid;place-items:center;animation:spPop .9s cubic-bezier(.2,1.25,.3,1) both}
+#splash .sp-logo img{position:relative;width:112px;height:112px;border-radius:28px;box-shadow:0 24px 60px -12px #7C4DFFcc,0 0 0 1px #ffffff1f;overflow:hidden}
+#splash .sp-logo:after{content:"";position:absolute;inset:0;border-radius:28px;background:linear-gradient(115deg,transparent 35%,#ffffff55 50%,transparent 65%);background-size:250% 100%;background-position:160% 0;animation:spShine 1.4s .7s ease-out both;mix-blend-mode:overlay}
+#splash .sp-ring{position:absolute;inset:-14px;border-radius:40px;border:1.5px solid #C9A6FF66;opacity:0;animation:spRing 2.4s .5s ease-out infinite}
+#splash .sp-ring.r2{animation-delay:1.3s}
+#splash .sp-name{margin-top:26px;font-size:40px;font-weight:900;line-height:1.4;letter-spacing:.5px;background:linear-gradient(90deg,#E6D8FF,#9BB8FF);-webkit-background-clip:text;background-clip:text;color:transparent;animation:spUp .8s .45s cubic-bezier(.2,.8,.2,1) both}
+#splash .sp-tag{margin-top:2px;font-size:15px;color:#B7B2D2;animation:spUp .8s .62s cubic-bezier(.2,.8,.2,1) both}
+#splash .sp-sub{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;animation:spUp .8s .8s cubic-bezier(.2,.8,.2,1) both}
+#splash .sp-sub span{font-size:12px;padding:2px 12px;border-radius:99px;border:1px solid #ffffff22;background:#ffffff0a;color:#D6D1EC}
+#splash .sp-foot{position:absolute;left:0;right:0;bottom:calc(34px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:12px;font-size:12px;color:#8E89AD;letter-spacing:1px;animation:spUp .8s 1s both}
+#splash .sp-bar{width:128px;height:3px;border-radius:3px;background:#ffffff1c;overflow:hidden}
+#splash .sp-bar i{display:block;width:40%;height:100%;border-radius:3px;background:linear-gradient(90deg,#7C4DFF,#3D7BFF);animation:spBar 1.3s ease-in-out infinite}
+#splash.fast .sp-logo,#splash.fast .sp-name,#splash.fast .sp-tag,#splash.fast .sp-sub,#splash.fast .sp-foot{animation-duration:.01s;animation-delay:0s}
+@keyframes spPop{0%{opacity:0;transform:scale(.55) translateY(14px)}100%{opacity:1;transform:none}}
+@keyframes spUp{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:none}}
+@keyframes spShine{to{background-position:-60% 0}}
+@keyframes spRing{0%{opacity:.7;transform:scale(.92)}100%{opacity:0;transform:scale(1.35)}}
+@keyframes spBar{0%{transform:translateX(-120%)}100%{transform:translateX(330%)}}
+@keyframes spDrift{0%{transform:translate3d(-2%,-1%,0) scale(1)}100%{transform:translate3d(2%,2%,0) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){#splash *,#splash:after{animation:none!important}#splash .sp-ring{display:none}}
+/* ---- لیست بازشوی سفارشی (همرنگ تم) ---- */
+select.dd-n{position:absolute!important;width:1px;height:1px;opacity:0;pointer-events:none;margin:0;padding:0;border:0}
+.dd{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:38px;padding:6px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:14px;text-align:start;cursor:pointer}
+.dd:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+.dd .ddv{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dd svg{flex:none;width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.row .dd{width:auto;min-width:128px}
+.ddl{display:flex;flex-direction:column;gap:4px;padding:2px 0 6px}
+.ddo{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:46px;padding:8px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:15px;text-align:start}
+.ddo:hover,.ddo:focus-visible{border-color:var(--violet);outline:none}
+.ddo[aria-selected=true]{background:var(--soft);border-color:var(--violet);color:var(--text);font-weight:800}
+.ddo svg{width:18px;height:18px;stroke:var(--violet);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;visibility:hidden}
+.ddo[aria-selected=true] svg{visibility:visible}
 #settings .in{max-width:480px}
 dialog.sheet{border:0;padding:0;background:transparent;color:inherit;width:100%;height:100%;max-width:none;max-height:none;margin:0;inset:0;overflow:hidden}
 dialog.sheet::backdrop{background:#0009}
@@ -174,6 +215,48 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 @media print{header,nav,.noprint{display:none!important}body{background:#fff;color:#000;padding:0}.view{display:none!important}#v-shoot{display:block!important}.bi{break-inside:avoid;background:#fff}}
 </style></head>
 <body class="locked">
+<div id="splash" aria-hidden="true"><div class="sp-bg"></div><div class="sp-dots"></div>
+<div class="sp-core"><div class="sp-logo"><span class="sp-ring"></span><span class="sp-ring r2"></span><img src="icon-192.png" width="112" height="112" alt=""></div>
+<div class="sp-name">دوقاب</div><div class="sp-tag">کدساز عکس عاشقانه</div>
+<div class="sp-sub"><span>۳۲۰ کد</span><span>آلبوم‌ساز</span><span>آفلاین</span></div></div>
+<div class="sp-foot"><div class="sp-bar"><i></i></div><span>AIhub Tools</span></div></div>
+<script>
+(function(){
+ var sp=document.getElementById("splash"),t0=Date.now(),fast=false,rm=false;
+ try{fast=sessionStorage.getItem("duo.sp")==="1";sessionStorage.setItem("duo.sp","1")}catch(e){}
+ try{rm=matchMedia("(prefers-reduced-motion:reduce)").matches}catch(e){}
+ if(fast)sp.className="fast";
+ var MIN=fast?250:(rm?600:1800),done=0;
+ var iv=setInterval(function(){
+  var ready=window.__ready||window.__rescued,el=Date.now()-t0;
+  if(done||!((ready&&el>=MIN)||el>12000))return;
+  done=1;clearInterval(iv);sp.className=(fast?"fast ":"")+"out";
+  setTimeout(function(){if(sp.parentNode)sp.parentNode.removeChild(sp)},800)},60);
+})();
+</script>
+<script>
+/* صفحهٔ نجات: اگر برنامه تا ۹ ثانیه بالا نیامد یا هنگام راه‌اندازی خطا داد، به‌جای لوگوی ثابت راه نجات نشان می‌دهد */
+(function(){
+ var K="ccb1";
+ function raw(){try{return localStorage.getItem(K)||""}catch(e){return""}}
+ function dl(){try{var b=new Blob([raw()||"{}"],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="duoframe-raw-data.json";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},2000)}catch(e){}}
+ window.__rescue=function(){
+  if(window.__ready||window.__rescued)return;window.__rescued=1;
+  var L=document.getElementById("lock");if(!L)return;document.body.classList.add("locked");
+  L.innerHTML='<div class="lockbox"><img class="lm" src="icon-192.png" width="64" height="64" alt=""><h1>برنامه درست بالا نیامد</h1><p class="lsub">اطلاعات شما پاک نشده است. یکی از گزینه‌ها را امتحان کنید.</p>'
+   +'<button class="lbtn" type="button" id="rs-retry">تلاش دوباره</button>'
+   +'<button class="lbtn sec" type="button" id="rs-dl" style="margin-top:10px">دانلود نسخهٔ خام اطلاعات</button>'
+   +'<button class="lbtn sec" type="button" id="rs-reset" style="margin-top:10px">بازنشانی اطلاعات برنامه (کد فعال‌سازی می‌ماند)</button>'
+   +'<p class="lfoot">اگر مشکل ادامه داشت: <span dir="ltr">@aihub_tools</span></p></div>';
+  document.getElementById("rs-retry").onclick=function(){location.reload()};
+  document.getElementById("rs-dl").onclick=dl;
+  document.getElementById("rs-reset").onclick=function(){if(confirm("علاقه‌مندی‌ها، شات‌لیست و ترکیب‌های ذخیره‌شده پاک شود؟ پیشنهاد می‌شود اول نسخهٔ خام را دانلود کنید.")){try{localStorage.removeItem(K)}catch(e){}location.reload()}}
+ };
+ addEventListener("error",function(){window.__rescue()});
+ addEventListener("unhandledrejection",function(){window.__rescue()});
+ setTimeout(function(){window.__rescue()},9000);
+})();
+</script>
 <div id="lock" role="dialog" aria-modal="true" aria-label="فعال‌سازی"><div class="lockbox"><img class="lm" src="icon-192.png" width="64" height="64" alt=""></div></div>
 <header>
 <img src="icon-192.png" alt="" width="28" height="28" style="border-radius:7px">
@@ -239,7 +322,7 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 <section id="v-shoot" class="view">
  <div class="bar noprint"><h2>شات‌لیست عکاس</h2><span class="muted" id="bcnt"></span></div>
  <p class="guide noprint">ویژهٔ عکاس: ژست‌هایی که می‌خواهی در جلسه بگیری را اینجا جمع کن، حین عکاسی تیک بزن و لیست را کپی یا چاپ کن. «شات‌لیست پیشنهادی» یک شروع آماده می‌دهد.</p>
- <div class="bar noprint"><button class="b p" id="bsug" type="button">افزودن شات‌لیست پیشنهادی</button><button class="b" id="bcopy" type="button">کپی لیست</button><button class="b" id="bprint" type="button">چاپ</button><button class="b" id="bclr" type="button">پاک‌کردن</button></div>
+ <div class="bar noprint"><button class="b p" id="bsug" type="button">افزودن شات‌لیست پیشنهادی</button><button class="b" id="bcopy" type="button">کپی لیست</button><button class="b" id="bprint" type="button">چاپ</button><button class="b" id="bshare" type="button" hidden>اشتراک‌گذاری</button><button class="b" id="bclr" type="button">پاک‌کردن</button></div>
  <div id="board"></div>
 </section>
 </main>
@@ -252,6 +335,7 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 <button data-v="shoot" type="button"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>عکاس</button>
 </nav>
 <dialog class="sheet" id="sheet" aria-labelledby="sh-t"><div class="in"><div class="hd"><h2 id="sh-t"></h2><button class="b" id="sh-x" type="button">بستن</button></div><input class="search" id="sh-q" type="search" placeholder="جستجو" aria-label="جستجو در انتخاب"><div class="ls" id="sh-l"></div></div></dialog>
+<dialog class="sheet" id="ddlg" aria-labelledby="dd-t"><div class="in"><div class="hd"><h2 id="dd-t"></h2><button class="b" id="dd-x" type="button">بستن</button></div><div class="ls"><div class="ddl" id="ddl" role="listbox"></div></div></div></dialog>
 <div id="toast" role="status"></div>
 <dialog class="sheet" id="settings" aria-labelledby="st-t"><div class="in"><div class="hd"><h2 id="st-t">تنظیمات</h2><button class="b" data-close type="button">بستن</button></div><div class="ls">
 <div class="row"><div><b>ظاهر</b><div class="muted">پیش‌فرض: مطابق تنظیم دستگاه</div></div><select id="theme" aria-label="ظاهر"><option value="auto">خودکار</option><option value="light">روشن</option><option value="dark">تاریک</option></select></div>
@@ -261,7 +345,7 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 <div id="licCard"></div>
 <h3>پشتیبان‌گیری</h3>
 <p class="muted">علاقه‌مندی‌ها، شات‌لیست و ترکیب‌های ذخیره‌شده فقط روی همین دستگاه ذخیره می‌شوند. از آن‌ها پشتیبان بگیر تا با پاک‌شدن داده‌های مرورگر از دست نروند.</p>
-<div class="acts"><button class="b p" id="exp" type="button">دریافت فایل پشتیبان</button><button class="b" id="imp" type="button">بازیابی از فایل</button><input type="file" id="impf" accept="application/json,.json" hidden></div>
+<div class="acts"><button class="b p" id="exp" type="button">دریافت فایل پشتیبان</button><button class="b" id="imp" type="button">بازیابی از فایل</button><button class="b" id="undoimp" type="button" hidden>برگرداندن به قبل از بازیابی</button><input type="file" id="impf" accept="application/json,.json" hidden></div>
 <div class="row"><div><b>ذخیره‌سازی پایدار</b><div class="muted" id="persist">…</div></div><button class="b" id="pers" type="button">درخواست</button></div>
 <button class="b danger" id="wipe" type="button">پاک‌کردن همهٔ داده‌ها</button>
 <h3>دربارهٔ برنامه</h3>
@@ -274,7 +358,7 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
  <a href="https://instagram.com/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/></svg>اینستاگرام<small class="ltr">@aihub_tools</small></a>
 </div>
 <p class="copy">© ۱۴۰۵ AIhub Tools. همهٔ حقوق این برنامه، شامل کدها، محتوا و طراحی، محفوظ است. کپی، بازنشر، اشتراک‌گذاری کد فعال‌سازی و فروش مجدد بدون اجازهٔ کتبی ممنوع است.</p>
-<p class="muted" style="margin-top:8px">دوقاب · کدساز عکس عاشقانه · نسخهٔ ۲٫۴</p>
+<p class="muted" style="margin-top:8px">دوقاب · کدساز عکس عاشقانه · نسخهٔ ۲٫۶</p>
 </div></div></dialog>
 <div id="upd" role="alert" hidden><span>نسخهٔ جدید آماده است</span><button id="updgo" class="b p" type="button">به‌روزرسانی</button></div>
 
@@ -284,16 +368,42 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const BY={};D.codes.forEach(r=>BY[r[0]]={c:r[0],fa:r[1],en:r[2],cat:r[3],role:r[4],i:r[5]});
 const SLOTS=[["pose","ژست و تعامل"],["frame","کادر و زاویه"],["light","نور"],["place","مکان"],["outfit","لباس و وسیله"],["weather","آب‌وهوا"],["style","سبک رنگ و فیلم"],["lens","لنز و افکت"]];
 const RAND=["pose","frame","light","place","outfit","style"];
-const S={fav:[],board:[],modest:false,sel:{},ratio:"4:5",ref:true,lang:"both",saved:[],mode:"create",tool:"generic",eops:[],theme:"auto",wake:true,intro:0,alb:null,albums:[]};
-try{const o=JSON.parse(localStorage.getItem("ccb1")||"{}");Object.keys(S).forEach(k=>{if(o[k]!==undefined)S[k]=o[k]})}catch(e){}
-S.fav=S.fav.filter(c=>BY[c]);S.board=S.board.filter(b=>b&&BY[b.c]);
-Object.keys(S.sel).forEach(k=>{if(!BY[S.sel[k]])delete S.sel[k]});
-const save=()=>{try{localStorage.setItem("ccb1",JSON.stringify(S))}catch(e){}};
+const DATA_VER=1;
+/* مهاجرت دادهٔ ذخیره‌شده بین نسخه‌ها. هنگام تغییر ساختار یک مرحله اضافه کن: if(v<2){...;v=2} و DATA_VER را بالا ببر */
+function migrate(o){if(!o||typeof o!=="object"||Array.isArray(o))return o;let v=+o.ver||0;
+ o.ver=v>DATA_VER?v:DATA_VER;return o}
+const DEFS=()=>({ver:DATA_VER,fav:[],board:[],modest:false,sel:{},ratio:"4:5",ref:true,lang:"both",saved:[],mode:"create",tool:"generic",eops:[],theme:"auto",wake:true,intro:0,alb:null,albums:[]});
+const S=DEFS();
+/* هر مقدار ذخیره‌شده (بارگذاری، همگام‌سازی پنجره‌ها) از این فیلتر می‌گذرد؛ نوع غلط هرگز برنامه را از کار نمی‌اندازد */
+function cleanState(o){
+ const n=DEFS(),O=x=>!!x&&typeof x==="object"&&!Array.isArray(x);let bad=false;
+ if(!O(o))return{n,bad:true};
+ const ok=c=>typeof c==="string"&&!!BY[c];
+ const A=k=>{if(o[k]===undefined)return[];if(Array.isArray(o[k]))return o[k];bad=true;return[]};
+ n.fav=[...new Set(A("fav").filter(ok))];
+ n.board=A("board").filter(b=>O(b)&&ok(b.c)).map(b=>({c:b.c,d:b.d?1:0}));
+ if(o.sel!==undefined){if(O(o.sel))Object.keys(o.sel).forEach(k=>{if(ok(o.sel[k]))n.sel[k]=o.sel[k]});else bad=true}
+ n.modest=o.modest===true;n.ref=o.ref!==false;n.wake=o.wake!==false;n.intro=o.intro?1:0;
+ n.ratio=["4:5","9:16","1:1","3:2","16:9"].includes(o.ratio)?o.ratio:"4:5";
+ n.lang=["both","fa","en"].includes(o.lang)?o.lang:"both";
+ n.mode=o.mode==="edit"?"edit":"create";
+ n.tool=typeof o.tool==="string"?o.tool.slice(0,30):"generic";
+ n.theme=["light","dark"].includes(o.theme)?o.theme:"auto";
+ n.eops=A("eops").filter(x=>typeof x==="string").slice(0,20);
+ n.saved=A("saved").filter(x=>O(x)&&typeof x.n==="string"&&O(x.sel)).slice(0,50).map(x=>{const sel={};Object.keys(x.sel).forEach(k=>{if(ok(x.sel[k]))sel[k]=x.sel[k]});return{n:x.n.slice(0,60),sel,ratio:["4:5","9:16","1:1","3:2","16:9"].includes(x.ratio)?x.ratio:"4:5"}});
+ n.ver=DATA_VER;n.alb=O(o.alb)?o.alb:null;
+ n.albums=A("albums").slice(0,20);
+ return{n,bad}}
+let RECOVERED=false;
+try{const raw=localStorage.getItem("ccb1");if(raw){let o;try{o=JSON.parse(raw)}catch(e){}const r=cleanState(migrate(o));Object.assign(S,r.n);
+ if(r.bad){RECOVERED=true;try{localStorage.setItem("ccb1.bad",raw)}catch(_){}}}}catch(e){}
+let saveWarned=0;
+const save=()=>{try{localStorage.setItem("ccb1",JSON.stringify(S));saveWarned=0}catch(e){if(!saveWarned){saveWarned=1;toast("ذخیره نشد؛ فضای مرورگر پر یا بسته است. همین حالا از اطلاعات پشتیبان بگیرید",4500)}}};
 const vis=r=>!(S.modest&&r.i);
 const norm=s=>String(s).toLowerCase().replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/[\u200c\s]+/g,"");
 const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),1600)}
+let tt;function toast(m,ms){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),ms||1600)}
 async function copy(t){try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}toast("کپی شد")}
 /* ---------- تب‌ها ---------- */
 let curView="lib",curOut=null;
@@ -306,7 +416,23 @@ let wl=null;
 async function wakeOn(){try{if(S.wake&&"wakeLock" in navigator&&!wl){wl=await navigator.wakeLock.request("screen");wl.addEventListener("release",()=>{wl=null})}}catch(e){wl=null}}
 function wakeOff(){try{wl&&wl.release()}catch(e){}wl=null}
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&curView==="shoot")wakeOn()});
-$$("nav button").forEach(b=>b.onclick=()=>go(b.dataset.v));
+/* دکمهٔ Back اندروید: از هر تب اول به کتابخانه، بعد خروج؛ پنجره‌های باز با Back بسته می‌شوند */
+let navDepth=0,ignorePop=0;const dlgStack=[];
+function navTo(v){
+ if(v===curView)return go(v,true);
+ if(v==="lib"){if(navDepth===1){navDepth=0;history.back()}else go("lib");return}
+ if(navDepth===0){history.pushState({duo:1,v},"");navDepth=1}else history.replaceState({duo:1,v},"");
+ go(v)}
+function hookDialog(d){const sm=d.showModal.bind(d);
+ d.showModal=()=>{if(d.open)return;sm();dlgStack.push(d);history.pushState({duo:1,dlg:1},"")};
+ d.addEventListener("close",()=>{const i=dlgStack.lastIndexOf(d);if(i<0)return;dlgStack.splice(i,1);const by=d._byPop;d._byPop=false;if(!by){ignorePop++;history.back()}})}
+$$("dialog").forEach(hookDialog);
+addEventListener("popstate",e=>{
+ if(ignorePop>0){ignorePop--;return}
+ if(dlgStack.length){const d=dlgStack[dlgStack.length-1];d._byPop=true;d.close();return}
+ const st=e.state,v=st&&st.duo&&st.v?st.v:"lib";
+ navDepth=v==="lib"?0:1;if(v!==curView)go(v)});
+$$("nav button").forEach(b=>b.onclick=()=>navTo(b.dataset.v));
 /* ---------- کتابخانه ---------- */
 let q="",cat=0,lim=40;
 function renderChips(){const items=[[0,"همه"],[-1,"♡ علاقه‌مندی‌ها"],...D.cats.map(c=>[c.n,fa(c.n)+". "+c.t])];
@@ -445,7 +571,7 @@ $("#sh-q").oninput=fillSheet;$("#sh-x").onclick=closeSheet;
 $$("dialog.sheet").forEach(d=>d.addEventListener("click",e=>{if(e.target===d)d.close()}));
 $$("[data-close]").forEach(b=>b.onclick=()=>b.closest("dialog").close());
 /* ---------- ترکیب‌ها ---------- */
-function loadSel(sel,ratio){S.sel={};Object.keys(sel).forEach(k=>{if(BY[sel[k]])S.sel[k]=sel[k]});if(ratio)S.ratio=ratio;save();go("build")}
+function loadSel(sel,ratio){S.sel={};Object.keys(sel).forEach(k=>{if(BY[sel[k]])S.sel[k]=sel[k]});if(ratio)S.ratio=ratio;save();navTo("build")}
 function renderRec(){
  $("#recs").innerHTML=D.rec.map((r,i)=>`<article class="cd rc"><h3>${esc(r.title)}</h3><p class="muted">${esc(r.use)} · نسبت ${fa(r.ratio)}</p><div class="tg">${r.codes.map(c=>`<code>${c}</code>`).join("")}</div><p class="muted">${esc(r.note)}</p><div class="acts"><button type="button" class="b p" data-r="${i}">باز کردن در سازنده</button></div></article>`).join("");
  $$("#recs [data-r]").forEach(b=>b.onclick=()=>{const r=D.rec[+b.dataset.r],sel={};r.codes.forEach(c=>{if(BY[c])sel[BY[c].role]=c});loadSel(sel,r.ratio)});
@@ -459,8 +585,10 @@ function renderBoard(){const L=S.board;$("#bcnt").textContent=fa(L.filter(x=>x.d
  $$("#board [data-rm]").forEach(b=>b.onclick=()=>{S.board.splice(+b.dataset.rm,1);save();renderBoard()})}
 $("#bsug").onclick=()=>{D.board.forEach(c=>{if(BY[c]&&vis(BY[c])&&!S.board.some(x=>x.c===c))S.board.push({c,d:0})});save();renderBoard()};
 $("#bclr").onclick=()=>{if(!S.board.length||confirm("شات‌لیست پاک شود؟")){S.board=[];save();renderBoard()}};
-$("#bcopy").onclick=()=>copy(S.board.filter(x=>vis(BY[x.c])).map(x=>(x.d?"☑ ":"☐ ")+x.c+" — "+BY[x.c].fa).join("\n")||"");
-$("#bprint").onclick=()=>print();
+const boardText=()=>S.board.filter(x=>vis(BY[x.c])).map(x=>(x.d?"☑ ":"☐ ")+x.c+" — "+BY[x.c].fa).join("\n")||"";
+$("#bcopy").onclick=()=>copy(boardText());
+if(navigator.share){$("#bshare").hidden=false;$("#bshare").onclick=()=>{const t=boardText();if(!t)return toast("شات‌لیست خالی است");navigator.share({title:"شات‌لیست دوقاب",text:t}).catch(()=>{})}}
+$("#bprint").onclick=()=>{try{print()}catch(e){toast("چاپ در این دستگاه پشتیبانی نمی‌شود؛ از «کپی لیست» استفاده کن")}};
 /* ---------- حالت محتاط، نصب، آفلاین ---------- */
 function applyModest(){$("#mbadge").hidden=!S.modest}
 $("#modest").onchange=e=>{S.modest=e.target.checked;if(S.modest){Object.keys(S.sel).forEach(k=>{if(BY[S.sel[k]].i)delete S.sel[k]})}save();applyModest();go(curView,true)};
@@ -469,19 +597,27 @@ $("#theme").onchange=e=>{S.theme=e.target.value;save();applyTheme()};
 $("#wake").onchange=e=>{S.wake=e.target.checked;save();curView==="shoot"&&(S.wake?wakeOn():wakeOff())};
 async function persistInfo(){const el=$("#persist");try{if(navigator.storage&&navigator.storage.persisted){const p=await navigator.storage.persisted();el.textContent=p?"فعال است":"فعال نیست؛ در کمبود فضا مرورگر ممکن است داده‌ها را پاک کند"}else el.textContent="این مرورگر پشتیبانی نمی‌کند"}catch(e){el.textContent="نامشخص"}}
 $("#pers").onclick=async()=>{try{const ok=navigator.storage&&navigator.storage.persist&&await navigator.storage.persist();toast(ok?"ذخیره‌سازی پایدار شد":"مرورگر اجازه نداد")}catch(e){toast("پشتیبانی نمی‌شود")}persistInfo()};
-$("#gear").onclick=()=>{updLicUI();$("#modest").checked=!!S.modest;$("#theme").value=S.theme;$("#wake").checked=!!S.wake;persistInfo();$("#settings").showModal()};
-function dlBackup(){const d=new Date(),n="duoframe-backup-"+d.toISOString().slice(0,10)+".json",blob=new Blob([JSON.stringify({app:"ccb",v:2,at:d.toISOString(),state:S},null,1)],{type:"application/json"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("فایل پشتیبان ساخته شد")}
+$("#gear").onclick=()=>{updPrev();updLicUI();$("#modest").checked=!!S.modest;$("#theme").value=S.theme;$("#wake").checked=!!S.wake;persistInfo();$("#settings").showModal()};
+function dlBackup(){const d=new Date(),n="duoframe-backup-"+d.toISOString().slice(0,10)+".json",blob=new Blob([JSON.stringify({app:"ccb",v:3,ver:DATA_VER,at:d.toISOString(),state:S},null,1)],{type:"application/json"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast("فایل پشتیبان ساخته شد")}
 $("#exp").onclick=dlBackup;
 $("#imp").onclick=()=>$("#impf").click();
+function applyAll(){applyTheme();applyModest();$("#modest").checked=S.modest;$("#theme").value=S.theme;$("#wake").checked=S.wake;go(curView,true)}
+function updPrev(){let has=false;try{has=!!localStorage.getItem("ccb1.prev")}catch(e){}$("#undoimp").hidden=!has}
 $("#impf").onchange=async e=>{const f=e.target.files[0];e.target.value="";if(!f)return;
- try{const j=JSON.parse(await f.text());if(!j||j.app!=="ccb"||!j.state||typeof j.state!=="object")throw 0;const o=j.state,ok=c=>typeof c==="string"&&BY[c];
-  const n={fav:(Array.isArray(o.fav)?o.fav:[]).filter(ok),board:(Array.isArray(o.board)?o.board:[]).filter(b=>b&&ok(b.c)).map(b=>({c:b.c,d:b.d?1:0})),
-   sel:{},saved:(Array.isArray(o.saved)?o.saved:[]).filter(x=>x&&typeof x.n==="string"&&x.sel&&typeof x.sel==="object").slice(0,50).map(x=>{const sel={};Object.keys(x.sel).forEach(k=>{if(ok(x.sel[k]))sel[k]=x.sel[k]});return {n:x.n.slice(0,60),sel,ratio:RATIOS.includes(x.ratio)?x.ratio:"4:5"}})};
-  if(o.sel&&typeof o.sel==="object")Object.keys(o.sel).forEach(k=>{if(ok(o.sel[k]))n.sel[k]=o.sel[k]});
-  if(!confirm("اطلاعات فعلی با فایل پشتیبان جایگزین شود؟"))return;
-  Object.assign(S,n,{modest:!!o.modest,ratio:RATIOS.includes(o.ratio)?o.ratio:"4:5",ref:o.ref!==false,lang:["both","fa","en"].includes(o.lang)?o.lang:"both",mode:o.mode==="edit"?"edit":"create",tool:TOOLMAP[o.tool]?o.tool:"generic",eops:(Array.isArray(o.eops)?o.eops:[]).filter(x=>EOPS.some(p=>p.id===x)),theme:["light","dark"].includes(o.theme)?o.theme:"auto",wake:o.wake!==false,alb:cleanAlb(o.alb)||newAlb(),albums:(Array.isArray(o.albums)?o.albums:[]).map(cleanAlb).filter(Boolean).slice(0,20)});
-  save();applyTheme();applyModest();$("#modest").checked=S.modest;$("#theme").value=S.theme;$("#wake").checked=S.wake;go(curView,true);toast("بازیابی شد")}
+ try{
+  if(f.size>5e6)throw 0;
+  const j=JSON.parse(await f.text());if(!j||j.app!=="ccb"||!j.state||typeof j.state!=="object"||Array.isArray(j.state))throw 0;
+  const o=migrate(j.state),n=cleanState(o).n;
+  n.alb=cleanAlb(n.alb)||newAlb();n.albums=n.albums.map(cleanAlb).filter(Boolean).slice(0,20);
+  const c=a=>Array.isArray(a)?a.length:0,lost=Math.max(0,c(o.fav)-n.fav.length)+Math.max(0,c(o.board)-n.board.length)+Math.max(0,c(o.saved)-n.saved.length)+Math.max(0,c(o.albums)-n.albums.length);
+  const newer=(+j.state.ver||0)>DATA_VER;
+  if(!confirm("اطلاعات فعلی با فایل پشتیبان جایگزین شود؟\n"+fa(n.fav.length)+" علاقه‌مندی · "+fa(n.board.length)+" شات · "+fa(n.saved.length)+" ترکیب · "+fa(n.albums.length)+" آلبوم"+(lost?"\n"+fa(lost)+" مورد ناسازگار حذف می‌شود.":"")+(newer?"\nاین پشتیبان از نسخهٔ جدیدتری ساخته شده است.":"")+"\nوضعیت فعلی نگه داشته می‌شود و با «برگرداندن به قبل از بازیابی» برمی‌گردد."))return;
+  try{localStorage.setItem("ccb1.prev",JSON.stringify(S))}catch(_){}
+  Object.assign(S,n);save();applyAll();updPrev();toast(lost?"بازیابی شد؛ "+fa(lost)+" مورد ناسازگار حذف شد":"بازیابی شد",3200)}
  catch(err){toast("فایل پشتیبان معتبر نیست")}};
+$("#undoimp").onclick=()=>{let raw=null;try{raw=localStorage.getItem("ccb1.prev")}catch(e){}if(!raw)return updPrev();
+ if(!confirm("اطلاعات به وضعیت قبل از آخرین بازیابی برگردد؟"))return;
+ try{const n=cleanState(migrate(JSON.parse(raw))).n;n.alb=cleanAlb(n.alb)||newAlb();n.albums=n.albums.map(cleanAlb).filter(Boolean).slice(0,20);Object.assign(S,n);save();try{localStorage.removeItem("ccb1.prev")}catch(_){}applyAll();updPrev();toast("برگشت داده شد")}catch(e){toast("بازگردانی ممکن نشد")}};
 $("#wipe").onclick=()=>{if(confirm("همهٔ علاقه‌مندی‌ها، شات‌لیست و ترکیب‌های ذخیره‌شده پاک شود؟")){try{localStorage.removeItem("ccb1")}catch(e){}location.reload()}};
 $("#introx").onclick=()=>{S.intro=1;save();$("#intro").hidden=true};
 const RATIOS=["4:5","9:16","1:1","3:2","16:9"];
@@ -498,7 +634,7 @@ if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){
   document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")reg.update().catch(()=>{})})
  }).catch(()=>{});
  let rl=false;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(!had||rl)return;rl=true;location.reload()})}
-try{if(matchMedia("(display-mode: standalone)").matches&&navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
+try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
 /* ---------- برنامه‌ریز آلبوم ---------- */
 const AK={
  establish:{t:"نمای معرف",why:"محیط را معرفی می‌کند؛ زوج کوچک در صحنهٔ بزرگ.",
@@ -628,13 +764,15 @@ $("#abd").onclick=()=>{let n=0;S.alb.shots.forEach(x=>{if(x.pose&&!S.board.some(
 /* ---------- کد فعال‌سازی و فعال‌سازی (Worker مشترک AIhub، توکن امضاشدهٔ ECDSA P-256) ----------
    مثل پولینو: فعال‌سازی یک‌بار آنلاین؛ بعد آفلاین. تأیید دوره‌ای هر ۷ روز (در صورت اتصال).
    قطعی اینترنت هرگز برنامه را قفل نمی‌کند. در حالت منقضی/باطل، دانلود پشتیبان همیشه آزاد است. */
-const LIC_API='https://aihub-license.get-aihubtools.workers.dev',LIC_PRODUCT='duoframe',LIC_PUBLIC_JWK={"kty":"EC","crv":"P-256","x":"oaMsNWVXFBV3s7IW55TXXWc8b2fUkG6x-CQOunje2fM","y":"CpMhKno5HTtkUg7r9kykintWA_g-9E8xavFNyGJycDg"},LIC_ENFORCE=true;
+/* آدرس‌ها به ترتیب امتحان می‌شوند؛ دامنهٔ اختصاصی خودت را اول بگذار (workers.dev گاهی فیلتر است).
+   مثال: ['https://license.example.com','https://aihub-license.get-aihubtools.workers.dev'] */
+const LIC_APIS=['https://aihub-license.get-aihubtools.workers.dev'],LIC_PRODUCT='duoframe',LIC_PUBLIC_JWK={"kty":"EC","crv":"P-256","x":"oaMsNWVXFBV3s7IW55TXXWc8b2fUkG6x-CQOunje2fM","y":"CpMhKno5HTtkUg7r9kykintWA_g-9E8xavFNyGJycDg"},LIC_ENFORCE=true;
 const LIC_KEY='license',LIC_LS='duoframe.lic',LIC_REVAL_DAYS=7,LIC_SUPPORT='⁦@aihub_tools⁩',LIC_BUY='https://t.me/aihub_tools';
 const LIC={row:null,blocked:false,state:'off',msg:'',busy:false};
 const LIC_ALPHA='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 const licNewDevice=()=>{const r=new Uint8Array(12);crypto.getRandomValues(r);let s='';for(let i=0;i<12;i++){s+=LIC_ALPHA[r[i]%32];if(i%4===3&&i<11)s+='-'}return s};
 const licB64=s=>{s=String(s).replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u};
-const licIDB=()=>new Promise((res,rej)=>{try{const q=indexedDB.open('duoframe',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)}catch(e){rej(e)}});
+const licIDB=()=>new Promise((res,rej)=>{try{const q=indexedDB.open('duoframe',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onsuccess=()=>{q.result.onversionchange=()=>q.result.close();res(q.result)};q.onerror=()=>rej(q.error)}catch(e){rej(e)}});
 async function idbGet(k){try{const db=await licIDB();return await new Promise(r=>{const q=db.transaction('kv').objectStore('kv').get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r(undefined)})}catch(e){return undefined}}
 async function idbPut(k,v){try{const db=await licIDB();await new Promise(r=>{const t=db.transaction('kv','readwrite');t.objectStore('kv').put(v,k);t.oncomplete=()=>r();t.onerror=()=>r();t.onabort=()=>r()})}catch(e){}}
 async function licSave(){await idbPut(LIC_KEY,LIC.row);try{localStorage.setItem(LIC_LS,JSON.stringify(LIC.row))}catch(e){}}
@@ -671,12 +809,17 @@ const LIC_MSG={
  device:'این دستگاه برای این کد فعال نیست؛ دوباره فعال‌سازی کنید.',
  sig:'کد فعال‌سازی معتبر نیست یا برای این دستگاه صادر نشده است.',
  net:'اتصال به سرور برقرار نشد. VPN را روشن کنید و دوباره تلاش کنید، یا از «فعال‌سازی دستی» پایین صفحه استفاده کنید.'};
+let licApiIdx=0;
 async function licCall(action,extra){
- const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),15000);
- try{
-  const r=await fetch(LIC_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({action},extra)),signal:ctl.signal});
-  const j=await r.json();return r.status>=500?{net:true}:j;
- }catch(e){return{net:true}}finally{clearTimeout(t)}}
+ const body=JSON.stringify(Object.assign({action},extra));
+ for(let k=0;k<LIC_APIS.length;k++){
+  const i=(licApiIdx+k)%LIC_APIS.length,ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),12000);
+  try{
+   const r=await fetch(LIC_APIS[i],{method:'POST',headers:{'Content-Type':'application/json'},body,signal:ctl.signal});
+   if(r.status>=500)continue;
+   const j=await r.json();licApiIdx=i;return j;
+  }catch(e){}finally{clearTimeout(t)}}
+ return{net:true}}
 async function licInit(){
  await licLoad();
  if(!LIC_ENFORCE){LIC.state='off';return}
@@ -794,7 +937,45 @@ document.addEventListener('click',async e=>{
 async function licBoot(){
  try{await licInit()}catch(e){LIC.blocked=true;LIC.state='none'}
  if(LIC.blocked)showLicense();
- else{document.body.classList.remove('locked');$('#lock').innerHTML='';updLicUI()}}
+ else{document.body.classList.remove('locked');$('#lock').innerHTML='';updLicUI()}
+ window.__ready=true}
+/* همگام‌سازی چند پنجره/تب: تغییر در یکی در دیگری هم دیده می‌شود */
+addEventListener("storage",e=>{
+ if(e.storageArea!==localStorage||!window.__ready)return;
+ if(e.key===null||(e.key==="ccb1"&&e.newValue===null)){location.reload();return}
+ if(e.key!=="ccb1")return;
+ let o;try{o=JSON.parse(e.newValue)}catch(_){return}
+ Object.assign(S,cleanState(migrate(o)).n);
+ S.alb=cleanAlb(S.alb)||newAlb();S.albums=S.albums.map(cleanAlb).filter(Boolean).slice(0,20);
+ applyTheme();applyModest();$("#modest").checked=S.modest;$("#theme").value=S.theme;$("#wake").checked=S.wake;go(curView,true)});
+/* ---------- لیست بازشوی همرنگ تم (جایگزین منوی بومی که در تم تیره سفید می‌شد) ---------- */
+(function(){
+ const dlg=$("#ddlg"),list=$("#ddl"),SV=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,"value");
+ const CHEV='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',CHK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+ let cur=null;
+ const label=sel=>(sel.getAttribute("aria-label")||(sel.closest("label")&&sel.closest("label").childNodes[0]&&sel.closest("label").childNodes[0].textContent)||"انتخاب").trim();
+ function refresh(sel){const t=sel._dd;if(!t)return;const o=sel.options[sel.selectedIndex];t.querySelector(".ddv").textContent=o?o.textContent:""}
+ function open(sel){
+  cur=sel;$("#dd-t").textContent=label(sel);
+  list.innerHTML=[...sel.options].map((o,i)=>`<button type="button" class="ddo" role="option" data-i="${i}" aria-selected="${i===sel.selectedIndex}"><span>${esc(o.textContent)}</span>${CHK}</button>`).join("");
+  sel._dd.setAttribute("aria-expanded","true");dlg.showModal();
+  const on=list.querySelector('[aria-selected=true]')||list.firstChild;on&&on.focus();on&&on.scrollIntoView({block:"center"})}
+ function pick(i){const sel=cur;if(!sel)return;dlg.close();sel.selectedIndex=i;refresh(sel);sel.dispatchEvent(new Event("change",{bubbles:true}));sel._dd.focus()}
+ list.addEventListener("click",e=>{const b=e.target.closest(".ddo");if(b)pick(+b.dataset.i)});
+ list.addEventListener("keydown",e=>{const os=[...list.children],i=os.indexOf(document.activeElement);
+  if(e.key==="ArrowDown"){e.preventDefault();(os[i+1]||os[0]).focus()}else if(e.key==="ArrowUp"){e.preventDefault();(os[i-1]||os[os.length-1]).focus()}
+  else if(e.key==="Home"){e.preventDefault();os[0].focus()}else if(e.key==="End"){e.preventDefault();os[os.length-1].focus()}});
+ dlg.addEventListener("close",()=>{if(cur&&cur._dd)cur._dd.setAttribute("aria-expanded","false");cur=null});
+ $("#dd-x").onclick=()=>dlg.close();
+ $$("select").forEach(sel=>{
+  const t=document.createElement("button");t.type="button";t.className="dd";t.setAttribute("aria-haspopup","listbox");t.setAttribute("aria-expanded","false");
+  t.innerHTML='<span class="ddv"></span>'+CHEV;sel.after(t);sel._dd=t;sel.classList.add("dd-n");sel.tabIndex=-1;sel.setAttribute("aria-hidden","true");
+  Object.defineProperty(sel,"value",{configurable:true,get(){return SV.get.call(this)},set(v){SV.set.call(this,v);refresh(this)}});
+  new MutationObserver(()=>refresh(sel)).observe(sel,{childList:true});
+  t.addEventListener("click",()=>open(sel));
+  const lb=sel.closest("label");if(lb)lb.addEventListener("click",e=>{if(!e.target.closest(".dd")){e.preventDefault();t.click()}});
+  refresh(sel)})
+})();
 /* ---------- شروع ---------- */
 S.mode=S.mode==="edit"?"edit":"create";if(!TOOLMAP[S.tool])S.tool="generic";if(!Array.isArray(S.eops))S.eops=[];S.eops=S.eops.filter(x=>EOPS.some(p=>p.id===x));
 if(!["auto","light","dark"].includes(S.theme))S.theme="auto";
@@ -808,5 +989,7 @@ const shared=QP.get("text")||QP.get("title")||QP.get("q");if(shared){q=shared.sl
 let startTab=QP.get("tab");if(fromHash())startTab="build";
 renderChips();
 if(["lib","build","album","rec","shoot"].includes(startTab))go(startTab,true);else renderLib();
+try{history.replaceState({duo:1},"");if(curView!=="lib"){history.pushState({duo:1,v:curView},"");navDepth=1}}catch(e){}
 licBoot();
+if(RECOVERED)setTimeout(()=>toast("بخشی از اطلاعات ذخیره‌شده خراب بود و ترمیم شد (نسخهٔ خراب نگه داشته شد)",5000),1500);
 </script></body></html>
