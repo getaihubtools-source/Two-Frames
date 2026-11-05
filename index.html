@@ -69,7 +69,7 @@ code,.ltr{direction:ltr;unicode-bidi:isolate;font-family:var(--mono)}
 .top nav{display:none;gap:26px;font-size:14.5px}
 .top nav a{color:#C7C2E0;text-decoration:none}
 .top nav a:hover{color:#fff}
-@media(min-width:860px){.top nav{display:flex}}
+@media(min-width:860px){.top nav{display:flex;margin-inline-end:auto}.brand{margin-inline-end:14px}}
 
 /* ---------- هیرو ---------- */
 .hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;isolation:isolate}
@@ -196,7 +196,19 @@ ol{list-style-type:persian}
 footer{background:var(--ink);color:#A9A4C8;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding-block:28px 36px}
 footer b{color:#fff}
+footer a{color:#C9B8FF;text-decoration:none;border-bottom:1px solid #C9B8FF55}
+footer a:hover{color:#fff}
 
+/* ---------- پنجرهٔ دریافت کد ---------- */
+#buy .buy-sub{margin-top:6px;font-size:14.5px;color:#CFCAE8;line-height:1.9}
+.buy-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.buy-list a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 4px;border:1px solid #ffffff22;border-radius:16px;background:#ffffff08;color:#fff;text-decoration:none;font-size:14px}
+.buy-list a:hover,.buy-list a:focus-visible{border-color:#9B78FF;background:#7C4DFF22;outline:none}
+.buy-list svg{width:26px;height:26px;fill:none;stroke:#C9A6FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.buy-list small{font-size:10.5px;color:#9C97BD}
+.buy-msg{font-size:13.5px;color:#B7B2D2;line-height:2;margin-bottom:14px}
+.buy-msg span{color:#fff}
+.buy-msg button{border:1px solid #ffffff2a;border-radius:99px;padding:0 12px;font-size:12.5px;color:#E7E2F8;margin-inline-start:6px}
 /* ---------- پنجرهٔ راهنمای نصب ---------- */
 dialog{border:0;border-radius:22px;padding:0;max-width:min(460px,92vw);width:100%;background:var(--ink);color:#fff;margin:auto}
 dialog::backdrop{background:#000a}
@@ -229,7 +241,7 @@ dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF
    <p class="lead">ژست، نور، لباس و مکان را از ۳۲۰ کد انتخاب کن. دوقاب جملهٔ کامل را برای ChatGPT، Gemini، Midjourney یا Flux می‌سازد؛ برای عکس تازه، ویرایش عکس موجود و برنامه‌ریزی کل آلبوم.</p>
    <div class="cta-row">
     <a class="btn btn-main" href="app.html" data-install data-state="ready"><span class="on-ready"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>نصب برنامه</span><span class="on-installed"><svg viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l4 4-4 4M14 12H4"/></svg>ورود به برنامه</span><span class="on-pending">در حال نصب…</span></a>
-    <a class="btn btn-ghost" href="https://t.me/aihub_tools" target="_blank" rel="noopener" data-buy>خرید کد فعال‌سازی</a>
+    <a class="btn btn-ghost" href="https://t.me/aihub_tools" data-buy>خرید کد فعال‌سازی</a>
    </div>
    <p class="state-note" data-note aria-live="polite"></p>
    <ul class="facts">
@@ -334,7 +346,7 @@ dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF
   <div class="faq">
    <details><summary>بدون اینترنت کار می‌کند؟</summary><p>بعد از فعال‌سازی، بله. فعال‌سازی بار اول و تأیید دوره‌ای کد (هر ۷ روز، در صورت اتصال) به اینترنت نیاز دارند؛ قطعی اینترنت برنامه را قفل نمی‌کند.</p></details>
    <details><summary>کد فعال‌سازی چطور کار می‌کند؟</summary><p>هر کد یک‌ساله است و روی حداکثر ۳ دستگاه فعال می‌شود. فعال‌سازی بار اول آنلاین است؛ اگر اتصال برقرار نشد، VPN را روشن کن. اگر اصلاً به سرور وصل نمی‌شوی، از «فعال‌سازی دستی» استفاده کن: کد دستگاهت را برای پشتیبانی می‌فرستی و کد مخصوص همان دستگاه را می‌گیری.</p></details>
-   <details><summary>چطور کد فعال‌سازی بگیرم؟</summary><p>از طریق پشتیبانی در تلگرام: <a href="https://t.me/aihub_tools" target="_blank" rel="noopener" class="ltr">@aihub_tools</a>. بعد از دریافت کد، برنامه را نصب کن و در صفحهٔ فعال‌سازی وارد کن.</p></details>
+   <details><summary>چطور کد فعال‌سازی بگیرم؟</summary><p>از طریق پشتیبانی در روبیکا، تلگرام و اینستاگرام: <a href="https://t.me/aihub_tools" data-buy class="ltr">@aihub_tools</a>. بعد از دریافت کد، برنامه را نصب کن و در صفحهٔ فعال‌سازی وارد کن.</p></details>
    <details><summary>بعد از تمام شدن یک سال چه می‌شود؟</summary><p>برنامه قفل می‌شود، ولی دکمهٔ دانلود پشتیبان همیشه آزاد است و اطلاعاتت پاک نمی‌شود. با تمدید از پشتیبانی، دوباره فعال می‌کنی.</p></details>
    <details><summary>عکس‌های من جایی آپلود می‌شود؟</summary><p>نه. دوقاب اصلاً عکس نمی‌گیرد. فقط متن می‌سازد و فهرست‌هایت را روی دستگاه خودت ذخیره می‌کند. عکس مرجع را خودت در ابزار AI پیوست می‌کنی.</p></details>
    <details><summary>خودِ دوقاب عکس می‌سازد؟</summary><p>نه. جملهٔ آماده می‌دهد تا در ابزار دلخواهت بچسبانی. هزینهٔ ساخت تصویر با همان ابزار است.</p></details>
@@ -347,13 +359,20 @@ dialog .tabs button[aria-pressed=true]{background:#7C4DFF40;border-color:#9B78FF
 </section>
 </main>
 
-<footer><div class="wrap"><span><b>دوقاب</b> (Duoframe)، محصولی از AIhub Tools</span><span>کانال تلگرام: <span class="ltr">@aihub_tools</span></span></div></footer>
+<footer><div class="wrap"><span><b>دوقاب</b> (Duoframe)، محصولی از AIhub Tools</span><span>کانال و پشتیبانی: <span class="ltr">@aihub_tools</span> در <a href="https://rubika.ir/aihub_tools" target="_blank" rel="noopener">روبیکا</a> · <a href="https://t.me/aihub_tools" target="_blank" rel="noopener">تلگرام</a> · <a href="https://instagram.com/aihub_tools" target="_blank" rel="noopener">اینستاگرام</a></span></div></footer>
 
 <dialog id="how" aria-labelledby="how-t"><div class="in">
  <h3 id="how-t">نصب دوقاب</h3>
  <div class="tabs" role="group" aria-label="دستگاه"><button type="button" data-p="android">اندروید</button><button type="button" data-p="ios">آیفون</button><button type="button" data-p="desktop">کامپیوتر</button></div>
  <ol id="how-steps"></ol>
  <button class="btn btn-main btn-sm" type="button" id="how-x">متوجه شدم</button>
+</div></dialog>
+<dialog id="buy" aria-labelledby="buy-t"><div class="in">
+ <h3 id="buy-t">دریافت کد فعال‌سازی</h3>
+ <p class="buy-sub">از هر کدام از این سه پلتفرم که راحت‌تری، برای ما پیام بده. آیدی هر سه یکی است.</p>
+ <div class="buy-list"><a href="https://rubika.ir/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9 9h4a2 2 0 010 4H9m3 0l3 3"/></svg><b>روبیکا</b><small class="ltr">@aihub_tools</small></a><a href="https://t.me/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg><b>تلگرام</b><small class="ltr">@aihub_tools</small></a><a href="https://instagram.com/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/></svg><b>اینستاگرام</b><small class="ltr">@aihub_tools</small></a></div>
+ <p class="buy-msg">متن پیشنهادی برای پیام:<br><span id="buy-txt">سلام، کد فعال‌سازی دوقاب را می‌خواهم.</span> <button type="button" id="buy-copy">کپی</button></p>
+ <button class="btn btn-main btn-sm" type="button" id="buy-x">بستن</button>
 </div></dialog>
 <div id="toast" role="status"></div>
 
@@ -430,6 +449,11 @@ const STEPS={
 function showHow(p){$$("#how .tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.p===p));$("#how-steps").innerHTML=STEPS[p].map(t=>`<li>${t}</li>`).join("");const d=$("#how");if(!d.open)d.showModal()}
 $$("#how .tabs button").forEach(b=>b.onclick=()=>showHow(b.dataset.p));
 $("#how-x").onclick=()=>$("#how").close();
+const buyD=$("#buy");
+$$("[data-buy]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();buyD.showModal()}));
+$("#buy-x").onclick=()=>buyD.close();
+buyD.addEventListener("click",e=>{if(e.target===buyD)buyD.close()});
+$("#buy-copy").onclick=async()=>{const t=$("#buy-txt").textContent;try{await navigator.clipboard.writeText(t);toast("کپی شد")}catch(e){toast("دستی کپی کن")}};
 $("#how").addEventListener("click",e=>{if(e.target.id==="how")e.target.close()});
 const platform=()=>isIOS?"ios":/android/i.test(ua)?"android":"desktop";
 btns.forEach(b=>b.addEventListener("click",async e=>{

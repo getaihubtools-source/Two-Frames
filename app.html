@@ -191,6 +191,13 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 .lbtn.sec{background:#ffffff0f;border:1px solid #ffffff2a;box-shadow:none;font-size:14.5px;min-height:44px}
 .lbuy{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:14px;border:1.5px solid #ffffff33;color:#E9E4FA;text-decoration:none;font-weight:700;font-size:14.5px;margin-top:10px}
 .lbuy:hover{background:#ffffff12}
+button.lbuy{width:100%;background:none;font-family:inherit;cursor:pointer}
+.lchoose{margin-top:8px;padding:10px;border:1px solid #ffffff1c;border-radius:14px;background:#ffffff08}
+.lchoose p{font-size:12.5px;line-height:1.9;color:#B7B2D2;margin:0 0 8px;text-align:right}
+.lch{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.lch a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;border:1px solid #ffffff22;border-radius:12px;color:#fff;text-decoration:none;font-size:13px;font-weight:700}
+.lch a:hover{border-color:#9B78FF;background:#7C4DFF22}
+.lch svg{width:22px;height:22px;fill:none;stroke:#C9A6FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .licdev{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding:8px 12px;border:1px solid #ffffff1c;border-radius:12px;background:#ffffff08;font-size:13px}
 .licdev span{color:#A9A4C8;white-space:nowrap}.licdev b{font-family:var(--mono,monospace);font-size:13px;letter-spacing:.5px;overflow:hidden;text-overflow:ellipsis}
 .licdev button{border:1px solid #ffffff2a;border-radius:99px;padding:2px 12px;font-size:12.5px;color:#E7E2F8;white-space:nowrap}
@@ -353,12 +360,12 @@ body.locked #lock{display:flex;position:fixed;inset:0;z-index:200;align-items:fl
 <h3>ارتباط با ما و پشتیبانی</h3>
 <p class="muted">برای خرید و تمدید کد فعال‌سازی، سؤال و گزارش مشکل، از یکی از راه‌ها پیام بدهید: <span class="ltr">@aihub_tools</span></p>
 <div class="soc">
- <a href="https://t.me/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg>تلگرام<small class="ltr">@aihub_tools</small></a>
  <a href="https://rubika.ir/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9 9h4a2 2 0 010 4H9m3 0l3 3"/></svg>روبیکا<small class="ltr">@aihub_tools</small></a>
+ <a href="https://t.me/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg>تلگرام<small class="ltr">@aihub_tools</small></a>
  <a href="https://instagram.com/aihub_tools" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6"/></svg>اینستاگرام<small class="ltr">@aihub_tools</small></a>
 </div>
 <p class="copy">© ۱۴۰۵ AIhub Tools. همهٔ حقوق این برنامه، شامل کدها، محتوا و طراحی، محفوظ است. کپی، بازنشر، اشتراک‌گذاری کد فعال‌سازی و فروش مجدد بدون اجازهٔ کتبی ممنوع است.</p>
-<p class="muted" style="margin-top:8px">دوقاب · کدساز عکس عاشقانه · نسخهٔ ۲٫۶</p>
+<p class="muted" style="margin-top:8px">دوقاب · کدساز عکس عاشقانه · نسخهٔ ۲٫۷</p>
 </div></div></dialog>
 <div id="upd" role="alert" hidden><span>نسخهٔ جدید آماده است</span><button id="updgo" class="b p" type="button">به‌روزرسانی</button></div>
 
@@ -768,6 +775,7 @@ $("#abd").onclick=()=>{let n=0;S.alb.shots.forEach(x=>{if(x.pose&&!S.board.some(
    مثال: ['https://license.example.com','https://aihub-license.get-aihubtools.workers.dev'] */
 const LIC_APIS=['https://aihub-license.get-aihubtools.workers.dev'],LIC_PRODUCT='duoframe',LIC_PUBLIC_JWK={"kty":"EC","crv":"P-256","x":"oaMsNWVXFBV3s7IW55TXXWc8b2fUkG6x-CQOunje2fM","y":"CpMhKno5HTtkUg7r9kykintWA_g-9E8xavFNyGJycDg"},LIC_ENFORCE=true;
 const LIC_KEY='license',LIC_LS='duoframe.lic',LIC_REVAL_DAYS=7,LIC_SUPPORT='⁦@aihub_tools⁩',LIC_BUY='https://t.me/aihub_tools';
+const LIC_CH=[["روبیکا", "https://rubika.ir/aihub_tools", "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M9 9h4a2 2 0 010 4H9m3 0l3 3\"/></svg>"], ["تلگرام", "https://t.me/aihub_tools", "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M21 4L3 11l6 2 2 6 3-4 5 4z\"/></svg>"], ["اینستاگرام", "https://instagram.com/aihub_tools", "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"3.6\"/><circle cx=\"16.8\" cy=\"7.2\" r=\".6\"/></svg>"]];
 const LIC={row:null,blocked:false,state:'off',msg:'',busy:false};
 const LIC_ALPHA='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 const licNewDevice=()=>{const r=new Uint8Array(12);crypto.getRandomValues(r);let s='';for(let i=0;i<12;i++){s+=LIC_ALPHA[r[i]%32];if(i%4===3&&i<11)s+='-'}return s};
@@ -885,7 +893,8 @@ function showLicense(){
   +'<label for="licKey">کد فعال‌سازی</label><input id="licKey" dir="ltr" autocomplete="off" spellcheck="false" placeholder="DUO-XXXX-XXXX-XXXX" value="'+esc(r.license||'')+'">'
   +'<div class="lmsg" id="licMsg" role="alert">'+esc(LIC.msg||'')+'</div>'
   +'<button class="lbtn" type="button" data-lic="activate">فعال‌سازی</button>'
-  +'<a class="lbuy" href="'+LIC_BUY+'" target="_blank" rel="noopener">خرید کد فعال‌سازی</a>'
+  +'<button class="lbuy" type="button" data-lic="buy" aria-expanded="false">خرید کد فعال‌سازی</button>'
+  +'<div class="lchoose" id="licChoose" hidden><p>از هر پلتفرمی که راحت‌تری برای ما پیام بده؛ آیدی هر سه <span dir="ltr">@aihub_tools</span> است.</p><div class="lch">'+LIC_CH.map(c=>'<a href="'+c[1]+'" target="_blank" rel="noopener">'+c[2]+c[0]+'</a>').join('')+'</div></div>'
   +'<div class="licdev"><span>کد دستگاه شما</span><b dir="ltr">'+esc(r.dev||'')+'</b><button type="button" data-lic="copydev">کپی</button></div>'
   +'<details class="licman"><summary>فعال‌سازی دستی (وقتی اتصال به سرور برقرار نمی‌شود)</summary><p>کد دستگاه بالا را برای پشتیبانی ('+LIC_SUPPORT+') بفرستید. یک «کد دستی» مخصوص همین دستگاه می‌گیرید؛ آن را اینجا بچسبانید.</p><textarea id="licTok" dir="ltr" rows="3" spellcheck="false" placeholder="کد دستی (مخصوص این دستگاه)"></textarea><button class="lbtn sec" type="button" data-lic="manual">فعال‌سازی با کد دستی</button></details>'
   +(hasData?'<button class="lklink" type="button" data-lic="backup">دانلود پشتیبان از اطلاعات من</button>':'')
@@ -931,6 +940,7 @@ document.addEventListener('click',async e=>{
  if(a==='activate')licActivate();
  else if(a==='manual')licManual();
  else if(a==='backup')dlBackup();
+ else if(a==='buy'){const c=$('#licChoose');c.hidden=!c.hidden;b.setAttribute('aria-expanded',String(!c.hidden))}
  else if(a==='check')licCheckNow();
  else if(a==='offline')licCheckOffline();
  else if(a==='copydev'){try{await navigator.clipboard.writeText(LIC.row.dev);b.textContent='کپی شد ✓'}catch(_){b.textContent='دستی کپی کنید'}}});
