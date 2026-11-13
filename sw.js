@@ -1,6 +1,6 @@
 /* دوقاب — Service Worker
    هر بار فایل‌های برنامه تغییر کرد، فقط عدد نسخه را بالا ببر. */
-const V='duoframe-v2.8.1';
+const V='duoframe-v2.8.2';
 const SHELL=['./','index.html','app.html','app.js','aihub.bundle.css','aihub.bundle.js','duoframe.css','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','favicon-32.png','fonts/Vazirmatn.woff2'];
 
 self.addEventListener('install',e=>{
